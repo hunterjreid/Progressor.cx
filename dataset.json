@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "question": "What is a firewall?",
+        "answer": "A firewall is a network security device that monitors and controls incoming and outgoing network traffic based on predetermined security rules. It acts as a barrier between a trusted internal network and untrusted external networks, helping to prevent unauthorized access and potential cyber attacks."
+    },
+    {
+        "id": 2,
+        "question": "What is phishing?",
+        "answer": "Phishing is a cyber attack where attackers send fraudulent emails or messages to deceive individuals into revealing sensitive information, such as passwords, credit card numbers, or personal data. These emails often appear legitimate and aim to manipulate recipients into taking actions that benefit the attackers."
+    },
+    {
+        "id": 3,
+        "question": "How can I create a strong password?",
+        "answer": "To create a strong password, use a combination of upper and lower case letters, numbers, and special characters. Avoid using easily guessable information like birthdays or names. Make the password at least 12 characters long and unique for each account. Consider using a passphrase that's easy for you to remember but difficult for others to guess."
+    },
+    {
+        "id": 4,
+        "question": "What is two-factor authentication (2FA)?",
+        "answer": "Two-factor authentication (2FA) is an extra layer of security used to ensure that people trying to gain access to an online account are who they say they are. In addition to a password, 2FA requires a second piece of information, such as a temporary code sent to a mobile device or a fingerprint scan."
+    },
+    {
+        "id": 5,
+        "question": "What is a DDoS attack?",
+        "answer": "A Distributed Denial of Service (DDoS) attack is a malicious attempt to disrupt the normal functioning of a targeted server, service, or network by overwhelming it with a flood of internet traffic. This makes the targeted system slow down or become unavailable to legitimate users."
+    },
+    {
+        "id": 6,
+        "question": "What is malware?",
+        "answer": "Malware, short for malicious software, refers to a variety of software programs designed to harm, exploit, or gain unauthorized access to computer systems or networks. Types of malware include viruses, worms, trojan horses, ransomware, and spyware."
+    },
+    {
+        "id": 7,
+        "question": "What is a VPN and why is it important for cybersecurity?",
+        "answer": "A Virtual Private Network (VPN) is a technology that creates a secure and encrypted connection between a user's device and a remote server. It's important for cybersecurity because it helps protect sensitive data from being intercepted by hackers when using public networks. VPNs can also mask the user's IP address, adding an extra layer of anonymity."
+    },
+    {
+        "id": 8,
+        "question": "What is social engineering?",
+        "answer": "Social engineering is the manipulation of individuals into revealing confidential information or performing actions that compromise security. Attackers use psychological tactics to exploit human nature, often relying on trust, curiosity, or fear to achieve their goals."
+    },
+    {
+        "id": 9,
+        "question": "What is encryption?",
+        "answer": "Encryption is the process of converting plain text into a scrambled format (cipher text) using algorithms and keys. It ensures that only authorized parties can access and understand the original data. Encryption is a crucial technique for protecting sensitive information during transmission and storage."
+    },
+    {
+        "id": 10,
+        "question": "What is a security patch?",
+        "answer": "A security patch is a software update designed to fix vulnerabilities or weaknesses in a computer program or operating system. Patches are released by software vendors to address known security issues and prevent potential exploits by malicious actors."
+    },
+    {
+        "id": 11,
+        "question": "What is a data breach?",
+        "answer": "A data breach is an unauthorized access, acquisition, or exposure of sensitive information, such as personal data, financial records, or trade secrets. Breaches can occur due to cyber attacks, insider threats, or accidental leaks, and they can have serious consequences for individuals and organizations."
+    },
+    {
+        "id": 12,
+        "question": "What is a vulnerability assessment?",
+        "answer": "A vulnerability assessment is the process of identifying and evaluating security vulnerabilities in a system, network, or application. It helps organizations understand their potential weaknesses and prioritize actions to mitigate those vulnerabilities and enhance their overall security posture."
+    }
+]
