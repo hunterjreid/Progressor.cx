@@ -1,6 +1,8 @@
 <br>
 <p align="center">
-    <br><sub>A COMPANZT</sub>
+    <img width="170" src="https://github.com/hunterjreid/Capstone/assets/62681404/d6f8f1ae-6f90-489e-9f13-e144f4024cab" alt="https://progressor.cx"/>
+    <br><sub>MySQL Node, Vue, TypeScript -> Azure AI -> Microsoft Azure (Same thing as ChatGPT they are small research company Microsoft runs them)</sub>
+    <br><sub>I’m doing this project solo. AI SaaS Cyber Security QnA Chat Bot Capstone Hunter Reid Yoobee Colleges Lecturers: Arthur, Mohammad, and Rouwa. </sub>
     <h3 align="center"><a href="https://ee.com">Progrossor.cx</a>©</h3>
 </p>
 
