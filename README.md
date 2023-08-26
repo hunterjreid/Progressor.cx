@@ -63,7 +63,7 @@ apt-get update && apt-get upgrade -y
 apt-get install apache2 mysql-server mysql-client php -y
 
 sudo mysql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by '4L!2de#wdof[Z%';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by '4Lwerf[Z%';
 
 apt install -y phpmyadmin
 Leave password for phpmyadmin empty.
@@ -128,9 +128,9 @@ systemctl start apache2
 
 <br>
 
-<h1><sub>IP 45.32.245.216   <br>
-Pass: L!2doc[Z%EHF)gj5      <br>
-PHP Pass: 4L!2de#wdof[Z%</sub></h1>
+<h1><sub>Irw   <br>
+Pass: LrewEHF)gj5      <br>
+PHP Pass: erwof[Z%</sub></h1>
 
 
 
