@@ -39,17 +39,7 @@
     Engineered as an elite Cybersecurity Chatbot, Progressor.cx empowers individuals and businesses by providing real-time insights into the evolving cyber threat landscape. Our advanced AI technology equips you with the knowledge and tools needed to fortify your digital defenses.
 </p>
 
-<router-link class="jlinkers" to="/home2">
-    <button style="margin-bottom: 40px;" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
-        LEARN MORE
-    </button>
-</router-link>
-
-        </div>
-      </div>
-
-
-  <h1 class="text-center font-bold text-3xl mt-8">Progressor.cx: Your Cybersecurity Chatbot</h1>
+<h1 class="text-center font-bold text-3xl mt-8">Progressor.cx: Your Cybersecurity Chatbot</h1>
     <p class="text-center italic text-gray-600 mt-2">Empowering Your Cyber Defense</p>
 
             <section class="my-8">
@@ -84,6 +74,19 @@
       </div>
     </div>
   </section>
+<router-link class="jlinkers" to="/chat">
+    <button style="margin-bottom: 40px;" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
+        Show me how it works!
+    </button>
+</router-link>
+        </div>
+      </div>
+
+      
+
+
+
+
 
   
     </div>
@@ -888,7 +891,6 @@ button:hover {
   background-color: #2c4ae8;
 }
   .parallax-banner {
-    height: 500px; /* Adjust the height as needed */
     background-image: url('@/assets/imgg.png');
     background-size: cover;
     background-position: center;
@@ -901,7 +903,7 @@ button:hover {
   }
 
   .banner-content {
-    max-width: 600px;
+    max-width: 1280px;
     margin: 0 auto;
   }
   .container3 {

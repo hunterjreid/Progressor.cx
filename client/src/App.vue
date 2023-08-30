@@ -1,13 +1,13 @@
 <template>
     <div id="master">
 
-      <header class="header">
+      <header v-if="$route.path !== '/chat'" class="header">
         <div class="gradient-header2 wave-bottom" style="    z-index: 99999;">
       <!-- Swiggly border header -->
 
 
 
-      <p class="header-text">Welcome to Progressor.cx! Try now. <a>    <router-link style="color:white;"  @click="closeMenu" to="/apply">Click Here try Progressor.cx</router-link></a></p>
+      <p class="header-text">Welcome to Progressor.cx! Try now. <a>    <router-link style="color:white;"  @click="closeMenu" to="/chat">Click Here try Progressor.cx</router-link></a></p>
   
     </div>
         <div class="header-content container mx-auto flex justify-between items-center">
@@ -65,6 +65,37 @@
   </div>
       
       </header>
+      <header v-else class="header">
+        <div style=" height: 100px;
+    z-index: 99999;
+    background: linear-gradient(159deg, rgb(0, 0, 0), rgb(111, 111, 111));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;">
+      <!-- Swiggly border header -->
+
+
+      <router-link to="/" @click="closeMenu" style="font-size: 64px;" class="link">
+      <span class="emoji">👈</span>
+    </router-link>
+
+   
+            <img alt="Logo" src="./assets/logo_clean.png" class="max-w-xs logo r3r3" style="max-width: 330px;" />
+          
+     <router-link style="color:white;"  @click="closeMenu" to="/apply">Chat History</router-link>
+    
+    
+        <router-link style="color:white;"  @click="closeMenu" to="/apply">New Chat+</router-link>
+    
+    
+   
+  
+    </div>
+       
+
+      
+      </header>
   
       <main id="mainSCROL" @click="closeMenu" style="
 
@@ -74,7 +105,11 @@ height: calc(100% - 100px);
     bottom: 0px;
     width: 100%;
     padding: 0px;
-">
+"
+
+:style="{ backgroundColor: $route.path === '/chat' ? 'black' : '' }"
+
+>
         <router-view></router-view>
       </main>
   
@@ -224,6 +259,9 @@ font-family: 'Comfortaa', cursive;
   .container {
     max-width: 1200px;
     margin: 0 auto;
+  }
+  #master {
+    background: black;
   }
   
   img {
@@ -559,7 +597,7 @@ font-size: 20px;
   top: 0;
   left: 0;
   right: 0;
-  background-color: #fff; /* Add your desired background color */
+
   z-index: 1000; /* Ensure the header stays above other content */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow for a subtle effect */
   transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add transitions for smooth effects */
