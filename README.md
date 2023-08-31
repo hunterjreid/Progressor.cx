@@ -13,7 +13,7 @@
 
 <summary><h4 style="text-align: center;">Dev Install</h4></summary>
 
-```js
+```markdown
 # For the client side:
 git clone https://github.com/hunterjreid/Progressor.cx
 cd Progressor.cx/client
