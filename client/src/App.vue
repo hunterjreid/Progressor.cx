@@ -83,10 +83,8 @@
    
             <img alt="Logo" src="./assets/logo_clean.png" class="max-w-xs logo r3r3" style="max-width: 330px;" />
           
-     <router-link style="color:white;"  @click="closeMenu" to="/apply">Chat History</router-link>
+  
     
-    
-        <router-link style="color:white;"  @click="closeMenu" to="/apply">New Chat+</router-link>
     
     
    

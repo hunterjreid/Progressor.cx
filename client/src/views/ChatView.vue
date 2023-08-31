@@ -4,15 +4,24 @@
     height: 100%;
     flex-direction: row;
     justify-content: center;
-    align-items: center;">
+    align-items: center;"> 
     <div style="max-width: 800px; margin: 0 auto; padding: 20px; position: absolute; bottom: 0;">
-      <div class="chat-container">
+      <div class="chat-container"><div class="chat-historyr" style="display: flex;" v-if="showHistory">
+          <div class="rrr" style="cursor: pointer;" v-for="message in dummyChatHistory" :key="message.id" :class="message.type">
+            <div class="message-contentr">{{ message.content }}</div>
+          </div>
+        </div>
         <div class="chat-history">
           <div v-for="message in messages" :key="message.id" :class="message.type">
             <div class="message-content">
               {{ message.content }}
             </div>
           </div>
+        </div>
+       
+        <div class="chat-controls">
+            <button @click="toggleHistory">{{ showHistory ? 'Close History' : 'Open History' }}</button>
+          <button @click="clearChat">New Chat</button>
         </div>
         <div class="chat-input">
           <input v-model="inputMessage" @keyup.enter="sendMessage" placeholder="Type your message..." />
@@ -29,6 +38,14 @@
     data() {
       return {
         inputMessage: '',
+        showHistory: false,
+        dummyChatHistory: [
+        { content: 'Chat 1 Hello there!',id: 0 },
+        { content: 'Old Hi! How can I help you?',id: 1 },
+        { content: 'This another chat I have a question about your services.', id: 2 },
+        { content: 'Sure, feel free to ask.', id: 3 },
+        // Add more dummy messages here
+      ],
         messages: [
         { content: 'Welcome to Progressor CX! 🚀,Hello! How can we assist you today?', type: 'received', id: 0 },
           // Add more default messages here
@@ -46,6 +63,13 @@
         // Clear the input field after sending
         this.inputMessage = '';
       },
+      toggleHistory() {
+      this.showHistory = !this.showHistory;
+    },
+    clearChat() {
+      this.messages = [];
+      this.messages.push(  { content: 'Welcome to Progressor CX! 🚀,Hello! How can we assist you today?', type: 'received', id: 0 });
+    },
     },
   };
   </script>
@@ -102,6 +126,22 @@
     border-radius: 3px;
   }
   
+.rrr {
+    font-size: 10px!important;
+    font-family: Gilroy;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+    overflow: hidden;
+    white-space: nowrap;
+    inline-size: 60px;
+    overflow-wrap: break-word;
+    background: #7b7b7b;
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px dashed black;
+    margin-right: 10px;
+}
+
   .chat-input button {
     margin-left: 10px;
     padding: 5px 10px;

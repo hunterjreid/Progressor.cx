@@ -20,15 +20,15 @@
     font-family: system-ui;
     background: linear-gradient(159deg, #0090ff, #e10000);
     -webkit-background-clip: text;
-    background-clip: text;
-  ">Welcome to Progressor.cs</h1>
+    background-clip: text;font-size: 92px;
+  ">  Progressor.cx: Empowering Your Cybersecurity</h1>
 
 
 
 
-<a></a>
+
 <div style="color:black;">
-    Progressor.cx: Empowering Your Cybersecurity<br>
+  <br>
 
 </div><br>
 
@@ -294,7 +294,6 @@
 
 
 <section class="agency-numbers-section bg-gray-100">
-  <h2 class="agency-numbers-title">PROGRESSOR.CX IN ACHIEVEMENTS</h2>
   <div class="agency-numbers-grid">
     <div class="agency-number-box">
       <h3 class="agency-number">95</h3>
@@ -314,8 +313,8 @@
        
       <div class="youtube-section">
         <h2 class="youtube-section-title">Client Experiences</h2>
-<p class="agency-number-description">The foundation of triumph is built upon the relationships one nurtures, invests in, and values. At Progressor.cx, this is precisely our approach.</p>
-
+<p >The foundation of triumph is built upon the relationships one nurtures, invests in, and values. At Progressor.cx, this is precisely our approach.</p>
+<h2 class="col-span-6 text-2xl font-bold">Elevate Your Cyber Security Standards</h2>
         <div class="youtube-video">
           <iframe src="https://www.youtube.com/embed/EKdZutMkmTE" title="YouTube video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -329,11 +328,8 @@
 
    <main class="container mx-auto p-4">
   <!-- Title section with H2 grid -->
-  <div class="grid grid-cols-6 gap-4 mb-4">
-    <h2 class="col-span-6 text-2xl font-bold">Elevate Your Cyber Security Standards</h2>
-    <h4 class="col-span-6 text-xl font-bold">Join Our Exclusive Cyber Security Alliance</h4>
-  </div>
 
+  <h4 class="col-span-6 text-xl font-bold">Join Our Exclusive Cyber Security Alliance</h4>
   <!-- Title section with Success Stories, Benefits, and Apply Button -->
   <div class="mb-8">
     <h2 class="text-2xl font-bold">Unveil Your Potential with Progressor.cx</h2>
@@ -370,16 +366,7 @@
 </main>
 
    
-<section class="bottom-section">
-  <div class="bottom-content">
-    <h2 class="bottom-title">Ready to Take the Next Step?</h2>
-    <p style="color:white">There's everything to gain and nothing to lose.</p>
-    <p style="color:white">Our successful clients are earning substantial figures monthly, and they entrust us with an objective assessment. If you're seeking increased security or starting out, we invite you to apply for collaboration.</p>
-    <router-link class="jlinkers" to="/contact-us">
-      <button class="bottom-btn">Get Started</button>
-    </router-link>
-  </div>
-</section>
+
 
 </main>
 
@@ -525,12 +512,14 @@ components: {
 
 .agency-numbers-section {
     display: flex;
-    background: #bb44b0;
-    border: 2px solid #16e9c9;
-    border-radius: 22px;
-    justify-content: center;
-    padding: 20px;
-    align-items: center;
+  background: #bb44b0;
+  border: 2px solid #000;
+  border-radius: 22px;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+  background: linear-gradient(159deg, #0090ff, #e10000);
+  text-align: center;
 }
 
 
@@ -720,6 +709,16 @@ main {
       transition: background-color 0.3s ease;
     }
 
+    .agency-number {
+        font-size: 47px;
+  color: white;
+    }
+
+    .agency-number-description {
+        font-size: 27px;
+  color: white;
+    }
+
     .custom-button:hover {
       background-color: #a71a7c;
     }
@@ -907,7 +906,8 @@ button:hover {
     margin: 0 auto;
   }
   .container3 {
-    max-width: 600px;
+    max-width: 1200px;
+    width: 90%;
     margin: 0 auto;
   }
   

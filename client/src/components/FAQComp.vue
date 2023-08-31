@@ -33,8 +33,8 @@
     .faq-question {
       font-size: 16px;
       font-weight: bold;
-      color: #6b207d; /* Purple */
-      background-color: #ffd6f6; /* Light pink */
+      color: #000000; /* Purple */
+      background-color: #ffd6f61e; /* Light pink */
       padding: 8px 12px;
       border: none;
       border-radius: 5px;
@@ -45,7 +45,8 @@
     }
   
     .faq-question:hover {
-      background-color: #f11111; /* Darker pink on hover */
+        color: #ffffff; /* Purple */
+      background-color: #2e2e2ec2; /* Darker pink on hover */
     }
   
     .faq-answer {
