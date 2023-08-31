@@ -215,9 +215,9 @@ forever start server.js
     
 <summary><h3>Images / screenshots</h3></summary>
 
-
 ![image](https://github.com/hunterjreid/Progressor.cx/assets/62681404/4cb49ee9-35e9-4072-a0e8-50edcd4caf6c)
-
+![image](https://github.com/hunterjreid/Progressor.cx/assets/62681404/2947d7e0-4e65-47b8-a46f-fa053e0b4009)
+![image](https://github.com/hunterjreid/Progressor.cx/assets/62681404/2bd94d55-a0f2-4f1c-af91-b1c7e97cee4c)
 ![image](https://github.com/hunterjreid/Progressor.cx/assets/62681404/d16a8879-c7fc-465d-9bcd-6c4328eb2a98)
 
 <br>
