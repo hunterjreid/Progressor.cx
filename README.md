@@ -211,12 +211,14 @@ forever start server.js
 
 ```
 </details>
-<details closed>
+<details open>
     
-<summary><h5>Images / screenshots</h5></summary>
+<summary><h3>Images / screenshots</h3></summary>
 
 
-NOTHING HERE ATM
+![image](https://github.com/hunterjreid/Progressor.cx/assets/62681404/4cb49ee9-35e9-4072-a0e8-50edcd4caf6c)
+
+![image](https://github.com/hunterjreid/Progressor.cx/assets/62681404/d16a8879-c7fc-465d-9bcd-6c4328eb2a98)
 
 <br>
 
