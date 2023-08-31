@@ -1,47 +1,73 @@
 <br>
 <p align="center">
     <img width="470" src="https://github.com/hunterjreid/Capstone/assets/62681404/d6f8f1ae-6f90-489e-9f13-e144f4024cab" alt="https://progressor.cx"/>
-        <h3 align="center">https://progressor.cx</a></h3>
-     <br><h3  align="center">AI SaaS Cyber Security QnA Chat Bot</h3>
-    <br><p align="center">MySQL Node, Vue, TypeScript -> Azure AI -> Microsoft Azure (Same thing as ChatGPT they are small research company Microsoft runs them)</p>
-    <br><p  align="center">I’m doing this project solo.  Capstone Hunter Reid Yoobee Colleges Lecturers: Arthur, Mohammad, and Rouwa. </p>
-
+    <p  align="center">Capstone Progressor.cx Hunter Reid Yoobee Colleges Lecturers: Arthur, Mohammad, and Rouwa. </p>
+    <h3 align="center">https://progressor.cx</a></h3>
+    <h3  align="center">AI SaaS Cyber Security QnA Chat Bot</h3>
+    <i align="center">MySQL Node, Vue, TypeScript -> Azure AI -> Microsoft Azure (Same thing as ChatGPT they are small research company Microsoft runs them</i>
 </p>
 
 
-## What is Progressor ??
-Progressor is your go-to solution for cybersecurity questions. It's like having a virtual cybersecurity expert on hand all the time. This smart chat bot uses AI to give you quick and accurate answers whenever you need them, helping you stay safe online.
 
-With Progressor, you can stay ahead of potential cybersecurity threats. It keeps an eye on security data and patterns, giving you timely advice to prevent issues before they become big problems. Whether you're a tech pro or not, Progressor makes cybersecurity easy to understand and act on.
-
-## Instant Answers, No Fuss
-
-Got a question about cybersecurity? Progressor has the answer. It's like asking a friend who knows all about online security. You'll get clear, easy-to-follow advice that empowers you to make smart choices and stay protected.
-
-Progressor fits into your cybersecurity routine seamlessly. It's available online and on your mobile device whenever you need it. No complicated setups—just straightforward answers that help you navigate the world of cybersecurity confidently.
-
-
-
-<details closed>
+<details open>
 
 <summary><h4 style="text-align: center;">Dev Install</h4></summary>
 
-<br>
-
-## 
-```bash
+```js
+# For the client side:
 git clone https://github.com/hunterjreid/Progressor.cx
 cd Progressor.cx/client
 npm i
 npm run serve
 
+# Open a new PowerShell and run the server:
 cd Progressor.cx/server
 npm i
 npm run server
-
-npm run build <- Dist
 ```
 </details>
+
+<details closed>
+
+<summary><h4 style="text-align: center;">Why i made it</h4></summary>
+
+Got a question about cybersecurity? Progressor has the answer. It's like asking a friend who knows all about online security. You'll get clear, easy-to-follow advice that empowers you to make smart choices and stay protected.
+
+Progressor fits into your cybersecurity routine seamlessly. It's available online and on your mobile device whenever you need it. No complicated setups—just straightforward answers that help you navigate the world of cybersecurity confidently.
+
+</details>
+
+
+<details closed>
+
+<summary><h4 style="text-align: center;">What is Progressor ??</h4></summary>
+
+
+
+Progressor is your go-to solution for cybersecurity questions. It's like having a virtual cybersecurity expert on hand all the time. This smart chat bot uses AI to give you quick and accurate answers whenever you need them, helping you stay safe online.
+
+With Progressor, you can stay ahead of potential cybersecurity threats. It keeps an eye on security data and patterns, giving you timely advice to prevent issues before they become big problems. Whether you're a tech pro or not, Progressor makes cybersecurity easy to understand and act on.
+
+</details>
+
+<details closed>
+
+<summary><h4 style="text-align: center;">How does it give Instant Answers, with No Fuss</h4></summary>
+
+<br>
+
+Progressor is your go-to solution for cybersecurity questions. It's like having a virtual cybersecurity expert on hand all the time. This smart chat bot uses AI to give you quick and accurate answers whenever you need them, helping you stay safe online.
+
+With Progressor, you can stay ahead of potential cybersecurity threats. It keeps an eye on security data and patterns, giving you timely advice to prevent issues before they become big problems. Whether you're a tech pro or not, Progressor makes cybersecurity easy to understand and act on.
+
+
+
+</details>
+
+
+
+
+
 <details closed>
 
 
@@ -109,6 +135,7 @@ cd /var/www/client
 
 npm install
 npm run build
+npm run build <- Dist
 
 cd /var/www/server
 
@@ -195,6 +222,15 @@ NOTHING HERE ATM
 
 </details>
 
+<details closed>
+    
+<summary><h5>DISCLAIMER</h5></summary>
 
 
 I'm the sole creator behind Progressor, taking on this project solo. I'm Hunter Reid, currently pursuing my capstone project at Yoobee Colleges. The guidance and support from my esteemed mentors—Arthur, Mohammad, and Rouwa—have been invaluable. Their insights have helped shape Progressor into the practical cybersecurity resource it is today.
+
+
+<br>
+
+</details>
+
