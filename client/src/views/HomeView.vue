@@ -79,6 +79,13 @@
         Show me how it works!
     </button>
 </router-link>
+
+
+<router-link class="jlinkers" to="/price">
+    <button style="margin-bottom: 40px;" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
+        PRICING
+    </button>
+</router-link>
         </div>
       </div>
 

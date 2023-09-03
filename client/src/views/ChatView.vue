@@ -32,6 +32,9 @@
   </template>
   
   <script>
+
+import axios from 'axios';
+
   export default {
     name: 'ChatView',
   
@@ -53,24 +56,53 @@
       };
     },
     methods: {
-      sendMessage() {
-        if (this.inputMessage.trim() === '') {
-          return;
-        }
-        // Add sent message to the messages array
-        this.messages.push({ content: this.inputMessage, type: 'sent', id: this.messages.length });
-        
-        // Clear the input field after sending
-        this.inputMessage = '';
+        async sendMessage() {
+  if (this.inputMessage.trim() === '') {
+    return;
+  }
+
+  try {
+
+    this.messages.push({ content: this.inputMessage, type: 'sent', id: this.messages.length });
+
+    this.inputMessage = '';
+
+
+    const secret = 'aY73OLUQzbM.7aLSse5ezotXeAhdEywnqcpK1D4vhe60m0wukUzd-nQ';
+    const directLineUrl = 'https://directline.botframework.com/v3/directline/conversations';
+
+    // Open a new conversation
+    const conversationResponse = await axios.post(directLineUrl, {}, {
+      headers: {
+        Authorization: `Bearer ${secret}`,
       },
-      toggleHistory() {
-      this.showHistory = !this.showHistory;
-    },
-    clearChat() {
-      this.messages = [];
-      this.messages.push(  { content: 'Welcome to Progressor CX! 🚀,Hello! How can we assist you today?', type: 'received', id: 0 });
-    },
-    },
+    });
+
+    // const conversationId = conversationResponse.data.conversationId;
+
+    const knowledgeBaseUrl = 'https://progressor.cognitiveservices.azure.com/language/:query-knowledgebases';
+    const projectName = 'ProgressorAI';
+    const apiVersion = '2021-10-01';
+    const deploymentName = 'production';
+
+    const apiUrl = `${knowledgeBaseUrl}?projectName=${projectName}&api-version=${apiVersion}&deploymentName=${deploymentName}`;
+
+    // Make the API request using Axios
+    const response = await axios.get(apiUrl, {
+      headers: {
+        'Ocp-Apim-Subscription-Key': '5cb722b3df204efc93f741cc4a6aefad',
+        'Authorization': `Bearer ${conversationResponse.data.token}`,
+      },
+    });
+
+    // Append the API response as a message to the messages array
+    this.messages.push({ content: response.data, type: 'received', id: this.messages.length });
+  } catch (error) {
+    console.error('Error sending API request:', error);
+  }
+}
+
+}
   };
   </script>
   <style>

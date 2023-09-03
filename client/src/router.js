@@ -13,6 +13,8 @@ import NewLanding from './views/NewLanding.vue'
 import ChatView from './views/ChatView.vue'
 import FaqView from './views/FaqView.vue'
 import ContactView from './views/ContactView.vue'
+import PricingPage from './views/PricingPage.vue'
+import HowtokensWorkPage from './views/HowtokensWorkPage.vue'
 
 const routes = [
     {
@@ -20,6 +22,16 @@ const routes = [
       name: 'Home',
       component: HomeView,
     },
+    {
+        path: '/tokens',
+        name: 'HowtokensWorkPage',
+        component: HowtokensWorkPage,
+      },
+    {
+        path: '/price',
+        name: 'PricingPage',
+        component: PricingPage,
+      },
     {
         path: '/chat',
         name: 'chat',

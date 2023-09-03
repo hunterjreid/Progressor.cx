@@ -1,6 +1,6 @@
 <template>
     <div class="landing-page">
-      <!-- Section 1: Image on left, text on right -->
+
       <div style="display: flex; text-align: center; justify-content: center; align-items: center;">
         <h2>Elevate Your Career with Progressor</h2>
       </div>
@@ -19,7 +19,7 @@
         </div>
       </section>
   
-      <!-- Section 2: Image on right, text on left -->
+
       <section class="section reverse">
         <div class="content">
           <div class="image">
