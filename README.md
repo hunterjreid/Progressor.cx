@@ -3,7 +3,7 @@
     <img width="470" src="https://github.com/hunterjreid/Capstone/assets/62681404/d6f8f1ae-6f90-489e-9f13-e144f4024cab" alt="https://progressor.cx"/>
     <p  align="center">Capstone Progressor.cx Hunter Reid Yoobee Colleges Lecturers: Arthur, Mohammad, and Rouwa. </p>
     <h3 align="center">https://progressor.cx</a></h3>
-    <h3  align="center">AI SaaS Cyber Security QnA Chat Bot</h3>
+    <h3  align="center">Azure AI based Cyber Security expert Chatbot Software as a service (SaaS)</h3>
     <i align="center">MySQL Node, Vue, TypeScript -> Azure AI -> Microsoft Azure (Same thing as ChatGPT they are small research company Microsoft runs them</i>
 </p>
 
