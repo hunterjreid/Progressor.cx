@@ -45,7 +45,7 @@
     height: 256px;
 "></textarea>
   <br>
-  <label>URL: https://ommida.com/blog/</label>
+  <label>URL: https://progressor.cx/blog/</label>
   <input type="text" v-model="newBlog.url">
   <button  style="background:green" @click="addBlog">Create Blog</button>  <br>
   <button @click="showAddBlogPopup = false">Close popup</button>

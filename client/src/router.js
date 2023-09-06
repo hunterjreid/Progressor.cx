@@ -15,7 +15,7 @@ import FaqView from './views/FaqView.vue'
 import ContactView from './views/ContactView.vue'
 import PricingPage from './views/PricingPage.vue'
 import HowtokensWorkPage from './views/HowtokensWorkPage.vue'
-
+import YoobeeTestView from './views/YoobeeTestView.vue'
 const routes = [
     {
       path: '/',
@@ -36,6 +36,11 @@ const routes = [
         path: '/chat',
         name: 'chat',
         component: ChatView,
+      },
+      {
+        path: '/Yoobee_test_wip',
+        name: 'YoobeeTestView',
+        component: YoobeeTestView,
       },
 
       {

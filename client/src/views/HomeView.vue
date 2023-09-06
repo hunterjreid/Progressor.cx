@@ -159,7 +159,7 @@
     text-stroke: 1px black; /* Adding black outline */
       -webkit-text-fill-color: transparent;
       font-family: system-ui;
-      background-image: linear-gradient(270deg,#13fff3 31%,#df64d3);
+      background-image: linear-gradient(159deg, #0090ff, #e10000);
       -webkit-background-clip: text;
       background-clip: text;
       font-size: 47px;"> What Others say.</h2>
@@ -181,7 +181,7 @@
       text-stroke: 1px black; /* Adding black outline */
       -webkit-text-fill-color: transparent;
       font-family: system-ui;
-      background-image: linear-gradient(270deg,#13fff3 31%,#df64d3);
+      background-image: linear-gradient(159deg, #0090ff, #e10000);
       -webkit-background-clip: text;
       background-clip: text;
       font-size: 47px;">Discover the Power of Progressor.cx</h2>
@@ -210,7 +210,7 @@
     text-stroke: 1px black; /* Adding black outline */
     -webkit-text-fill-color: transparent;
     font-family: system-ui;
-    background-image: linear-gradient(270deg,#13fff3 31%,#df64d3);
+    background-image: linear-gradient(159deg, #0090ff, #e10000);
     -webkit-background-clip: text;
     background-clip: text;
     font-size: 47px;">Elevate Your Cyber Security with Progressor.cx</h2>

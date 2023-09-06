@@ -37,7 +37,7 @@
             style="text-decoration: none"
             to="/landing"
           >
-            <a class="header_link">Why</a>
+            <a class="header_link">Blogs ↓</a>
           </router-link>
           <router-link
             @click="closeMenu"
@@ -49,8 +49,15 @@
   
           <a @click="menuOpen = !menuOpen" style="cursor: pointer">
             <span v-html="menuOpen ? upArrowIcon : dropdownIcon"></span>
-            {{ menuOpen ? '⬆️' : '⬇️' }}
+            {{ menuOpen ? 'Company' : 'Company' }}
           </a>
+          <router-link
+            @click="closeMenu"
+            style="text-decoration: none"
+            to="/price"
+          >
+            <a class="header_link">Pricing</a>
+          </router-link>
         </div>
         <div v-if="menuOpen" class="b_menthis">
           <router-link to="/home2" @click="closeMenu" class="link">

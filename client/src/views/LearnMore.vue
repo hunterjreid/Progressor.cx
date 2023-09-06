@@ -2,31 +2,61 @@
     <div class="landing-page">
 
       <div style="display: flex; text-align: center; justify-content: center; align-items: center;">
-        <h2>Elevate Your Career with Progressor</h2>
+        <h2>READ OUR BLOGS</h2>
+        
       </div>
+      <section class="section">
+        <div style="display: flex; justify-content: center;">
+      <router-link :to="{ path: '/blog/1' }">
+        <button class="bg-blue-53ee3">
+          Cybersecurity Blog 1
+        </button>
+      </router-link>
+      <router-link :to="{ path: '/blog/2' }">
+        <button class="bg-blue-53ee3">
+          Cybersecurity Blog 2
+        </button>
+      </router-link>
+      <router-link :to="{ path: '/blog/3' }">
+        <button class="bg-blue-53ee3">
+          Cybersecurity Blog 3
+        </button>
+      </router-link>      <router-link :to="{ path: '/blog/1' }">
+        <button class="bg-blue-53ee3">
+          Cybersecurity Blog 4
+        </button>
+      </router-link>
+      <router-link :to="{ path: '/blog/2' }">
+        <button class="bg-blue-53ee3">
+          Cybersecurity Blog 5
+        </button>
+      </router-link>
+      <router-link :to="{ path: '/blog/3' }">
+        <button class="bg-blue-53ee3">
+          Cybersecurity Blog 6
+        </button>
+      </router-link>
+      <!-- Repeat the pattern for additional blogs -->
+    </div>
+      </section>
+      
       <p style="text-align: center; font-style: italic; max-width: 450px; margin: 24px auto;">
+        
+   
         Join Progressor's leading cybersecurity community and propel your professional journey. Benefit from expert mentorship, privacy assurance, and unparalleled professionalism as you step towards success.
       </p>
-      <section class="section">
-        <div class="content">
-          <div class="text">
-            <h2>Welcome to Our Voyage</h2>
-            <p>We are a dedicated team passionate about offering exceptional services to our users.</p>
-          </div>
-          <div class="image">
-            <img class="iamner" src="../assets/SET(1).png" alt="Team Collaboration">
-          </div>
-        </div>
-      </section>
+
   
 
       <section class="section reverse">
+        
         <div class="content">
           <div class="image">
             <img class="iamner" src="../assets/SET(2).png" alt="Innovation">
           </div>
           <div class="text">
             <h2>Our Dedication to Excellence</h2>
+            
             <p>With a focus on quality and innovation, we constantly push the boundaries of cybersecurity.</p>
           </div>
         </div>
@@ -35,6 +65,7 @@
       <!-- Section 3: Key Points -->
       <section class="key-points">
         <h2>Our Core Values</h2>
+        
         <ul>
           <li>Cutting-Edge Solutions</li>
           <li>User-Centric Approach</li>
