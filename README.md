@@ -3,6 +3,23 @@
     <h3><a href="https://progressor.cx">https://progressor.cx</a> is a Azure AI based Cyber Security expert Chatbot Software as a service (SaaS)</h3>
     <table align="center">
         <tr>
+             <td><details closed><summary><h4 style="text-align: center;">Quick Start (builds for dev)</h4></summary>
+
+
+```markdown
+# For the client side:
+git clone https://github.com/hunterjreid/Progressor.cx
+cd Progressor.cx/client
+npm i
+npm run serve
+
+# Open a new PowerShell and run the server:
+cd Progressor.cx/server
+npm i
+npm run server
+```
+</details>
+</td>
             <td><a href="READDOCS.md">Docs</a></td>
             <td><a href="READWIKI.md">Wiki</a></td>
             <td><a href="DEMO_VIDEO_LINK">Demo Video</a></td>
@@ -18,3 +35,5 @@
     </table>
     <p>Capstone Project - Progressor.cx by Hunter Reid from Yoobee Colleges with help of wonderful lecturers Arthur, Mohammad and Rouwa.</p>
 </div>
+
+
