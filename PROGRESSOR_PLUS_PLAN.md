@@ -1,32 +1,29 @@
-# Custom Chatbot Development Procedure
+# ProgressorPlus+
 
 ## Objective:
-This procedure outlines the steps for creating a tailored chatbot to meet a client's specific needs and requirements.
+This is what happens when someone signs up for the Processor Plus program. It's a set of rules we always follow, no matter what.
 
-## Scope:
-This procedure encompasses the entire process, from project initiation to delivering a fully functional chatbot to the client.
+### Step 1: Starting the Project
+1.1. First, we get in touch with the person who applied and is serious about it.
 
-### Step 1: Project Kick-off
-1.1.Establish initial contact with person who has applyed and we are taking seriously,
+1.2. Next, we set up an initial meeting to introduce the project team and talk about our goals.
 
-1.2. Organize an initial meeting to introduce the project team, discuss goals
+### Step 2: Understanding What the Client Needs
+2.1. We work closely with the client to understand exactly what they want for the chatbot.
 
-### Step 2: Understanding Client Needs
-2.1. Work client to comprehend their unique needs and objectives for the chatbot.
+2.2. We define the main functions the chatbot should have.
 
-2.2. Defining Chatbot core Functions
+### Step 3: Making the Chatbot
+3.1. Here, we design and build the chatbot based on the client's requests.
 
-### Step 3: Chatbot Development
-3.1. Design and Build: Create the chatbot according to the client's specifications and preferences.
+3.2. We collaborate with the client to get their input and make any needed changes to match their expectations.
 
-3.2. Client Input: Work together with the client to incorporate their feedback and make necessary adjustments to meet their expectations.
+### Step 4: Handing Over the Chatbot
+4.1. We make sure the client knows how to use the chatbot effectively.
 
-### Step 4: Handover
-4.1. Client Orientation
+4.2. We provide documentation for reference.
 
-4.2. Documentation
+### Step 5: Wrapping Up the Progressor Pro Plan
+5.1. We do a final evaluation to ensure everything meets the client's requirements.
 
-### Step 5: Progressor Pro Plan Completion
-5.1. Final Evaluation
-
-5.2. Client Approval
+5.2. We seek client approval to complete the project.
