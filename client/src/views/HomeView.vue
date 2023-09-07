@@ -4,14 +4,14 @@
 
 
         <main class=" mx-auto p-4">
-      
-    
+        
         <div
 
     >
 
         <!-- Parallax Banner -->
         <div class="parallax-banner">
+            
         <div class="banner-content">
           <h1 class="text-3xl font-bold" style="font-weight: 700;
     margin-bottom: 10px;  -webkit-text-stroke: 1px black; /* Adding black outline */
@@ -25,7 +25,16 @@
 
 
 
-
+<button class="custom-button" style="background: white;
+    color: black;
+    font-size: 26px;" @click="$router.push('/Login')">
+      Login
+    </button>    <button class="custom-button"  style="background: white;
+    color: black;
+    font-size: 26px;" @click="$router.push('/Signup')">
+      Signup
+    </button>
+    
 
 <div style="color:black;">
   <br>

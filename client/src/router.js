@@ -16,6 +16,8 @@ import ContactView from './views/ContactView.vue'
 import PricingPage from './views/PricingPage.vue'
 import HowtokensWorkPage from './views/HowtokensWorkPage.vue'
 import YoobeeTestView from './views/YoobeeTestView.vue'
+import SignupView from './views/Signup.vue'
+import LoginView from './views/LoginScreen.vue'
 const routes = [
     {
       path: '/',
@@ -23,6 +25,14 @@ const routes = [
       component: HomeView,
     },
     {
+        path: '/signup',
+        name: 'signup',
+        component: SignupView,
+      },      {
+        path: '/login',
+        name: 'login',
+        component: LoginView,
+      },    {
         path: '/tokens',
         name: 'HowtokensWorkPage',
         component: HowtokensWorkPage,
