@@ -24,7 +24,7 @@ npm run server
             <td><a href="READWIKI.md">Wiki</a></td>
             <td><a href="DEMO_VIDEO_LINK">Demo Video</a></td>
             <td><a href="SCREENSHOT.md">Screenshots</a></td>
-            <td><a href="PROGRESSOR_PLUS_PLAN_LINK">Progressor Plus+ Plan</a></td>
+            <td><a href="PROGRESSOR_PLUS_PLAN.md">Progressor Plus+ Plan</a></td>
             <td> <details closed>
         <summary><h5>DISCLAIMER</h5></summary>
         <p>
