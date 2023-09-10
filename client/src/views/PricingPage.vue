@@ -14,7 +14,7 @@
       <li><i class="fa fa-check"></i> Access to Basic Features</li>
       <li><i class="fa fa-check"></i> Email and Chat Support</li>
     </ul>
-    <button @click="selectPlan(9)">Select</button>
+    <button @click="$router.push('/login')">Select</button>
   </div>
 
   <!-- Card 2 -->
@@ -25,7 +25,7 @@
       <li><i class="fa fa-check"></i> Access to Advanced Features</li>
       <li><i class="fa fa-check"></i> Email and Chat Support</li>
     </ul>
-    <button @click="selectPlan(19)">Select</button>
+    <button @click="$router.push('/login')">Select</button>
   </div>
 
   <!-- Card 3 -->
@@ -36,7 +36,7 @@
       <li><i class="fa fa-check"></i> Access to Premium Features</li>
       <li><i class="fa fa-check"></i> Priority Support 24/7</li>
     </ul>
-    <button @click="selectPlan(42)">Select</button>
+    <button @click="$router.push('/login')">Select</button>
   </div>
 
   <!-- Custom Price Card -->
@@ -44,7 +44,7 @@
     <h2>Custom Price</h2>    <h2>Progressor PLUS+</h2>
     <li><i class="fa fa-check"></i> Infinite Tokens</li>
     <p>Contact us for a personalized plan tailored to your requirements, including custom token limits and additional benefits.</p>
-    <button @click="showCustomPriceDialog()">Contact</button>
+    <button  @click="$router.push('/apply')">Contact</button>
   </div>
 </div>
 <p>Your Satisfaction is 100% Guaranteed or Your Money Back</p>

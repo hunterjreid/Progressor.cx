@@ -5,7 +5,8 @@
 
         <main class=" mx-auto p-4">
         
-        <div
+        <div style="    max-width: 1000px;
+    margin: 0px auto;"
 
     >
 
@@ -25,20 +26,13 @@
 
 
 
-<button class="custom-button" style="background: white;
-    color: black;
-    font-size: 26px;" @click="$router.push('/Login')">
-      Login
-    </button>    <button class="custom-button"  style="background: white;
-    color: black;
-    font-size: 26px;" @click="$router.push('/Signup')">
-      Signup
-    </button>
+
     
 
 <div style="color:black;">
   <br>
 
+  
 </div><br>
 
 <p class="my-4" style="text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
@@ -108,15 +102,29 @@
     </div>
 
 
+    <main class="container3"> 
+    <h2 class="font-semibold text-white">Companies just trust progressor.cx</h2>
+    <div style="display: flex;
+  justify-content: space-around;">
+        <img src="@/assets/Manulife_logo.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
+        <img src="@/assets/Google_2015_logo.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
+        <img src="@/assets/revolut-logo-black-1.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
+        <img src="@/assets/Manulife_logo.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
+        <img src="@/assets/Google_2015_logo.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
+        <img src="@/assets/revolut-logo-black-1.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
+        <img src="@/assets/Manulife_logo.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
+        <img src="@/assets/Google_2015_logo.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
+        <img src="@/assets/revolut-logo-black-1.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
 
-
+    </div>
+</main>
     <div class="pic-left-text-right">
   <div class="max-w-md">
     <h2 class="text-3xl font-bold">Enhance Your Cyber Security with Our AI Chatbot</h2>
     <p class="my-4">
       Elevate your organization's security posture with our advanced AI Chatbot Cyber Security SaaS. Explore cutting-edge solutions and protect your digital assets today.
     </p>
-    <button class="custom-button" @click="$router.push('/learn-more')">
+    <button class="custom-button" @click="$router.push('/home2')">
       Learn More
     </button>
   </div>
@@ -309,7 +317,7 @@
 </main>
 
 
-<section class="agency-numbers-section bg-gray-100">
+<section class="agency-numbers-section bg-gray-100" style="max-width: 900px;">
   <div class="agency-numbers-grid">
     <div class="agency-number-box">
       <h3 class="agency-number">95</h3>
@@ -323,29 +331,11 @@
       <h3 class="agency-number">132%</h3>
       <p class="agency-number-description">CYBER RESILIENCE BOOST</p>
     </div>
-  </div>
-</section>
+</div>
 
        
-      <div class="youtube-section">
-        <h2 class="youtube-section-title">Client Experiences</h2>
-<p >The foundation of triumph is built upon the relationships one nurtures, invests in, and values. At Progressor.cx, this is precisely our approach.</p>
-<h2 class="col-span-6 text-2xl font-bold">Elevate Your Cyber Security Standards</h2>
-        <div class="youtube-video">
-          <iframe src="https://www.youtube.com/embed/EKdZutMkmTE" title="YouTube video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="youtube-video">
-          <iframe src="https://www.youtube.com/embed/EKdZutMkmTE" title="YouTube video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="youtube-video">
-          <iframe src="https://www.youtube.com/embed/EKdZutMkmTE" title="YouTube video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-
-   <main class="container mx-auto p-4">
-  <!-- Title section with H2 grid -->
-
-  <h4 class="col-span-6 text-xl font-bold">Join Our Exclusive Cyber Security Alliance</h4>
+    
+    <h4 class="col-span-6 text-xl font-bold">Join Our Exclusive Cyber Security Alliance</h4>
   <!-- Title section with Success Stories, Benefits, and Apply Button -->
   <div class="mb-8">
     <h2 class="text-2xl font-bold">Unveil Your Potential with Progressor.cx</h2>
@@ -359,7 +349,30 @@
     </div>
     <p class="mb-4">Discover how Progressor.cx can empower you to strengthen your cyber security defenses.</p>
     <ApplyComp />
+      <div class="youtube-section">
+        <h2 class="youtube-section-title">Client Experiences</h2>
+<p >The foundation of triumph is built upon the relationships one nurtures, invests in, and values. At Progressor.cx, this is precisely our approach.</p>
+<h2 class="col-span-6 text-2xl font-bold">Elevate Your Cyber Security Standards</h2>
+<div class="youtube-video">
+  <iframe src="https://www.youtube.com/embed/EKdZutMkmTE" title="YouTube video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="832px" height="468px"></iframe>
+</div>
+<div class="youtube-video">
+  <iframe src="https://www.youtube.com/embed/EKdZutMkmTE" title="YouTube video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="832px" height="468px"></iframe>
+</div>
+<div class="youtube-video">
+
+    <iframe src="https://www.youtube.com/embed/EKdZutMkmTE" title="YouTube video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="832px" height="468px"></iframe>
+</div>
+
+     
+    </div>
+
   </div>
+
+</section>
+   <main class="container mx-auto p-4">
+  <!-- Title section with H2 grid -->
+
 
   <!-- Our Commitment section -->
   <section class="my-8">
@@ -535,7 +548,8 @@ components: {
   padding: 20px;
   align-items: center;
   background: linear-gradient(159deg, #0090ff, #e10000);
-  text-align: center;
+  text-align: center;flex-direction: column;    max-width: 1080px;
+    margin: 0 auto;
 }
 
 

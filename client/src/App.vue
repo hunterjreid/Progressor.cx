@@ -25,6 +25,15 @@
               @click="navigateToHome"
             />
           </router-link>
+          <button class="custom-button" style="background: rgb(192, 187, 187);
+    color: black;
+    font-size: 26px;" @click="$router.push('/Login')">
+      Login
+    </button>    <button class="custom-button"  style="background: rgb(255, 3, 87);
+    color: black;
+    font-size: 26px;" @click="$router.push('/Signup')">
+      Signup
+    </button>
           <router-link
             @click="closeMenu"
             style="text-decoration: none"
