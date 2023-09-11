@@ -37,4 +37,4 @@ npm run server
     <p>Capstone Project - Progressor.cx by Hunter Reid from Yoobee Colleges with help of wonderful lecturers Arthur, Mohammad and Rouwa.</p>
 </div>
 
-
+<sub>By viewing, editing, forking, copying, or cloning, I acknowledge that our company is operational/live, and it is not to be copied under any circumstances. I strictly agree this whole git is confidential (UNLESS EDUCATIONAL USE)* information without prior written consent.</sub>
