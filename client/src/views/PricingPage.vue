@@ -1,6 +1,6 @@
 <template>
-    <div>
-    <div style="max-width: 1280px; margin: 0 auto; padding: 20px;">
+
+    <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
       <!-- Your existing code here -->
   <h1>Simple pricing at any scale that just works.</h1>
   <h2>If you don;t like progressor we can refund you at any time.</h2>
@@ -52,10 +52,10 @@
     <button style="margin-bottom: 40px;" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
        HOW DO TOKENS WORK?
     </button>
-</router-link>
+</router-link>      <FooterComp /> <!-- Your existing code here -->
 </div>
-      <FooterComp /> <!-- Your existing code here -->
-    </div>
+
+    
   </template>
   
   <script>
@@ -117,7 +117,7 @@
 .pricing-card.largest-card {
     color: white;
     background: linear-gradient(159deg, #0090ff, #e10000);
-    font-size: 28px;
+    font-size: 23px;
     border: 2px solid #007bff;
 }
 

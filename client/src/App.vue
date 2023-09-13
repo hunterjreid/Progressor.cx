@@ -13,23 +13,27 @@
             >
           </p>
         </div>
-        <div
-          class="header-content container mx-auto flex justify-between items-center"
-        >
-          <router-link @click="closeMenu" to="/">
+        <div class="id_2s">
+          <router-link @click="closeMenu"   class="r3r3z" to="/landing">
             <img
               alt="Logo"
               src="./assets/logo_clean.png"
               class="max-w-xs logo r3r3"
-              style="height: 30px"
+              style="height: 30px;  display: flex;"  
               @click="navigateToHome"
             />
           </router-link>
-          <button class="custom-button" style="background: rgb(192, 187, 187);
+          <button @click="menuOpen = !menuOpen; menuOpen2 = false" class="colorlessbtn">Resources {{ !menuOpen ? '⏬' : '🔝' }}</button>
+          <button @click="menuOpen2 = !menuOpen2; menuOpen = false" class="colorlessbtn">Company {{ !menuOpen2 ? '⏬' : '🔝' }}</button>
+          <button   @click="$router.push('/pricing'), closeMenu" class="colorlessbtn">Pricing</button>
+          <div class="btn_holder">
+          <button class="actionBTN">Log in</button>
+          <button class="actionBTN2">Sign up</button></div>
+       <!--     <button class="custom-button" style="background: rgb(192, 187, 187);
     color: black;
     font-size: 26px;" @click="$router.push('/Login')">
       Login
-    </button>    <button class="custom-button"  style="background: rgb(255, 3, 87);
+     </button>  <button class="custom-button"  style="background: rgb(255, 3, 87);
     color: black;
     font-size: 26px;" @click="$router.push('/Signup')">
       Signup
@@ -66,44 +70,71 @@
             to="/price"
           >
             <a class="header_link">Pricing</a>
-          </router-link>
+          </router-link> -->
         </div>
         <div v-if="menuOpen" class="b_menthis">
-          <router-link to="/home2" @click="closeMenu" class="link">
-            <span class="emoji">🌟</span> Fancy New Screen
-          </router-link>
-          <router-link to="/apply" @click="closeMenu" class="link">
-            <span class="emoji">📝</span> Apply
-          </router-link>
-          <router-link to="/terms" @click="closeMenu" class="link">
-            <span class="emoji">📜</span> Terms
-          </router-link>
-          <router-link to="/services" @click="closeMenu" class="link">
-            <span class="emoji">🚀</span> Services
-          </router-link>
-          <router-link to="/contact" @click="closeMenu" class="link">
-            <span class="emoji">📞</span> Contact
-          </router-link>
-          <router-link to="/faq" @click="closeMenu" class="link">
-            <span class="emoji">❓</span> FAQ
-          </router-link>
-          <router-link to="/career" @click="closeMenu" class="link">
-            <span class="emoji">🎃</span> Careers V2
-          </router-link>
+  <router-link to="/home2" @click="closeMenu" class="link">
+    <span class="emoji">🌟</span> Explore Our New Features
+  </router-link>
+  <router-link to="/apply" @click="closeMenu" class="link">
+    <span class="emoji">📝</span> Application Process
+  </router-link>
+  <router-link to="/terms" @click="closeMenu" class="link">
+    <span class="emoji">📜</span> Terms and Conditions
+  </router-link>
+  <router-link to="/services" @click="closeMenu" class="link">
+    <span class="emoji">🚀</span> Our Services
+  </router-link>
+  <router-link to="/contact" @click="closeMenu" class="link">
+    <span class="emoji">📞</span> Contact Information
+  </router-link>
+  <router-link to="/faq" @click="closeMenu" class="link">
+    <span class="emoji">❓</span> Frequently Asked Questions
+  </router-link>
+  <router-link to="/career" @click="closeMenu" class="link">
+    <span class="emoji">🎃</span> Explore Career Opportunities
+  </router-link>
+
+  <button
+    v-if="this.$cookies.isKey('admin')"
+    @click="$router.push('/admin')"
+    style="
+      border: 1px solid black;
+      margin: 20px;
+      margin-top: 0px;
+      background: linear-gradient(45deg, red, orange);
+    "
+  >
+    <span class="emoji">👑</span> Access the Admin Panel
+  </button>
+</div>
+
+<div v-if="menuOpen2" class="b_menthisx">
+  <router-link to="/home2" @click="closeMenu" class="link">
+    <span class="emoji">🌟</span> Home
+  </router-link>
+  <router-link to="/apply" @click="closeMenu" class="link">
+    <span class="emoji">📝</span> Careers
+  </router-link>
+  <router-link to="/terms" @click="closeMenu" class="link">
+    <span class="emoji">📜</span> Terms & Conditions
+  </router-link>
+  <router-link to="/services" @click="closeMenu" class="link">
+    <span class="emoji">🚀</span> Our Services
+  </router-link>
+  <router-link to="/contact" @click="closeMenu" class="link">
+    <span class="emoji">📞</span> Contact Us
+  </router-link>
+  <router-link to="/faq" @click="closeMenu" class="link">
+    <span class="emoji">❓</span> FAQs
+  </router-link>
+  <router-link to="/career" @click="closeMenu" class="link">
+    <span class="emoji">🎃</span> Explore Career Opportunities
+  </router-link>
+
   
-          <button
-            v-if="this.$cookies.isKey('admin')"
-            @click="$router.push('/admin')"
-            style="
-              border: 1px solid black;
-              margin: 20px;
-              margin-top: 0px;
-              background: linear-gradient(45deg, red, orange);
-            "
-          >
-            <span class="emoji">👑</span> ADMIN PANEL
-          </button>
-        </div>
+</div>
+
       </header>
       <header v-else class="header">
         <div
@@ -164,6 +195,7 @@
         // CHANGE IN PROD ^^^^^^^^^^^^^^^^^^^^^^^^
 
         menuOpen: false,
+        menuOpen2: false,
         activeDropdown: null,
         isDropdownVisible: {
           aboutus: false,
@@ -190,6 +222,7 @@
   
       closeMenu() {
       this.menuOpen = false;
+      this.menuOpen2 = false;
     },
   
       showDropdown(menu) {
@@ -226,8 +259,8 @@
 <style>
   * {
     font-family: "Almarai", sans-serif;
-    font-family: "Comfortaa", cursive;
-  
+
+    font-family: 'DM Sans', sans-serif;
     font-weight: 400;
   
     font-style: normal;
@@ -288,7 +321,7 @@
     max-width: none; /* Reset max-width to take full width */
   }
   .container {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
   }
   #master {
@@ -297,6 +330,26 @@
   
   img {
     max-width: 200px;
+  }
+
+  .actionBTN {
+    background: rgb(136, 136, 136);
+    color: black;
+    font-size: 16px;
+    padding: 10px 15px;color:white;
+    margin: 0px;
+    margin-left: 10px;
+    margin-right: 10px;   width: 90px;
+  }
+
+  .actionBTN2 {
+    background: rgb(163, 46, 46);
+    color: black;
+    font-size: 16px;
+    padding: 10px 15px;color:white;
+    margin: 0px;
+    margin-left: 10px;
+    width: 90px;
   }
   
   main {
@@ -356,7 +409,7 @@
   }
   
   button:hover {
-    background-color: #34495e;
+    background-color: #cecece;
   }
   
   footer {
@@ -389,6 +442,14 @@
   .social p {
     margin: 0;
   }
+  .btn_holder {
+    margin: 0px;
+    display: flex;
+    padding: 0px;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+  }
   
   header {
     position: fixed;
@@ -403,7 +464,30 @@
     flex-direction: column;
     align-items: stretch;
   }
+
+  .id_2s {
+    max-width: 800px;
+    padding: 12px 0;
+    display: flex;
+    width: 100%;
+    margin: 0px auto;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+
+
+  }
   
+
+.colorlessbtn {
+    background: none;
+    color: black;
+    font-size: 15px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 10px;
+}
+
   nav {
     display: flex;
     margin-top: 50px;
@@ -439,7 +523,7 @@
   
   .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
   .wave-top::before {
@@ -475,7 +559,9 @@
   .wave-mid {
     background-color: rgba(237, 30, 30, 1);
     height: 50px;
-  }
+  }::-webkit-scrollbar {
+  display: none;
+}
   
   .wave-bottom {
     position: relative;
@@ -530,6 +616,12 @@
     color: white;
     text-align: center;
   }
+
+  .b_menthisx {
+    background: linear-gradient(259deg, #0573c72f, #43cc0d2a);
+    color: white;
+    text-align: center;
+  }
   
   .gradient-header2 {
     background: linear-gradient(159deg, #0090ff, #e10000);
@@ -537,10 +629,9 @@
   }
   
   .header-text {
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    padding: 10px 0px 15px 0px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0px 0px 10px 0px;
     margin: 0;
   }
   .header__ {
@@ -591,8 +682,37 @@
     display: block;
   }
   @media (max-width: 600px) {
+
+
+.id_2s {
+
+width: 100%;
+}
+
+
     .r3r3 {
-      margin: 0px !important;
+      margin: 0px !important;      display: none  !important;
+    }    .r3r3z {
+      margin: 0px !important;      display: none  !important;
+    }
+    .actionBTN {
+        padding: 0px;
+    margin: 0px;
+    margin-right: 10px;
+    width: auto;
+
+    }
+    .actionBTN2 {
+        padding: 0px;
+    margin: 0px;
+    width: auto;
+
+    }
+    .colorlessbtn {
+        font-size: 12px;
+    }
+    .logo {
+        display: none;
     }
     /* Adjust padding and margins for better spacing */
     .container {

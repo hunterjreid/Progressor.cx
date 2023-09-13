@@ -18,12 +18,18 @@ import HowtokensWorkPage from './views/HowtokensWorkPage.vue'
 import YoobeeTestView from './views/YoobeeTestView.vue'
 import SignupView from './views/Signup.vue'
 import LoginView from './views/LoginScreen.vue'
+import NewHomeLanding from './views/NewHomeLanding.vue'
 const routes = [
     {
       path: '/',
       name: 'Home',
       component: HomeView,
     },
+    {
+        path: '/landing',
+        name: 'NewHomeLanding',
+        component: NewHomeLanding,
+      },
     {
         path: '/signup',
         name: 'signup',
@@ -38,7 +44,7 @@ const routes = [
         component: HowtokensWorkPage,
       },
     {
-        path: '/price',
+        path: '/pricing',
         name: 'PricingPage',
         component: PricingPage,
       },
