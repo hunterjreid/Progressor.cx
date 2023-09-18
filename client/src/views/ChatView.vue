@@ -1,32 +1,19 @@
 <template>
-    <div style="    display: flex;
-    width: 100%;
+    <div style="     display: flex;
+    max-width: 400px;
     height: 100%;
     flex-direction: row;
     justify-content: center;
-    align-items: center;"> 
-    <div style="max-width: 800px; margin: 0 auto; padding: 20px; position: absolute; bottom: 0;">
-      <div class="chat-container"><div class="chat-historyr" style="display: flex;" v-if="showHistory">
-          <div class="rrr" style="cursor: pointer;" v-for="message in dummyChatHistory" :key="message.id" :class="message.type">
-            <div class="message-contentr">{{ message.content }}</div>
-          </div>
-        </div>
-        <div class="chat-history">
-          <div v-for="message in messages" :key="message.id" :class="message.type">
-            <div class="message-content">
-              {{ message.content }}
-            </div>
-          </div>
-        </div>
-       
-        <div class="chat-controls">
-            <button @click="toggleHistory">{{ showHistory ? 'Close History' : 'Open History' }}</button>
-          <button @click="clearChat">New Chat</button>
-        </div>
-        <div class="chat-input">
-          <input v-model="inputMessage" @keyup.enter="sendMessage" placeholder="Type your message..." />
-          <button @click="sendMessage">Send</button>
-        </div>
+    align-items: center;
+    margin: auto;"> 
+    <div style="max-width: 800px; margin: 0 auto; padding: 10px; position: absolute; bottom: 0;">
+      <div class="chat-container" style="    width: 100vw;"> 
+        
+        <iframe src='https://webchat.botframework.com/embed/progressorcxx-bot5?s=xYZsCozozYE.Qr-ZDvI4tM596RssQ2qqfbDbK-WOr605CIQ5sHCO4F0' style='     width: 100vw; width: 50vw;height: 79.5vh;'></iframe>
+ 
+        
+    
+        
       </div>
     </div></div>
   </template>
@@ -34,6 +21,8 @@
   <script>
 
 import axios from 'axios';
+import * as WebChat from 'botframework-webchat';
+
 
   export default {
     name: 'ChatView',
@@ -55,6 +44,37 @@ import axios from 'axios';
         ],
       };
     },
+    mounted() {
+    const styleSet = WebChat.createStyleSet({   
+
+      bubbleBackground: '#ff4e4e',
+      bubbleTextColor: 'white',
+      bubbleFromUserBackground: 'lightblue',
+      rootHeight: '100%',
+      rootWidth: '100%',
+      backgroundColor: 'black',
+      sendBoxBackground: 'black',
+      sendBoxTextColor: 'white',
+      sendBoxHeight: '70px'
+    });
+
+    // Modify the CSS rules
+    styleSet.textContent = {
+      ...styleSet.textContent,
+      fontFamily: "'Comic Sans MS', 'Arial', sans-serif",
+      fontWeight: 'bold',
+    };
+
+    WebChat.renderWebChat(
+      {
+        directLine: WebChat.createDirectLine({
+          token: 'xYZsCozozYE.Qr-ZDvI4tM596RssQ2qqfbDbK-WOr605CIQ5sHCO4F0',
+        }),
+        styleSet,
+      },
+      this.$el
+    );
+  },
     methods: {
         async sendMessage() {
   if (this.inputMessage.trim() === '') {

@@ -75,6 +75,9 @@
   <style scoped>
   .landing {
     font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0px auto;
+    margin-bottom: 20px;
   }
   
   * {

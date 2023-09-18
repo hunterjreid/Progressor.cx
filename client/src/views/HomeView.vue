@@ -118,18 +118,6 @@
 
     </div>
 </main>
-    <div class="pic-left-text-right">
-  <div class="max-w-md">
-    <h2 class="text-3xl font-bold">Enhance Your Cyber Security with Our AI Chatbot</h2>
-    <p class="my-4">
-      Elevate your organization's security posture with our advanced AI Chatbot Cyber Security SaaS. Explore cutting-edge solutions and protect your digital assets today.
-    </p>
-    <button class="custom-button" @click="$router.push('/home2')">
-      Learn More
-    </button>
-  </div>
-  <img src="../assets/main(1).png" alt="AI Cyber Security" class="max-w-md h-auto" />
-</div>
 
 <main class="container3">
 

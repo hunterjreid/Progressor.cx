@@ -167,5 +167,18 @@
   .pricing-card button:hover {
     background-color: #0056b3;
   }
+
+  
+@media (max-width: 600px) {
+    .pricing-card {
+        width: calc(100% - 70px);
+    }
+    .pricing-cards {
+
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+}
   </style>
   

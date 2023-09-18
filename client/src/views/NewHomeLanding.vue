@@ -70,6 +70,9 @@ Are you concerned about the security of your code, Just ask progressor!</h4>
 
 
 
+  
+
+
 
 
 
@@ -77,6 +80,49 @@ Are you concerned about the security of your code, Just ask progressor!</h4>
 
 
 </div>
+
+<div class="pic-left-text-right">
+  <div class="max-w-md">
+    <h2 class="text-3xl font-bold">Enhance Your Cyber Security with Our AI Chatbot</h2>
+    <p class="my-4">
+      Elevate your organization's security posture with our advanced AI Chatbot Cyber Security SaaS. Explore cutting-edge solutions and protect your digital assets today.
+    </p>
+    <button class="custom-button" @click="$router.push('/home2')">
+      Learn More
+    </button>
+  </div>
+  <br> <img src="../assets/main(1).png" alt="AI Cyber Security" class="max-w-md h-auto" />
+</div>
+<br><br>
+<div class="pic-left-text-right">
+    <img src="../assets/main(2).png" alt="AI Cyber Security" class="max-w-md h-auto" />
+  <div class="max-w-md" style="margin-left: 20px;">
+    <h2 class="text-3xl font-bold">Enhance Your Cyber Security with Our AI Chatbot</h2>
+    <p class="my-4">
+      Elevate your organization's security posture with our advanced AI Chatbot Cyber Security SaaS. Explore cutting-edge solutions and protect your digital assets today.
+    </p>
+    <button class="custom-button" @click="$router.push('/home2')">
+      Learn More
+    </button>
+  </div>
+ 
+</div>
+
+<div class="pic-left-text-right">
+  <div class="max-w-md">
+    <h2 class="text-3xl font-bold">Enhance Your Cyber Security with Our AI Chatbot</h2>
+    <p class="my-4">
+      Elevate your organization's security posture with our advanced AI Chatbot Cyber Security SaaS. Explore cutting-edge solutions and protect your digital assets today.
+    </p>
+    <button class="custom-button" @click="$router.push('/home2')">
+      Learn More
+    </button>
+  </div>
+  <br>  <img src="../assets/main224.png" alt="AI Cyber Security" class="max-w-md h-auto" />
+</div>
+
+
+
  <FooterComp />
       
 
@@ -164,8 +210,62 @@ Are you concerned about the security of your code, Just ask progressor!</h4>
     margin-top: 10px;
   }
 
+  button {
+    background-color: #3d5af1;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2c4ae8;
+  }
+  
+  /* FAQ section */
+  .faq-container {
+    margin-top: 2rem;
+  }
+    /* Add your custom styles here */
+    .banner {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  /* Align pic left, text right */
+  .pic-left-text-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .custom-button {
+      background-color: #3490dc;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .agency-number {
+        font-size: 47px;
+  color: white;
+    }
+
+    .agency-number-description {
+        font-size: 27px;
+  color: white;
+    }
 
   @media only screen and (max-width: 600px) {
+    .grid {
+        display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    }
 
     .bg_img {
         background-image: url(http://localhost:8080/img/main225.cef4fc43.png);
@@ -183,6 +283,12 @@ Are you concerned about the security of your code, Just ask progressor!</h4>
 
 
 
+}
+.pic-left-text-right {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
 }
 .font-semiboldcxs {
     font-size: 14px;

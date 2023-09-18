@@ -1,5 +1,4 @@
 
-import HomeView from './views/HomeView.vue'
 import BlogView from './views/BlogView.vue'
 import AboutUs from './views/AboutUs.vue';
 import Services from './views/Services.vue';
@@ -22,14 +21,10 @@ import NewHomeLanding from './views/NewHomeLanding.vue'
 const routes = [
     {
       path: '/',
-      name: 'Home',
-      component: HomeView,
+      name: 'NewHomeLanding',
+      component: NewHomeLanding,
     },
-    {
-        path: '/landing',
-        name: 'NewHomeLanding',
-        component: NewHomeLanding,
-      },
+
     {
         path: '/signup',
         name: 'signup',
@@ -81,7 +76,7 @@ const routes = [
         component: AdminView,
       },
       {
-        path: '/landing',
+        path: '/landinge',
         name: 'LearnMore',
         component: LearnMore,
       },

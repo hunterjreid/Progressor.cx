@@ -86,8 +86,11 @@ import FooterComp from '@/components/FooterComp.vue';
   </script>
   
   <style scoped>
-  .landing {
+ .landing {
     font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0px auto;
+    margin-bottom: 20px;
   }
   
   * {
@@ -220,7 +223,7 @@ max-width: 100% !important;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease-out;
-  background-image: url('../assets/main225.png'); /* Add your image URL here */
+  background-image: url('../assets/main22.png'); /* Add your image URL here */
   background-size: cover;
   background-attachment: fixed;
   margin: 0; /* Reset margin to zero */

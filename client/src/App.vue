@@ -14,7 +14,7 @@
           </p>
         </div>
         <div class="id_2s">
-          <router-link @click="closeMenu"   class="r3r3z" to="/landing">
+          <router-link @click="closeMenu"   class="r3r3z" to="/">
             <img
               alt="Logo"
               src="./assets/logo_clean.png"
@@ -23,12 +23,22 @@
               @click="navigateToHome"
             />
           </router-link>
+          <router-link @click="closeMenu"  style="margin-left: 20px;" class="Mob" to="/">
+            <img
+              alt="Logo"
+              src="./assets/lil_logo.png"
+            
+              style="height: 30px;  display: flex;"  
+              @click="navigateToHome"
+            />
+          </router-link>
+
           <button @click="menuOpen = !menuOpen; menuOpen2 = false" class="colorlessbtn">Resources {{ !menuOpen ? '⏬' : '🔝' }}</button>
           <button @click="menuOpen2 = !menuOpen2; menuOpen = false" class="colorlessbtn">Company {{ !menuOpen2 ? '⏬' : '🔝' }}</button>
           <button   @click="$router.push('/pricing'), closeMenu" class="colorlessbtn">Pricing</button>
           <div class="btn_holder">
-          <button class="actionBTN">Log in</button>
-          <button class="actionBTN2">Sign up</button></div>
+          <button  @click="$router.push('/login'), closeMenu" class="actionBTN">Log in</button>
+          <button  @click="$router.push('/signup'), closeMenu" class="actionBTN2">Sign up</button></div>
        <!--     <button class="custom-button" style="background: rgb(192, 187, 187);
     color: black;
     font-size: 26px;" @click="$router.push('/Login')">
@@ -151,16 +161,16 @@
           <router-link
             to="/"
             @click="closeMenu"
-            style="font-size: 64px"
+            style="font-size: 24px"
             class="link"
           >
-            <span class="emoji">👈</span>
+            <span class="emojirrr">🔙RETURN</span>
           </router-link>
   
           <img
             alt="Logo"
             src="./assets/logo_clean.png"
-            class="max-w-xs logo r3r3"
+            class=""
             style="max-width: 330px"
           />
         </div>
@@ -170,12 +180,12 @@
         id="mainSCROL"
         @click="closeMenu"
         style="
-          height: calc(100% - 100px);
-          position: fixed;
-          overflow-y: scroll;
-          bottom: 0px;
-          width: 100%;
-          padding: 0px;
+           height: calc(100% - 100px);
+    position: fixed;
+    overflow-y: auto;
+    bottom: 0px;
+    width: 100%;
+    padding: 0px;
         "
         :style="{ backgroundColor: $route.path === '/chat' ? 'black' : '' }"
       >
@@ -331,6 +341,9 @@
   img {
     max-width: 200px;
   }
+  .Mob {
+    display: none;
+  }
 
   .actionBTN {
     background: rgb(136, 136, 136);
@@ -417,6 +430,12 @@
     color: #fff;
     text-align: center;
     padding: 20px 0px;
+  }
+  .emojirrr {
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
   }
   
   .footer-content {
@@ -667,6 +686,7 @@
       margin: 10px;
       font-size: 20px;
     }
+ 
   }
   
   .emoji {
@@ -683,7 +703,9 @@
   }
   @media (max-width: 600px) {
 
-
+    .Mob {
+    display: flex;
+  }
 .id_2s {
 
 width: 100%;
