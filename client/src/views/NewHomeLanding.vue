@@ -12,6 +12,12 @@ Are you concerned about the security of your code, Just ask progressor!</h4>
 
 </div>
 
+<div style="  margin-top: 20px;  border: 1px solid;
+    padding: 15px;
+    border-radius: 50px;text-align: center;
+    margin-bottom: 20px;
+"><router-link to="/updates">See more here, about our lastest updates.</router-link></div>
+
 
 <h2 class="font-semibold text-white font-semiboldcxs " style="text-align: center;">Companies just trust progressor.cx</h2>
     <div style="display: flex;
@@ -121,8 +127,71 @@ Are you concerned about the security of your code, Just ask progressor!</h4>
   <br>  <img src="../assets/main224.png" alt="AI Cyber Security" class="max-w-md h-auto" />
 </div>
 
+<div class="ewq" style="
+    text-align: center;
+">
 
 
+  
+  <section class="my-8">
+    <!-- Benefits in 3x2 tiles -->
+    <div class="grid grid-cols-3 gap-4">
+      <!-- Benefit 1 -->
+      <div class="bg-gray-100 p-4ee">
+        <div class="smaller_box"></div>
+        <h2 class="font-semibold">Loving Comunity</h2>
+        <p>Join our cybersecurity journey - feel the warmth of ouhe warmth of ouhe warmth of ouhe warmth of ouhe warmth of our family and our unwavering support.</p>
+      </div>
+
+      <!-- Benefit 2 -->
+      <div class="bg-gray-100 p-4ee">
+        <div class="smaller_box"></div>
+        <h2 class="font-semibold">Always ahead of the curb</h2>
+        <p>Stay ahead in cybersecurity with our expert network, always one step ahead of emerging threats.</p>
+      </div>
+
+      <!-- Benefit 3 -->
+      <div class="bg-gray-100 p-4ee">
+        <div class="smaller_box"></div>
+        <h2 class="font-semibold">Save your company money</h2>
+        <p>Global cybercrime costs rise yearly, with businesses losing billions - a constant battleground.</p>
+      </div>
+
+
+    </div>
+    <div class="max-w-md" style="
+    text-align: center;
+">
+    <h2 class="text-3xl font-bold">Reduce risk, boost productivity</h2>
+    <p class="my-4">
+        More than 85% of developers recommend Snyk thanks to its ease of use and the considerable amount of time it saves them during development.
+    </p>
+    <button class="custom-button" @click="$router.push('/home2')">
+        Book a demo
+
+
+
+    </button>
+  </div>
+   
+  </section>
+
+
+</div>
+<div class="bg_img2">
+      <h1 class="titleee" style="color:rgb(53, 53, 53); margin-top: -70px;">Get started for free</h1>
+      <h4  class="below_para2"   style="color:rgb(53, 53, 53);">
+        Secure your applications with Progressor vulnerability scanning and AI-powered fixes.
+
+
+
+</h4>
+      <h1 class="below_para"  style="color:rgb(53, 53, 53)">No credit card required.
+ </h1>
+ <div style="margin-left: 40px;"> <button style="margin-right: 20px; background-color: rgb(0, 0, 0);color: rgb(255, 255, 255);">Login back in</button>
+ <button>TZry Prgressor</button></div>
+
+</div>
  <FooterComp />
       
 
@@ -143,9 +212,26 @@ Are you concerned about the security of your code, Just ask progressor!</h4>
   </script>
   
   <style>
+  .smaller_box {
+    height: 30px;
+    background: white;
+    padding: 50px;
+    margin: 25px;
+  }
+  .ewq {
+    
+  }
   
   .bg_img {
     background-image: url('@/assets/main225.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 370px;
+    padding: 100px 0px;
+  }
+  .bg_img2 {
+    background-image: url('@/assets/main606.png'); 
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
@@ -186,6 +272,13 @@ Are you concerned about the security of your code, Just ask progressor!</h4>
     margin-left: 20px;
     width: 400px;
     font-size: 20px;
+  }
+  .p-4ee {
+    background: #ececec;
+    padding: 20px;
+    border: 1px solid black;
+    margin-top: 20px;
+    border-radius: 10px;
   }
 
   .below_para2 {

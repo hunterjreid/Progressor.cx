@@ -124,7 +124,7 @@
   }.footer-menus {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+
     flex-direction: column;
 }
 
@@ -156,7 +156,7 @@
     display: flex;
     background: #464646;
     justify-content: center;
-    margin-top: 20px;
+ 
     flex-direction: row;
 }
 @media (max-width: 600px) {
@@ -173,5 +173,11 @@
     flex-direction: column;
 }
   }
+  .footer-menus {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 799px;
+}
   </style>
   
