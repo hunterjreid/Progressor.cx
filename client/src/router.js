@@ -18,11 +18,17 @@ import YoobeeTestView from './views/YoobeeTestView.vue'
 import SignupView from './views/Signup.vue'
 import LoginView from './views/LoginScreen.vue'
 import NewHomeLanding from './views/NewHomeLanding.vue'
+import NewChatView from './views/NewChatView.vue'
 const routes = [
     {
       path: '/',
       name: 'NewHomeLanding',
       component: NewHomeLanding,
+    },
+    {
+      path: '/chat2',
+      name: 'NewChatView',
+      component: NewChatView,
     },
 
     {

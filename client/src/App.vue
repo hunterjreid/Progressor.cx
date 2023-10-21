@@ -8,6 +8,8 @@
             Welcome to Progressor.cx! Try now.
             <a>
               <router-link style="color: white" @click="closeMenu" to="/chat"
+                >Old Route</router-link
+              >  <router-link style="color: white" @click="closeMenu" to="/chat2"
                 >Click Here try Progressor.cx</router-link
               ></a
             >
