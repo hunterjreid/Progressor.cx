@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import App from './App.vue';
 import routes from './router.js';
+
 import { initializeApp } from "firebase/app";
 
 
@@ -11,8 +12,7 @@ const router = createRouter({
   routes,
 });
 
-const app = createApp(App);
-app.use(router).use(require('vue-cookies'));
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -25,9 +25,11 @@ const firebaseConfig = {
   measurementId: "G-STCTPS3VDY"
 };
 
-// Initialize Firebase using a different variable
-const firebaseApp = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
-export default firebaseApp;
+const app = createApp(App);
+app.use(router).use(require('vue-cookies'));
+
+export default app;
 
 app.mount('#app');
