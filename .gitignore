@@ -1,5 +1,6 @@
 server/node_modules/
 client/node_modules/
+client/node_modules
 server/logs/
 server/uploads/KYCVerification/
 client/package-lock.json

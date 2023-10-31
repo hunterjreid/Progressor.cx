@@ -38,6 +38,7 @@
           <button @click="menuOpen = !menuOpen; menuOpen2 = false" class="colorlessbtn">Resources {{ !menuOpen ? '⏬' : '🔝' }}</button>
           <button @click="menuOpen2 = !menuOpen2; menuOpen = false" class="colorlessbtn">Company {{ !menuOpen2 ? '⏬' : '🔝' }}</button>
           <button   @click="$router.push('/pricing'), closeMenu" class="colorlessbtn">Pricing</button>
+          <button   @click="$router.push('/pricing2'), closeMenu" class="colorlessbtn">STRIPE PAYMENT</button>
           <div class="btn_holder">
           <button  @click="$router.push('/login'), closeMenu" class="actionBTN">Log in</button>
           <button  @click="$router.push('/signup'), closeMenu" class="actionBTN2">Sign up</button></div>

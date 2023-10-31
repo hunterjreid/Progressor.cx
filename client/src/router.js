@@ -19,11 +19,17 @@ import SignupView from './views/Signup.vue'
 import LoginView from './views/LoginScreen.vue'
 import NewHomeLanding from './views/NewHomeLanding.vue'
 import NewChatView from './views/NewChatView.vue'
+import PaymentPage from './views/PaymentPage.vue'
 const routes = [
     {
       path: '/',
       name: 'NewHomeLanding',
       component: NewHomeLanding,
+    },
+    {
+      path: '/pricing2',
+      name: 'PaymentPage',
+      component: PaymentPage,
     },
     {
       path: '/chat2',
