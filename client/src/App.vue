@@ -4,6 +4,11 @@
     <div id="master">
       <header v-if="$route.path !== '/chat'" class="header">
         <div class="gradient-header2 wave-bottom" style="z-index: 99999">
+          <a>Status:</a>
+          <p v-if="user" style="color: green">User Logged in as {{ user.email }}</p>
+          <p v-else style="color: red">No Signin</p>
+
+
           <p class="header-text">
             Welcome to Progressor.cx! Try now.
             <a>
@@ -206,6 +211,10 @@
       return {
         api_prefix: `http://${location.hostname}:3001`,
         // CHANGE IN PROD ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+        user: null,
 
         menuOpen: false,
         menuOpen2: false,
