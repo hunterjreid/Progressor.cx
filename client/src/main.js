@@ -32,4 +32,5 @@ app.use(router).use(require('vue-cookies'));
 
 export default app;
 
+
 app.mount('#app');

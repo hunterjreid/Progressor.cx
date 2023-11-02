@@ -203,6 +203,8 @@
   </template>
 <!-- JS -->
 <script>
+
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
   
   export default {
     name: "App",
@@ -269,6 +271,21 @@
       this.closeMenu();
     },
   },
+  created() {
+  const auth = getAuth();
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in
+      console.log('User is signed in:', user);
+      this.user = user;
+    } else {
+      // User is signed out
+      console.log('User is signed out');
+      this.user = null;
+    }
+  });
+},
     mounted() {
       window.addEventListener("scroll", this.handleScroll);
     },
