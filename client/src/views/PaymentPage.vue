@@ -1,5 +1,18 @@
 <template>
+
   <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+    <br>  <br>  <br>  <br>  <br>
+    <h1>Choose a Subscription Plan</h1>
+
+    <ul>
+      <li>
+        <input type="radio" name="subscriptionPlan" value="monthly"> Monthly ($10/month)
+      </li>
+      <li>
+        <input type="radio" name="subscriptionPlan" value="annual"> Annual ($100/year)
+      </li>
+    </ul>
+
     <h1>Enter the Amount and Pay with Stripe</h1>
 
     <div class="custom-amount">
@@ -11,20 +24,23 @@
         min="1"
         step="0.01"
       />
-      <button @click="payWithStripe">Pay with Stripe</button>
+      <button @click="payWithStripe" :disabled="paymentProcessing">
+        Pay with Stripe
+      </button>
+      <p v-if="paymentProcessing">Proceeding to payment screen. Please wait...</p>
     </div>
+
     <br />
 
     <FooterComp />
   </div>
 </template>
+
 <script>
 import { getAuth } from 'firebase/auth';
 import FooterComp from "@/components/FooterComp.vue";
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { Stripe } from "stripe";
-import { collection } from 'firebase/firestore';
-import 'firebase/firestore';
-import { getFirestore } from 'firebase/firestore';
 
 const stripe = new Stripe("sk_test_51HRBTFBewAw4IAEuztSDWicx95ofc2cYNB5uAGpFP4rWqlYY2puzq3JEPVfbuRMRRDdG9uHEf1M0kOzPtfBa30cL00vRf6R6jH");
 
@@ -36,46 +52,50 @@ export default {
   data() {
     return {
       customAmount: 0,
-      your_id: "",
+      paymentProcessing: false,
+      paymentLink: "",
+      subscriptionId: "",
+      subscriptionPlan: "monthly",
     };
   },
   methods: {
+
+    
+    
     async payWithStripe() {
-      const auth = getAuth();
-      const user = auth.currentUser;
-      const uid = user.uid;
+  this.paymentProcessing = true;
 
-const subscriptionsRef = collection(getFirestore(), "subscriptions");
-
-// Data for the subscription
-      const subscriptionData = {
-        uid: uid,
-        price: this.customAmount,
-        successUrl: "YOUR_SUCCESS_URL", // Replace with your success URL
-        cancelUrl: "YOUR_CANCEL_URL", // Replace with your cancel URL
-      };
-
-try {
-        // Add the document to Firestore
-        const docRef = await subscriptionsRef.add(subscriptionData);
-        console.log("Document written with ID: ", docRef.id);
-
-// Use the Stripe instance to create a payment intent
-        const paymentIntent = await stripe.paymentIntents.create({
-          amount: this.customAmount * 100, // Stripe amount is in cents
-          currency: "usd", // Change to your desired currency
-        });
-
-// You'll get a client secret from the paymentIntent
-        const clientSecret = paymentIntent.client_secret;
-
-// Redirect the user to the Stripe Payment Page
-        // You can use stripe.redirectToCheckout() instead of window.location.href
-        window.location.href = `https://checkout.stripe.com/pay/${clientSecret}`;
-      } catch (error) {
-        console.error("Error adding document or creating payment intent: ", error);
-      }
+  const price = await stripe.prices.create({
+    product_data: {
+      name: "My Product",
+      type: "service",
     },
+  });
+
+  // Create a Stripe Checkout session for the selected subscription plan.
+  const checkoutSession = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        price: price.id, // Use the subscription plan ID as the price ID
+        quantity: 1,
+        currency: "usd", 
+      },
+    ],
+  });
+
+  // Add the payment information to Firebase.
+  const subscriptionRef = collection(getFirestore(), "subscriptions");
+  const subscriptionData = {
+    uid: getAuth().currentUser.uid,
+    subscriptionId: checkoutSession.id,
+    subscriptionPlan: this.subscriptionPlan,
+    active: true,
+  };
+  await addDoc(subscriptionRef, subscriptionData);
+
+  // Redirect the user to the Stripe Checkout session URL.
+  window.open(checkoutSession.url, "_blank", "width=400,height=400");
+}
   },
 };
 </script>

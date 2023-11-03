@@ -20,6 +20,7 @@
     "vue": "^3.2.13",
     "vue-cookies": "^1.8.3",
     "vue-router": "^4.2.4",
+    "vue-stripe": "^0.1.52",
     "vue-stripe-js": "^1.0.1"
   },
   "devDependencies": {
