@@ -1,5 +1,5 @@
 <template>
-    <div style="max-width: 800px; margin: 0 auto; padding: 20px; padding-top: 0px;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 20px; padding-top: 0px;padding-bottom: 0px;">
 
 
 
@@ -138,22 +138,22 @@ Are you concerned about the security of your code, Just ask progressor!</h4>
     <div class="grid grid-cols-3 gap-4">
       <!-- Benefit 1 -->
       <div class="bg-gray-100 p-4ee">
-        <div class="smaller_box"></div>
-        <h2 class="font-semibold">Loving Comunity</h2>
+        <div class="smaller_box"><img src="./../assets/ai.png"></div>
+        <h2 class="font-semibold"> Unleash the power of AI </h2>
         <p>Join our cybersecurity journey - feel the warmth of ouhe warmth of ouhe warmth of ouhe warmth of ouhe warmth of our family and our unwavering support.</p>
       </div>
 
       <!-- Benefit 2 -->
       <div class="bg-gray-100 p-4ee">
-        <div class="smaller_box"></div>
-        <h2 class="font-semibold">Always ahead of the curb</h2>
+        <div class="smaller_box"><img src="./../assets/sec.png"></div>
+        <h2 class="font-semibold"> Elevate your security</h2>
         <p>Stay ahead in cybersecurity with our expert network, always one step ahead of emerging threats.</p>
       </div>
 
       <!-- Benefit 3 -->
       <div class="bg-gray-100 p-4ee">
-        <div class="smaller_box"></div>
-        <h2 class="font-semibold">Save your company money</h2>
+        <div class="smaller_box"><img src="./../assets/safe.png"></div>
+        <h2 class="font-semibold"> Safeguard your valuable data</h2>
         <p>Global cybercrime costs rise yearly, with businesses losing billions - a constant battleground.</p>
       </div>
 
@@ -213,10 +213,8 @@ Are you concerned about the security of your code, Just ask progressor!</h4>
   
   <style>
   .smaller_box {
-    height: 30px;
-    background: white;
-    padding: 50px;
-    margin: 25px;
+border-radius: 10px;
+    background: rgb(255, 255, 255)
   }
   .ewq {
     

@@ -65,23 +65,35 @@ export default {
     async payWithStripe() {
   this.paymentProcessing = true;
 
-  const price = await stripe.prices.create({
-    product_data: {
-      name: "My Product",
-      type: "service",
-    },
-  });
 
-  // Create a Stripe Checkout session for the selected subscription plan.
-  const checkoutSession = await stripe.checkout.sessions.create({
-    line_items: [
-      {
-        price: price.id, // Use the subscription plan ID as the price ID
-        quantity: 1,
-        currency: "usd", 
-      },
-    ],
-  });
+
+  const product = await stripe.products.create({
+  name: 'Monthly Subscription',
+});
+
+// Create a price for the product (representing $19 per month)
+const price = await stripe.prices.create({
+  unit_amount: 1900, // Amount in cents (19 dollars)
+  currency: 'usd',
+  recurring: {
+    interval: 'month',
+  },
+  product: product.id,
+});
+
+// Create a checkout session for the subscription
+const checkoutSession = await stripe.checkout.sessions.create({
+  mode: 'subscription',
+  payment_method_types: ['card'],
+  line_items: [
+    {
+      price: price.id,
+      quantity: 1,
+    },
+  ],
+  success_url: 'https://example.com/success',
+  cancel_url: 'https://example.com/cancel',
+});
 
   // Add the payment information to Firebase.
   const subscriptionRef = collection(getFirestore(), "subscriptions");
@@ -94,7 +106,8 @@ export default {
   await addDoc(subscriptionRef, subscriptionData);
 
   // Redirect the user to the Stripe Checkout session URL.
-  window.open(checkoutSession.url, "_blank", "width=400,height=400");
+  window.open(checkoutSession.url, "_blank", "width=800,height=00");
+  this.paymentProcessing = false;
 }
   },
 };

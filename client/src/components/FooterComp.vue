@@ -9,6 +9,11 @@
                 <li><a href="#time-optimization">Discover Time Optimization Solutions</a></li>
                 <li><a href="#revenue-protection">Explore Revenue Protection Services</a></li>
                 <li><a href="#rapid-defense-advancement">Achieve Rapid Defense Advancement</a></li>
+                <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Mission</a></li>
+        <li><a href="#">Company History</a></li>
+        <li><a href="#">Leadership Team</a></li>
+        <li><a href="#">Corporate Responsibility</a></li>
             </ul>
 
             <ul class="footer-menu">
@@ -17,6 +22,11 @@
                 <li><a href="#">Read Client Testimonials</a></li>
                 <li><a href="#">Check Out Our Blog</a></li>
                 <li><a href="#">Contact Our Support Team</a></li>
+                <li><a href="#">Services</a></li>
+        <li><a href="#">Cybersecurity Solutions</a></li>
+        <li><a href="#">Data Privacy Consulting</a></li>
+        <li><a href="#">Risk Management</a></li>
+        <li><a href="#">Cloud Security</a></li>
             </ul>
 
             <ul class="footer-menu">
@@ -25,42 +35,22 @@
                 <li><a href="#">Comprehensive Security Audits</a></li>
                 <li><a href="#">Specialized Training Programs</a></li>
                 <li><a href="#">Explore Partnership Opportunities</a></li>
-            </ul>
-            
-        </div>
-        <div class="menuCatch" style="margin-top: 0px;">
-            <ul class="footer-menu">
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Mission</a></li>
-        <li><a href="#">Company History</a></li>
-        <li><a href="#">Leadership Team</a></li>
-        <li><a href="#">Corporate Responsibility</a></li>
-    </ul>
-
-    <ul class="footer-menu">
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Cybersecurity Solutions</a></li>
-        <li><a href="#">Data Privacy Consulting</a></li>
-        <li><a href="#">Risk Management</a></li>
-        <li><a href="#">Cloud Security</a></li>
-    </ul>
-
-    <ul class="footer-menu">
-        <li><a href="#">Resources</a></li>
+                <li><a href="#">Resources</a></li>
         <li><a href="#">Whitepapers</a></li>
         <li><a href="#">Case Studies</a></li>
         <li><a href="#">Webinars</a></li>
         <li><a href="#">FAQs</a></li>
-    </ul>
+            </ul>
             
         </div>
 
+
     <footer class="footer">
 
-        
+        <div>
       <router-link to="/">
         <img alt="Logo" src=".././assets/logo_clean.png" class="max-w-xs logo" style="height: 30px;" />
-      </router-link>
+      </router-link></div><div>
       <h3 class="text-lg font-bold">Empower Your Cyber Defense.</h3><br>
       <h3 class="text-lg font-bold">CONTACT US</h3>
       <p>E-Mail: info@progressor.cx</p>
@@ -87,7 +77,7 @@
           </a>
           <!-- Add more social media icons as needed -->
         </div>
-      </div>
+      </div></div>
     </footer></div>
   </template>
   
@@ -99,7 +89,7 @@
   
   .footer {
     background-color: #f4f4f4;
-    padding: 20px;
+    padding: 20px 0px;
     text-align: center;
     max-width: 980px;
     margin: 0px auto !important;
@@ -108,6 +98,7 @@
     align-items: center;
     justify-content: center !important;
     color: #000000;
+    width: 100%;
   }
   
 

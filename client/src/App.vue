@@ -4,19 +4,19 @@
     <div id="master">
       <header v-if="$route.path !== '/chat'" class="header">
         <div class="gradient-header2 wave-bottom" style="z-index: 99999">
-          <a>Status:</a>
-          <p v-if="user" style="color: green">User Logged in as {{ user.email }}</p>
-          <p v-else style="color: red">No Signin</p>
+         
 
 
           <p class="header-text">
-            Welcome to Progressor.cx! Try now.
+            Welcome!
             <a>
-              <router-link style="color: white" @click="closeMenu" to="/chat"
-                >Old Route</router-link
+              <!-- <router-link style="color: white" @click="closeMenu" to="/chat"
+                >Old Route</router-link -->
               >  <router-link style="color: white" @click="closeMenu" to="/chat2"
                 >Click Here try Progressor.cx</router-link
-              ></a
+              > <a style="font-size: 14px;">Status:</a>
+          <a style="font-size: 14px;color: green" v-if="user" >User Logged in as {{ user.email }}</a>
+          <a style="font-size: 14px;color: red" v-else>No Signin</a></a
             >
           </p>
         </div>
