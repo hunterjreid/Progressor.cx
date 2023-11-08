@@ -43,6 +43,7 @@ export default {
         .then(userCredential => {
           this.$root.user = userCredential.user;
           this.successMessage = 'Logged in with email and password.';
+          this.$router.push('/welcome');
         })
         .catch(error => {
           this.errorMessage = 'Error signing in with email and password: ' + error.message;
@@ -59,6 +60,7 @@ export default {
         .then(result => {
           this.$root.user = result.user;
           this.successMessage = 'Logged in with Google.';
+          this.$router.push('/welcome');
         })
         .catch(error => {
           this.errorMessage = 'Error signing in with Google: ' + error.message;

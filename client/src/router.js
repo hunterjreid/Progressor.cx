@@ -21,11 +21,17 @@ import NewHomeLanding from './views/NewHomeLanding.vue'
 import NewChatView from './views/NewChatView.vue'
 import PaymentPage from './views/PaymentPage.vue'
 import UpdatesPage from './views/UpdatesView.vue'
+import WelcomeBack from './views/WelcomeBack.vue'
 const routes = [
     {
       path: '/',
       name: 'NewHomeLanding',
       component: NewHomeLanding,
+    },
+    {
+      path: '/welcome',
+      name: 'WelcomeBack',
+      component: WelcomeBack,
     },
     {
       path: '/updates',

@@ -47,6 +47,11 @@
     <button  @click="$router.push('/apply')">Contact</button>
   </div>
 </div>
+<router-link class="jlinkers" to="/pricing2">
+    <button style="margin-bottom: 40px; font: 4em sans-serif;   background: linear-gradient(270deg, #ff1313 31%, #5c85ff);" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
+Pay now
+    </button>
+</router-link>     
 <p>Your Satisfaction is 100% Guaranteed or Your Money Back</p>
 <router-link class="jlinkers" to="/tokens">
     <button style="margin-bottom: 40px;" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">

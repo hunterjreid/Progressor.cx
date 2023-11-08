@@ -44,8 +44,8 @@
           <div class="btn_holder">
           <button   v-if="!user" @click="$router.push('/login'), closeMenu" class="actionBTN">Log in</button>
           <button v-if="!user" @click="$router.push('/signup'), closeMenu" class="actionBTN2">Sign up</button>
-        <a v-if="user" style="background-color: aqua;">Tokens: 0</a>
-          <button v-if="user" @click="logout"  class="actionBTN2">Logout</button>
+        <a v-if="user" style="background-color: aqua;">Tokens: {{ userTokens }}</a>
+          <button v-if="user" @click="$router.push('/welcome'), closeMenu" class="actionBTN2">My Account</button>
         
         </div>
        <!--     <button class="custom-button" style="background: rgb(192, 187, 187);
@@ -206,6 +206,7 @@
 <script>
 
 import { getAuth, onAuthStateChanged,signOut } from 'firebase/auth';
+import { getFirestore, getDoc, doc} from 'firebase/firestore';
   
   export default {
     name: "App",
@@ -216,7 +217,7 @@ import { getAuth, onAuthStateChanged,signOut } from 'firebase/auth';
         // CHANGE IN PROD ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-
+        userTokens: 0,
         user: null,
 
         menuOpen: false,
@@ -251,6 +252,7 @@ import { getAuth, onAuthStateChanged,signOut } from 'firebase/auth';
         .then(() => {
           this.$root.user = null;
           this.successMessage = 'Logged out.';
+          this.$router.push('/');
         })
         .catch(error => {
           this.errorMessage = 'Error logging out: ' + error.message;
@@ -293,6 +295,32 @@ import { getAuth, onAuthStateChanged,signOut } from 'firebase/auth';
       // User is signed in
       console.log('User is signed in:', user);
       this.user = user;
+
+
+
+
+      const db = getFirestore();
+      const userDocRef = doc(db, 'users', this.user.uid);
+
+      // Get the user's document from Firestore
+      getDoc(userDocRef)
+        .then((docSnapshot) => {
+          if (docSnapshot.exists()) {
+            const userData = docSnapshot.data();
+            const userTokens = userData.tokens; // Assuming 'tokens' is the field in Firestore that stores the token count
+            this.userTokens = userTokens; // Store the token count in a Vue variable
+            console.log('User tokens:', userTokens);
+          } else {
+            // Handle the case where the user's document doesn't exist
+            console.log('User document does not exist.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error getting user document:', error);
+        });
+
+
+      
     } else {
       // User is signed out
       console.log('User is signed out');

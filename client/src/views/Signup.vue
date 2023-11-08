@@ -42,6 +42,7 @@ export default {
         .then(userCredential => {
           this.$root.user = userCredential.user;
           this.successMessage = 'Account created with email and password.';
+          this.$router.push('/welcome');
         })
         .catch(error => {
           this.errorMessage = 'Error creating an account: ' + error.message;
@@ -56,6 +57,7 @@ export default {
         .then(result => {
           this.$root.user = result.user;
           this.successMessage = 'Signed up with Google.';
+          this.$router.push('/welcome');
         })
         .catch(error => {
           this.errorMessage = 'Error signing up with Google: ' + error.message;
