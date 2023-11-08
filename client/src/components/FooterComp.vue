@@ -2,47 +2,50 @@
     
 
     <div class="footer-menus">
-        <div class="menuCatch" style="margin-bottom: 0px;">
-            <ul class="footer-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#cybersecurity-expertise">Learn About Our Cybersecurity Expertise</a></li>
-                <li><a href="#time-optimization">Discover Time Optimization Solutions</a></li>
-                <li><a href="#revenue-protection">Explore Revenue Protection Services</a></li>
-                <li><a href="#rapid-defense-advancement">Achieve Rapid Defense Advancement</a></li>
-                <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Mission</a></li>
-        <li><a href="#">Company History</a></li>
-        <li><a href="#">Leadership Team</a></li>
-        <li><a href="#">Corporate Responsibility</a></li>
-            </ul>
 
-            <ul class="footer-menu">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Meet Our Expert Team</a></li>
-                <li><a href="#">Read Client Testimonials</a></li>
-                <li><a href="#">Check Out Our Blog</a></li>
-                <li><a href="#">Contact Our Support Team</a></li>
-                <li><a href="#">Services</a></li>
-        <li><a href="#">Cybersecurity Solutions</a></li>
-        <li><a href="#">Data Privacy Consulting</a></li>
-        <li><a href="#">Risk Management</a></li>
-        <li><a href="#">Cloud Security</a></li>
-            </ul>
+      <div class="menuCatch" style="margin-bottom: 0px;">
+    <ul class="footer-menu">
+      <li><router-link to="/blog/home">Home</router-link></li>
+      <li><router-link to="/blog/cybersecurity-expertise">Learn About Our Cybersecurity Expertise</router-link></li>
+      <li><router-link to="/blog/time-optimization">Discover Time Optimization Solutions</router-link></li>
+      <li><router-link to="/blog/revenue-protection">Explore Revenue Protection Services</router-link></li>
+      <li><router-link to="/blog/rapid-defense-advancement">Achieve Rapid Defense Advancement</router-link></li>
+      <li><router-link to="/blog/about">About Us</router-link></li>
+      <li><router-link to="/blog/our-mission">Our Mission</router-link></li>
+      <li><router-link to="/blog/company-history">Company History</router-link></li>
+      <li><router-link to="/blog/leadership-team">Leadership Team</router-link></li>
+      <li><router-link to="/blog/corporate-responsibility">Corporate Responsibility</router-link></li>
+    </ul>
 
-            <ul class="footer-menu">
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Consulting Services</a></li>
-                <li><a href="#">Comprehensive Security Audits</a></li>
-                <li><a href="#">Specialized Training Programs</a></li>
-                <li><a href="#">Explore Partnership Opportunities</a></li>
-                <li><a href="#">Resources</a></li>
-        <li><a href="#">Whitepapers</a></li>
-        <li><a href="#">Case Studies</a></li>
-        <li><a href="#">Webinars</a></li>
-        <li><a href="#">FAQs</a></li>
-            </ul>
+    <ul class="footer-menu">
+  <li><router-link to="/blog/about-us">About Us</router-link></li>
+  <li><router-link to="/blog/meet-our-expert-team">Meet Our Expert Team</router-link></li>
+  <li><router-link to="/blog/client-testimonials">Read Client Testimonials</router-link></li>
+  <li><router-link to="/blog/check-out-our-blog">Check Out Our Blog</router-link></li>
+  <li><router-link to="/blog/contact-support-team">Contact Our Support Team</router-link></li>
+  <li><router-link to="/blog/services">Services</router-link></li>
+  <li><router-link to="/blog/cybersecurity-solutions">Cybersecurity Solutions</router-link></li>
+  <li><router-link to="/blog/data-privacy-consulting">Data Privacy Consulting</router-link></li>
+  <li><router-link to="/blog/risk-management">Risk Management</router-link></li>
+  <li><router-link to="/blog/cloud-security">Cloud Security</router-link></li>
+</ul>
+<ul class="footer-menu">
+  <li><router-link to="/blog/services">Services</router-link></li>
+  <li><router-link to="/blog/consulting-services">Consulting Services</router-link></li>
+  <li><router-link to="/blog/security-audits">Comprehensive Security Audits</router-link></li>
+  <li><router-link to="/blog/training-programs">Specialized Training Programs</router-link></li>
+  <li><router-link to="/blog/partnership-opportunities">Explore Partnership Opportunities</router-link></li>
+  <li><router-link to="/blog/resources">Resources</router-link></li>
+  <li><router-link to="/blog/whitepapers">Whitepapers</router-link></li>
+  <li><router-link to="/blog/case-studies">Case Studies</router-link></li>
+  <li><router-link to="/blog/webinars">Webinars</router-link></li>
+  <li><router-link to="/blog/faqs">FAQs</router-link></li>
+</ul>
+</div>
+
+
             
-        </div>
+  
 
 
     <footer class="footer">

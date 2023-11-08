@@ -8,16 +8,13 @@
 
 
           <p class="header-text">
-            Welcome!
-            <a>
-              <!-- <router-link style="color: white" @click="closeMenu" to="/chat"
-                >Old Route</router-link -->
-              >  <router-link style="color: white" @click="closeMenu" to="/chat2"
-                >Click Here try Progressor.cx</router-link
-              > <a style="font-size: 14px;">Status:</a>
-          <a style="font-size: 14px;color: green" v-if="user" >User Logged in as {{ user.email }}</a>
-          <a style="font-size: 14px;color: red" v-else>No Signin</a></a
-            >
+
+            <a  v-if="!user" >Please Sign in to get started with Progressor!</a>
+            <a  v-if="user" ><router-link style="color: white" @click="closeMenu" to="/chat2"
+                >Click Here try Progressor.cx</router-link> </a>
+     
+       
+   
           </p>
         </div>
         <div class="id_2s">
@@ -43,10 +40,14 @@
           <button @click="menuOpen = !menuOpen; menuOpen2 = false" class="colorlessbtn">Resources {{ !menuOpen ? '⏬' : '🔝' }}</button>
           <button @click="menuOpen2 = !menuOpen2; menuOpen = false" class="colorlessbtn">Company {{ !menuOpen2 ? '⏬' : '🔝' }}</button>
           <button   @click="$router.push('/pricing'), closeMenu" class="colorlessbtn">Pricing</button>
-          <button   @click="$router.push('/pricing2'), closeMenu" class="colorlessbtn">STRIPE PAYMENT</button>
+
           <div class="btn_holder">
-          <button  @click="$router.push('/login'), closeMenu" class="actionBTN">Log in</button>
-          <button  @click="$router.push('/signup'), closeMenu" class="actionBTN2">Sign up</button></div>
+          <button   v-if="!user" @click="$router.push('/login'), closeMenu" class="actionBTN">Log in</button>
+          <button v-if="!user" @click="$router.push('/signup'), closeMenu" class="actionBTN2">Sign up</button>
+        <a v-if="user" style="background-color: aqua;">Tokens: 0</a>
+          <button v-if="user" @click="logout"  class="actionBTN2">Logout</button>
+        
+        </div>
        <!--     <button class="custom-button" style="background: rgb(192, 187, 187);
     color: black;
     font-size: 26px;" @click="$router.push('/Login')">
@@ -204,7 +205,7 @@
 <!-- JS -->
 <script>
 
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, onAuthStateChanged,signOut } from 'firebase/auth';
   
   export default {
     name: "App",
@@ -241,6 +242,19 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
         if (element) {
         element.scrollTo({ top: 0 });
       }
+  
+    },
+    logout() {
+      
+      const auth = getAuth();
+      signOut(auth)
+        .then(() => {
+          this.$root.user = null;
+          this.successMessage = 'Logged out.';
+        })
+        .catch(error => {
+          this.errorMessage = 'Error logging out: ' + error.message;
+        });
   
     },
   
@@ -530,7 +544,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 .colorlessbtn {
     background: none;
     color: black;
-    font-size: 15px;
+    font-size: 12px;
     padding: 0px;
     margin: 0px;
     margin-left: 10px;
@@ -760,7 +774,7 @@ width: 100%;
 
     }
     .colorlessbtn {
-        font-size: 12px;
+        font-size: 10px;
     }
     .logo {
         display: none;

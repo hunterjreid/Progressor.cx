@@ -9,7 +9,7 @@ import TermsOfServiceView from './views/TermsOfServiceView.vue'
 import PrivacyPolicyView from './views/PrivacyPolicyView.vue'
 import LearnMore from './views/LearnMore.vue'
 import NewLanding from './views/NewLanding.vue'
-import ChatView from './views/ChatView.vue'
+
 import FaqView from './views/FaqView.vue'
 import ContactView from './views/ContactView.vue'
 import PricingPage from './views/PricingPage.vue'
@@ -61,11 +61,7 @@ const routes = [
         name: 'PricingPage',
         component: PricingPage,
       },
-    {
-        path: '/chat',
-        name: 'chat',
-        component: ChatView,
-      },
+
       {
         path: '/Yoobee_test_wip',
         name: 'YoobeeTestView',

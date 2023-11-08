@@ -1,62 +1,93 @@
 <template>
-    <div class="blog-container">
-      <div v-if="loading" class="loading-overlay" :class="{ 'hide': !loading }">
-        <div class="loading-spinner">
-          <img alt="Logo" src="./../assets/logo_clean.png" class="max-w-xs logo" style="height: 50px; padding: 27px; margin-left: -25px; margin-top: 8px;" />
-        </div>
+  <div class="blog-container">
+    <div v-if="loading" class="loading-overlay" :class="{ 'hide': !loading }">
+      <div class="loading-spinner">
+        <img alt="Logo" src="./../assets/logo_clean.png" class="max-w-xs logo" style="height: 50px; padding: 27px; margin-left: -25px; margin-top: 8px;" />
       </div>
-      <div class="main" v-else><br v-if="this.$cookies.isKey('admin')">
-        <button v-if="this.$cookies.isKey('admin')" @click="$router.push('/admin')" style="border:1px solid black;margin: 20px;margin-top: 0px;
-   background: linear-gradient(45deg, red, orange);">goto Admin</button>
-        <h1 class="blog-title" v-if="blog">{{ blog.title }}</h1>
-        <a v-else ><br>This blog doesn't exisit or has been made private. </a>
-        <p v-if="blog" class="blog-content" v-html="blog.content"></p>
-  <br>
-  <p v-if="blog" class="blog-content" >{{blog.read_count}} Views</p>
-        <router-link :to="'/all_blogs'">View all Blogs</router-link><br>
-        <router-link :to="'/'">Back to Home Page</router-link>
-      </div>
-      <FooterComp />
-
     </div>
-  </template>
-  
-  <script>
-  import axios from 'axios';
-  import FooterComp from '@/components/FooterComp.vue'; // Adjust the path
-  export default {
-    name: 'BlogView',
-    data() {
-      return {
-        blog: null,
-        loading: true, // Add a loading state
-      };
-    },components: {
-    FooterComp
+    <div class="main" v-else>
+      <br v-if="this.$cookies.isKey('admin')">
+      <button v-if="this.$cookies.isKey('admin')" @click="$router.push('/admin')" style="border:1px solid black;margin: 20px;margin-top: 0px;
+        background: linear-gradient(45deg, red, orange);">goto Admin</button>
+      <h1 class="blog-title" v-if="blog">{{ blog.title }}</h1>
+      <a v-else><br>No blog found.</a>
+      <p v-if="blog" class="blog-content" v-html="blog.content"></p>
+      <br>
+      <p v-if="blog" class="blog-content">{{ blog.read_count }} Views</p>
+      <router-link :to="'/all_blogs'">View all Blogs</router-link><br>
+      <router-link :to="'/'">Back to Home Page</router-link>
+    </div>
+    <FooterComp />
+  </div>
+</template>
+
+<script>
+import FooterComp from '@/components/FooterComp.vue';
+import { getFirestore,  getDoc } from 'firebase/firestore';
+
+export default {
+  name: 'BlogView',
+  data() {
+    return {
+      blog: null,
+      loading: true,
+    };
   },
-    created() {
-      const blogId = this.$route.params.id;
-  
-      axios
-        .post(`${this.$root.api_prefix}/blogs/${blogId}/view`)
-        .then((response) => {
-          this.blog = response.data;
-        })
-        .catch((error) => {
-          console.error('Error fetching blog:', error);
-        })
-        .finally(() => {
-          setTimeout(() => {
-            this.loading = false; // Set loading state to false after a delay
-          }, 500); // Adjust the delay as needed
-        });
+  components: {
+    FooterComp,
+  },
+  watch: {
+    '$route.params.id': {
+      handler(newId) {
+        // Fetch the blog data for the new ID
+        this.fetchBlog(newId);
+      },
+      immediate: true, // Fetch data immediately when the component is mounted
     },
-  };
-  </script>
-  
-  <style>  .main {
-    max-width: 800px; margin: 0 auto; padding: 20px;
+  },
+  methods: {
+    async fetchBlog() {
+      this.loading = true;
+      const blogId = this.$route.params.id;
+
+try {
+  // Fetch the blog data from Firestore
+  const db = getFirestore();
+  const blogRef = getDoc(db, "blogs", blogId);
+  const docSnap = await getDoc(blogRef);
+
+  if (docSnap.exists()) {
+    this.blog = docSnap.data();
+  } else {
+    console.log('Blog not found');
+    this.blog = null; // Set blog to null to display "No blog found" message
   }
+} catch (error) {
+  console.error('Error fetching blog:', error);
+} finally {
+  setTimeout(() => {
+    this.loading = false;
+  }, 500);
+}
+    },
+    },
+ 
+
+
+async created() {
+
+  const blogId = this.$route.params.id;
+    this.fetchBlog(blogId);
+},
+};
+</script>
+
+<style>
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
   .blog-title {
     font-weight: 700;
     margin-bottom: 10px;
