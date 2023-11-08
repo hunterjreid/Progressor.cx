@@ -10,16 +10,11 @@
 
 
 ```markdown
-# For the client side:
+# Client:
 git clone https://github.com/hunterjreid/Progressor.cx
 cd Progressor.cx/client
 npm i
 npm run serve
-
-# Open a new PowerShell and run the server:
-cd Progressor.cx/server
-npm i
-npm run server
 ```
 </details>
 </td>
