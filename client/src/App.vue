@@ -21,9 +21,9 @@
           <router-link @click="closeMenu"   class="r3r3z" to="/">
             <img
               alt="Logo"
-              src="./assets/logo_clean.png"
+              src="./assets/Logo.png"
               class="max-w-xs logo r3r3"
-              style="height: 30px;  display: flex;"  
+              style="height: 40px;  display: flex;"  
               @click="navigateToHome"
             />
           </router-link>
@@ -44,8 +44,9 @@
           <div class="btn_holder">
           <button   v-if="!user" @click="$router.push('/login'), closeMenu" class="actionBTN">Log in</button>
           <button v-if="!user" @click="$router.push('/signup'), closeMenu" class="actionBTN2">Sign up</button>
-        <a v-if="user" style="background-color: aqua;">Tokens: {{ userTokens }}</a>
-          <button v-if="user" @click="$router.push('/welcome'), closeMenu" class="actionBTN2">My Account</button>
+        <a v-if="user" style="    background-color: aqua;
+    font-size: 13px;">Tokens: {{ userTokens }}</a>
+          <button v-if="user" @click="$router.push('/welcome'), closeMenu" class="actionBTN2">Account</button>
         
         </div>
        <!--     <button class="custom-button" style="background: rgb(192, 187, 187);
@@ -774,6 +775,16 @@ import { getFirestore, getDoc, doc} from 'firebase/firestore';
   }
   @media (max-width: 600px) {
 
+    .bg_img2 {
+      padding: 100px 0px !important;
+    margin-bottom: -100px !important;
+    height: unset !important;
+    }
+.bg-gray-100 {
+  display: flex;     flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+}
     .Mob {
     display: flex;
   }
@@ -781,7 +792,11 @@ import { getFirestore, getDoc, doc} from 'firebase/firestore';
 
 width: 100%;
 }
-
+.max-w-md {
+  display: flex;     flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+}
 
     .r3r3 {
       margin: 0px !important;      display: none  !important;

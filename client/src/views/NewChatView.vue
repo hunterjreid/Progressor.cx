@@ -1,28 +1,36 @@
 <template>
   <div class="mainer">
+    <div v-if="outOfTokens" class="out-of-tokens-message">
+    You are out of tokens. Please consider upgrading your plan!
+  </div>
     <div class="dm-box" ref="dmBox">
-      <ul>
-        <li v-for="message in conversationHistory" :key="message.id">
+   
+        <a v-for="message in conversationHistory" :key="message.id">
           <div class="message-bubble" :class="{ 'sent': message.type === 'sent', 'received': message.type === 'received' }">
             {{ message.content }}
           </div>
-        </li>
-        <li v-if="progressorThinking" class="message-bubble received thinking-bubble">
+        </a>
+        <div v-if="progressorThinking" class="message-bubble received thinking-bubble">
           Progressor is thinking...
-        </li>
-      </ul>
+        </div>
+  
     </div>
     
     <div class="chat-bar">
+
+  
       <input type="text" v-model="inputMessage" placeholder="Enter your message here..." />
       <button @click="sendMessage">Send</button>
       <button @click="clearChat">Clear Chat</button> <!-- Add Clear Chat button -->
     </div>
+    <span v-if="messageCost !== undefined">COST: ({{ messageCost }} tokens)</span>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+
 
 export default {
   name: 'ChatView',
@@ -30,7 +38,8 @@ export default {
   data() {
     return {
       all_msgs: [],
-      
+      outOfTokens: false, // Initialize the outOfTokens property
+      messageCost: 0, // Initialize messageCost as a data property
       conversationHistory: [
         { content: 'Welcome to Progressor CX! 🚀 Hello! How can we assist you today?', type: 'received', id: 0 },
       ],
@@ -44,7 +53,13 @@ export default {
     chatBox.scrollTop = chatBox.scrollHeight;
   },
 
-
+  watch: {
+    inputMessage() {
+    
+      // Calculate the message cost based on the length of the new input message
+      this.messageCost = this.inputMessage.length * 2;
+    },
+  },
 
 
   methods: {
@@ -56,9 +71,50 @@ export default {
       if (this.inputMessage.trim() === '' || this.progressorThinking === true) {
         return;
       }
+
+      if (this.messageCost > this.$root.userTokens) {
+    // User doesn't have enough tokens
+    this.outOfTokens = true;
+    return;
+  }
       var chatBoxe = this.$refs.dmBox;
       chatBoxe.scrollTop = chatBoxe.scrollHeight;
       this.conversationHistory.push({ content: this.inputMessage, type: 'sent', id: this.conversationHistory.length });
+
+ 
+      const db = getFirestore();
+      const userDocRef = doc(db, 'users', this.$root.user.uid);
+
+      // Retrieve the user's current token count
+      const userDoc = await getDoc(userDocRef);
+      const currentTokens = userDoc.data().tokens;
+
+      // Calculate the new token count after subtracting the message cost
+      const newTokens = currentTokens - this.messageCost;
+
+      const tokensData = { tokens: newTokens };
+
+      // Update the user's token count in Firestore
+
+        setDoc(userDocRef, tokensData)
+          .then(() => {
+            // Show the token added popup
+
+          })
+          .catch((error) => {
+            console.error('Error setting tokens:', error);
+          });
+
+      // Update the userTokens in the root component
+      this.$root.userTokens = newTokens;
+
+      // Reset the messageCost
+      this.messageCost = 0;
+
+      // Show the token subtracted popup (if needed)
+      // this.showTokenSubtractedPopup = true;
+   
+
 
       this.all_msgs.push(this.inputMessage);
 
@@ -102,7 +158,8 @@ export default {
         });
 
         const candidates = response.data.candidates;
-        this.conversationHistory.push({ content: candidates[0].content, type: 'received', id: this.conversationHistory.length });
+        this.conversationHistory.push({ content: ```${candidates[0].content}```, type: 'received', id: this.conversationHistory.length });
+
 
         this.progressorThinking = false;
   
@@ -129,6 +186,15 @@ export default {
   margin: 20px;
 }
 
+.out-of-tokens-message {
+  background-color: #FF0000; /* Red background color */
+  color: #FFFFFF; /* White text color */
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px; /* Add margin to separate it from the chat box */
+  text-align: center;
+}
+
 .dm-box {
   width: 700px;
   height: 600px; /* Adjust the height as needed */
@@ -145,7 +211,7 @@ export default {
     background-color: #f0f0f0;
     padding: 10px;
     border-radius: 10px;
-    width: 705px;
+
 }
 
 input[type="text"] {
@@ -173,13 +239,20 @@ button {
   margin: 20px;
 }
 .dm-box {
-  width: 700px;
-  height: 800px;
-  border: 1px solid black;
-  padding: 10px;
-  overflow-y: scroll;
+    width: 60%;
+    max-width: 1280px;
+    border: 1px solid black;
+    padding: 10px;
+    overflow-y: scroll;
 }
 
+@media (max-width: 600px) {
+.dm-box {
+  height: 90vw;
+  width: 90%;
+
+}
+}
 .message-bubble {
   margin-bottom: 10px;
   padding: 10px;

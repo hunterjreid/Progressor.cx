@@ -1,6 +1,7 @@
 <template>
   <div class="blog-container">
     <div v-if="loading" class="loading-overlay" :class="{ 'hide': !loading }">
+      Loading Blog...
       <div class="loading-spinner">
         <img alt="Logo" src="./../assets/logo_clean.png" class="max-w-xs logo" style="height: 50px; padding: 27px; margin-left: -25px; margin-top: 8px;" />
       </div>
@@ -16,8 +17,10 @@
       <p v-if="blog" class="blog-content">{{ blog.read_count }} Views</p>
       <router-link :to="'/all_blogs'">View all Blogs</router-link><br>
       <router-link :to="'/'">Back to Home Page</router-link>
+      <br>
+      <FooterComp />
     </div>
-    <FooterComp />
+
   </div>
 </template>
 
@@ -84,9 +87,8 @@ async created() {
 
 <style>
 .main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+    max-width: 798px;
+    margin: 0 auto;
 }
   .blog-title {
     font-weight: 700;
