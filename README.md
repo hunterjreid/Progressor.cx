@@ -1,8 +1,8 @@
-
+<h2>https://progressor.cx</h2
 
 <div style="text-align: center;">
     <img width="470" src="https://github.com/hunterjreid/Progressor.cx/assets/62681404/aedf64b9-4839-4490-b117-724ff6d7b237" alt="https://progressor.cx">
-       <h2>https://progressor.cx is an  AI-driven cybersecurity website startup is a Palm 2 AI based Cyber Security expert Chatbot Software as a service (SaaS) </h2>
+       <h2>Progressor is an AI-driven cybersecurity expert website startup is a Palm 2 AI based Cyber Security expert Chatbot Software as a service (SaaS) </h2>
 
 <p>Capstone Project - Progressor.cx by Hunter Reid from Yoobee Colleges with help of wonderful lecturers Arthur, Mohammad and Rouwa.</p>      
 <p>Using the power of web v9 Modular</p>          
