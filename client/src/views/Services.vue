@@ -29,13 +29,18 @@
           <p>Access our team of cybersecurity experts at any time for guidance and resolution of security concerns.</p>
         </div>
       </div>
+      <br>
+      <FooterComp/>
     </div>
   </template>
   
-  
+
   <script>
+  import FooterComp from '@/components/FooterComp.vue';
   export default {
-    name: 'ServicesView',
+    name: 'ServicesView',  components: {
+    FooterComp,
+  },
   };
   </script>
   

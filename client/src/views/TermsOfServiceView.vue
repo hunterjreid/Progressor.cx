@@ -51,13 +51,17 @@
       <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
         <li>E-Mail: <a href="mailto:support@progtrrresor.com" style="color: #007bff;">support@progtrrresor.com</a></li>
         <li>Address: 9th Floor, 107 Cheapside, London, EC2V 6DN, United Kingdom</li>
-      </ul>
+      </ul>  <FooterComp/>
     </div>
   </template>
   
   <script>
+
+import FooterComp from '@/components/FooterComp.vue';
   export default {
-    name: 'TermsOfServiceView',
+    name: 'TermsOfServiceView',  components: {
+    FooterComp,
+  },
   };
   </script>
   

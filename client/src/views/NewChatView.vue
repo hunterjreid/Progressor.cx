@@ -158,7 +158,7 @@ export default {
         });
 
         const candidates = response.data.candidates;
-        this.conversationHistory.push({ content: ```${candidates[0].content}```, type: 'received', id: this.conversationHistory.length });
+        this.conversationHistory.push({ content: candidates[0].content, type: 'received', id: this.conversationHistory.length });
 
 
         this.progressorThinking = false;

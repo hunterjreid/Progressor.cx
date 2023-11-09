@@ -18,10 +18,10 @@
         </ul>
   
         <p>With 5,000 tokens, your capacity would increase accordingly, allowing you to perform five times as many tasks.</p>
-  
+        <FooterComp /> 
      
       </div>
-      <FooterComp /> 
+    
     </div>
   </template>
   
@@ -47,9 +47,9 @@
   
   <style scoped>
   .container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 0px 20px;
   }
   
   .feature-list {

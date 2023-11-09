@@ -3,7 +3,12 @@
     <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
       <!-- Your existing code here -->
   <h1>Simple pricing at any scale that just works.</h1>
-  <h2>If you don;t like progressor we can refund you at any time.</h2>
+  <h2>If you don;t like progressor we can refund you at any time.</h2>    <a>Well have a plan for you!</a><br><router-link class="jlinkers" to="/tokens">
+
+    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
+       LEARN ABOUT HOW DO TOKENS WORK?
+    </button>
+</router-link>    
       <!-- Pricing Cards -->
       <div class="pricing-cards">
   <!-- Card 1 -->
@@ -14,7 +19,9 @@
       <li><i class="fa fa-check"></i> Access to Basic Features</li>
       <li><i class="fa fa-check"></i> Email and Chat Support</li>
     </ul>
-    <button @click="$router.push('/login')">Select</button>
+    <button @click="$router.push('/login')">Select</button>    <button style="margin-bottom: 40px; font: 1em sans-serif;   background: linear-gradient(270deg, #ff1313 31%, #5c85ff);" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
+Pay now
+    </button>
   </div>
 
   <!-- Card 2 -->
@@ -25,7 +32,9 @@
       <li><i class="fa fa-check"></i> Access to Advanced Features</li>
       <li><i class="fa fa-check"></i> Email and Chat Support</li>
     </ul>
-    <button @click="$router.push('/login')">Select</button>
+    <button @click="$router.push('/login')">Select</button>    <button style="margin-bottom: 40px; font: 1em sans-serif;   background: linear-gradient(270deg, #ff1313 31%, #5c85ff);" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
+Pay now
+    </button>
   </div>
 
   <!-- Card 3 -->
@@ -36,7 +45,9 @@
       <li><i class="fa fa-check"></i> Access to Premium Features</li>
       <li><i class="fa fa-check"></i> Priority Support 24/7</li>
     </ul>
-    <button @click="$router.push('/login')">Select</button>
+    <button @click="$router.push('/login')">Select</button>    <button style="margin-bottom: 40px; font: 1em sans-serif;   color:black;background: white;" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
+Pay now
+    </button>
   </div>
 
   <!-- Custom Price Card -->
@@ -48,16 +59,10 @@
   </div>
 </div>
 <router-link class="jlinkers" to="/pricing2">
-    <button style="margin-bottom: 40px; font: 4em sans-serif;   background: linear-gradient(270deg, #ff1313 31%, #5c85ff);" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
-Pay now
-    </button>
+
 </router-link>     
 <p>Your Satisfaction is 100% Guaranteed or Your Money Back</p>
-<router-link class="jlinkers" to="/tokens">
-    <button style="margin-bottom: 40px;" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
-       HOW DO TOKENS WORK?
-    </button>
-</router-link>      <FooterComp /> <!-- Your existing code here -->
+  <FooterComp /> <!-- Your existing code here -->
 </div>
 
     

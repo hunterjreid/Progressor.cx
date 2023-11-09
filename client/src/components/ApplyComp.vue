@@ -24,12 +24,12 @@
           <label for="message">Message (optional):</label>
           <textarea id="message" name="message" v-model="message" rows="4"></textarea>
 
-          <label for="picture">Upload one picture of you (optional):</label>
-      <input type="file" @change="onFileChange" accept="image/*">
-      <br>
+          <!-- <label for="picture">Upload one picture of you (optional):</label>
+      <input type="file" @change="onFileChange" accept="image/*"> -->
+
       <img v-if="profilePicture" :src="profilePicture" style="max-width: 200px; max-height: 200px;" alt="Profile Picture">
 
-      <button style="width: 100px;" type="button" @click="submitForm">Apply Now to Progressor.cx PLUS PLAN</button>
+      <button style="width: 100%;" type="button" @click="submitForm">Apply Now to Progressor.cx PLUS PLAN</button>
         </form>
       </section>
   </template>
@@ -168,7 +168,7 @@
   .contact-form input[type="email"],
   .contact-form textarea {
     padding: 8px;
-    border: 1px solid #e0d0e8; /* Light pink */
+    border: 1px solid #ff1313; /* Light pink */
     border-radius: 5px;
     margin-top: 5px;
   }
@@ -186,7 +186,7 @@
   }
 
   .contact-form button[type="button"] {
-    background-color: #d04285; /* Darker pink */
+    background-color: #ff1313; /* Darker pink */
     color: #fff;
     padding: 8px 12px;
     border: none;
@@ -198,7 +198,7 @@
   }
 
   .contact-form button[type="button"]:hover {
-    background-color: #a0336e; /* Darker pink on hover */
+    background-color: #a03333; /* Darker pink on hover */
   }
 
   /* Add focus and hover styles for input and textarea */
@@ -220,6 +220,7 @@ background-image: linear-gradient(270deg,#ff1313 31%,#5c85ff);
 -webkit-background-clip: text;
 background-clip: text;
 font-size: 37px;
+margin: 0px;
   }
   </style>
   

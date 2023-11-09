@@ -155,6 +155,16 @@ import FooterComp from '@/components/FooterComp.vue';
   <style scoped>
   .landing {
     font-family: Arial, sans-serif;
+    margin: 0 auto;
+    height: calc(100% - 100px);
+    position: fixed;
+    overflow-y: auto;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    padding: 0px;
+    flex-direction: column;
+    align-items: center;
   }
   
   * {

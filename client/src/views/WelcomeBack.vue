@@ -1,10 +1,42 @@
-
 <template>
   <div style="max-width: 800px; margin: 0px auto; padding: 0px 20px;">
     <div v-if="user">
       <h1>Welcome back, {{ user.email }}</h1>
-      <p v-if="subscription">You have an active subscription: {{ subscription }}</p>
-      <router-link to="/chat2">Use Progressor.cx</router-link>
+
+      <!-- Radio box for first login message -->
+      <div v-if="firstLogin">
+        <input type="checkbox" id="firstLogin" v-model="firstLogin">
+        <label for="firstLogin">First Login: Welcome to Progressor! We gave you 1000 tokens for free to get started!!!</label>
+      </div>
+
+      <!-- Radio switch for subscription selection -->
+      <label>Subscription:</label>
+      <div>
+        <input type="radio" id="noSubscription" value="no" v-model="selectedSubscription" @change="updateSubscription">
+        <label for="noSubscription">No Subscription</label>
+
+        <input type="radio" id="tier1" value="Tier 1" v-model="selectedSubscription" @change="updateSubscription">
+        <label for="tier1" :style="{ backgroundColor: tierColors['Tier 1'] }">Tier 1</label>
+
+        <input type="radio" id="tier2" value="Tier 2" v-model="selectedSubscription" @change="updateSubscription">
+        <label for="tier2" :style="{ backgroundColor: tierColors['Tier 2'] }">Tier 2</label>
+
+        <input type="radio" id="tier3" value="Tier 3" v-model="selectedSubscription" @change="updateSubscription">
+        <label for="tier3" :style="{ backgroundColor: tierColors['Tier 3'] }">Tier 3</label>
+      </div>
+
+      <!-- Display subscription information -->
+      <div v-if="subscriptionInfo" class="subscription-container">
+        <p>{{ subscriptionInfo }}</p>
+        <div v-if="selectedSubscription === 'no'">
+          <p>View subscriptions or read on docs.</p>  <router-link to="/pricing">Subscribe now!</router-link>
+        </div>
+        <div v-else>
+          <router-link to="/chat2">Use Progressor.cx</router-link>
+          <button @click="manageSubscription">Manage Subscription</button>
+        </div>
+      </div>
+
       <button @click="logout">Logout</button>
 
       <label for="tokensInput">Enter number of tokens:</label>
@@ -30,28 +62,32 @@
   </div>
 </template>
 
-
-
 <script>
-import { getAuth } from 'firebase/auth';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
 export default {
   data() {
     return {
       user: this.$root.user,
-      subscription: null,
+      selectedSubscription: null,
+      subscriptionInfo: null,
       tokensToAdd: 0,
       showTokenAddedPopup: false,
+      firstLogin: true,
+      firstLoginAcknowledge: false,
+      tierColors: {
+        'Tier 1': '#FFD700', // Define color for Tier 1
+        'Tier 2': '#32CD32', // Define color for Tier 2
+        'Tier 3': '#4169E1', // Define color for Tier 3
+      },
     };
   },
   methods: {
     logout() {
-      // Perform logout actions here, e.g., clear user data and redirect to the login page.
       this.user = null;
       this.$root.logout()
-      this.subscription = null;
-      // Redirect to the login page (assuming you're using Vue Router)
+      this.selectedSubscription = null;
+      this.subscriptionInfo = null;
       this.$router.push('/login');
     },
     addTokens() {
@@ -80,22 +116,76 @@ export default {
     closeTokenAddedPopup() {
       this.showTokenAddedPopup = false;
     },
+    updateSubscription() {
+      switch (this.selectedSubscription) {
+        case 'no':
+          this.subscriptionInfo = 'You have no subscription.';
+          break;
+        case 'Tier 1':
+        case 'Tier 2':
+        case 'Tier 3':
+          this.subscriptionInfo = `You have a ${this.selectedSubscription} subscription. You are due for a top-up in X days of XXX Tokens.`;
+          break;
+        default:
+          this.subscriptionInfo = null;
+      }
+    },
   },
   created() {
-    // Fetch user and subscription data when the component is created (you may need to customize this part).
-    // Assign user and subscription data to this.user and this.subscription.
-    // For example:
     this.user = this.$root.user;
-    this.subscription = 'Premium';
-
-    const auth = getAuth();
-    const currentUser = auth.currentUser;
-
-    if (currentUser) {
-      this.user = currentUser;
-      // You can fetch the subscription information here and assign it to the subscription ref.
-      this.subscription = 'Premium';
-    }
+    this.selectedSubscription = 'Tier 1'; // Set a default subscription
+    this.updateSubscription(); // Update subscription info based on the default
   },
 };
 </script>
+
+<style scoped>
+.subscription-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subscription-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.subscription-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.subscription-container input[type="radio"] {
+  margin-right: 5px;
+}
+
+.subscription-container p {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.subscription-container button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.subscription-container button:hover {
+  background-color: #2980b9;
+}
+
+.subscription-container .token-added-popup {
+  /* Adjust styles for the token-added-popup as needed */
+}
+
+/* Add any additional styling as per your design */
+</style>

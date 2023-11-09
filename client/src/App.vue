@@ -39,7 +39,7 @@
 
           <button @click="menuOpen = !menuOpen; menuOpen2 = false" class="colorlessbtn">Resources {{ !menuOpen ? '⏬' : '🔝' }}</button>
           <button @click="menuOpen2 = !menuOpen2; menuOpen = false" class="colorlessbtn">Company {{ !menuOpen2 ? '⏬' : '🔝' }}</button>
-          <button   @click="$router.push('/pricing'), closeMenu" class="colorlessbtn">Pricing</button>
+          <button  v-if="!user"  @click="$router.push('/pricing'), closeMenu" class="colorlessbtn">Pricing</button>
 
           <div class="btn_holder">
           <button   v-if="!user" @click="$router.push('/login'), closeMenu" class="actionBTN">Log in</button>
@@ -94,15 +94,15 @@
         </div>
         <div v-if="menuOpen" class="b_menthis">
   <router-link to="/home2" @click="closeMenu" class="link">
-    <span class="emoji">🌟</span> Explore Our New Features
+    Explore
   </router-link>
-  <router-link to="/apply" @click="closeMenu" class="link">
-    <span class="emoji">📝</span> Application Process
+  <router-link to="/faq" @click="closeMenu" class="link">
+    Frequently Asked Questions
   </router-link>
   <router-link to="/terms" @click="closeMenu" class="link">
-    <span class="emoji">📜</span> Terms and Conditions
+  Terms and Conditions
   </router-link>
-  <router-link to="/services" @click="closeMenu" class="link">
+  <!-- <router-link to="/services" @click="closeMenu" class="link">
     <span class="emoji">🚀</span> Our Services
   </router-link>
   <router-link to="/contact" @click="closeMenu" class="link">
@@ -113,7 +113,7 @@
   </router-link>
   <router-link to="/career" @click="closeMenu" class="link">
     <span class="emoji">🎃</span> Explore Career Opportunities
-  </router-link>
+  </router-link> -->
 
   <button
     v-if="this.$cookies.isKey('admin')"
@@ -130,27 +130,19 @@
 </div>
 
 <div v-if="menuOpen2" class="b_menthisx">
-  <router-link to="/home2" @click="closeMenu" class="link">
-    <span class="emoji">🌟</span> Home
-  </router-link>
-  <router-link to="/apply" @click="closeMenu" class="link">
-    <span class="emoji">📝</span> Careers
-  </router-link>
-  <router-link to="/terms" @click="closeMenu" class="link">
-    <span class="emoji">📜</span> Terms & Conditions
-  </router-link>
+
   <router-link to="/services" @click="closeMenu" class="link">
-    <span class="emoji">🚀</span> Our Services
+    Progressor.cx Benifits
   </router-link>
   <router-link to="/contact" @click="closeMenu" class="link">
-    <span class="emoji">📞</span> Contact Us
+    Contact Us
   </router-link>
-  <router-link to="/faq" @click="closeMenu" class="link">
+  <!-- <router-link to="/faq" @click="closeMenu" class="link">
     <span class="emoji">❓</span> FAQs
   </router-link>
   <router-link to="/career" @click="closeMenu" class="link">
     <span class="emoji">🎃</span> Explore Career Opportunities
-  </router-link>
+  </router-link> -->
 
   
 </div>
@@ -703,13 +695,13 @@ import { getFirestore, getDoc, doc} from 'firebase/firestore';
   }
   
   .b_menthis {
-    background: linear-gradient(159deg, #0091ff2f, #e100002a);
+    background: rgb(224, 224, 224);
     color: white;
     text-align: center;
   }
 
   .b_menthisx {
-    background: linear-gradient(259deg, #0573c72f, #43cc0d2a);
+    background: rgb(224, 224, 224);
     color: white;
     text-align: center;
   }

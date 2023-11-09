@@ -15,16 +15,16 @@
 <h1>Apply for Progressor Plus Plan</h1>
 <p>Take your cybersecurity to the next level with our Progressor Plus plan. Join our community and gain access to advanced security features and personalized protection.</p>
 <a>
-  <ApplyComp />
+  <ApplyComp /><br>
 </a>
 
 Are you ready to enhance your digital defense with the Progressor Plus plan? Look no further! Join our exclusive cybersecurity community at Progressor.cx and explore a range of powerful security opportunities that await you. We're passionate about strengthening digital resilience, and we're seeking individuals who are eager to be a part of this mission.
 
-<h1>Why Choose Progressor Plus?</h1><br>
+<h1>30 Money Back gauentee</h1>
+
+<div>At Progressor.cx, we don't just provide services; we offer a pathway to fortified digital security. Here are some compelling reasons why you should consider applying</div>
+
 <br>
-At Progressor.cx, we don't just provide services; we offer a pathway to fortified digital security. Here are some compelling reasons why you should consider applying
-
-
 
 <FooterComp />
 
