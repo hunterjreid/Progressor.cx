@@ -19,9 +19,23 @@
       <li><i class="fa fa-check"></i> Access to Basic Features</li>
       <li><i class="fa fa-check"></i> Email and Chat Support</li>
     </ul>
-    <button @click="$router.push('/login')">Select</button>    <button style="margin-bottom: 40px; font: 1em sans-serif;   background: linear-gradient(270deg, #ff1313 31%, #5c85ff);" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
-Pay now
-    </button>
+    <button
+          v-if="!$root.user"
+          style="margin-bottom: 40px; font: 1em sans-serif; background: linear-gradient(270deg, #ff1313 31%, #5c85ff);"
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4"
+          @click="$router.push('/login')"
+        >
+          Sign Up to Continue
+        </button>
+        <button
+          v-else
+          style="margin-bottom: 40px; font: 1em sans-serif; background: linear-gradient(270deg, #ff1313 31%, #5c85ff);"
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4"
+
+          @click="$router.push({ path: '/pricing2', query: { pricing: 9 } })"
+        >
+          Pay now
+        </button>
   </div>
 
   <!-- Card 2 -->
@@ -32,9 +46,24 @@ Pay now
       <li><i class="fa fa-check"></i> Access to Advanced Features</li>
       <li><i class="fa fa-check"></i> Email and Chat Support</li>
     </ul>
-    <button @click="$router.push('/login')">Select</button>    <button style="margin-bottom: 40px; font: 1em sans-serif;   background: linear-gradient(270deg, #ff1313 31%, #5c85ff);" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
-Pay now
-    </button>
+
+    <button
+          v-if="!$root.user"
+          style="margin-bottom: 40px; font: 1em sans-serif; background: linear-gradient(270deg, #ff1313 31%, #5c85ff);"
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4"
+          @click="$router.push('/login')"
+        >
+          Sign Up to Continue
+        </button>
+        <button
+          v-else
+          style="margin-bottom: 40px; font: 1em sans-serif; background: linear-gradient(270deg, #ff1313 31%, #5c85ff);"
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4"
+
+          @click="$router.push({ path: '/pricing2', query: { pricing: 19 } })"
+        >
+          Pay now
+        </button>
   </div>
 
   <!-- Card 3 -->
@@ -45,9 +74,33 @@ Pay now
       <li><i class="fa fa-check"></i> Access to Premium Features</li>
       <li><i class="fa fa-check"></i> Priority Support 24/7</li>
     </ul>
-    <button @click="$router.push('/login')">Select</button>    <button style="margin-bottom: 40px; font: 1em sans-serif;   color:black;background: white;" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
-Pay now
-    </button>
+
+    
+
+        <button
+          v-if="!$root.user"
+          style="margin-bottom: 40px; font: 1em sans-serif; background: linear-gradient(270deg, #ff1313 31%, #5c85ff);"
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4"
+          @click="$router.push('/login')"
+        >
+          Sign Up to Continue
+        </button>
+        <button
+          v-else
+          style="margin-bottom: 40px; font: 1em sans-serif; background: linear-gradient(270deg, #ff1313 31%, #5c85ff);"
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4"
+
+          @click="$router.push({ path: '/pricing2', query: { pricing: 42 } })"
+        >
+          Pay now
+        </button>
+
+
+
+
+
+
+
   </div>
 
   <!-- Custom Price Card -->

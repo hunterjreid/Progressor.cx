@@ -1,30 +1,30 @@
 <template>
 
   <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-    <br>  <br>  <br>  <br>  <br>
-    <h1>Choose a Subscription Plan</h1>
-
-    <ul>
+    <h1>
+      You have chosen the ${{ $route.query.pricing }} plan. Would you like to pay monthly or annually?
+    </h1>
+ 
+ 
+    
       <li>
-        <input type="radio" name="subscriptionPlan" value="monthly"> Monthly ($10/month)
+        <input type="radio" name="subscriptionPlan"  @click="this.customAmount=  $route.query.pricing, subscriptionPlan = 'month'"   value="monthly"> Monthly (${{ $route.query.pricing }}/month)
       </li>
       <li>
-        <input type="radio" name="subscriptionPlan" value="annual"> Annual ($100/year)
+        <input type="radio" name="subscriptionPlan"  @click="this.customAmount =  $route.query.pricing * 11.2, subscriptionPlan = 'year'" value="annual"> Annual (${{ $route.query.pricing * 11.2}}/year)
       </li>
-    </ul>
-
-    <h1>Enter the Amount and Pay with Stripe</h1>
+    
 
     <div class="custom-amount">
-      <label for="amount">Enter Amount:</label>
-      <input
+      <!-- <label for="amount">Enter Amount:</label> -->
+      <!-- <input
         type="number"
         id="amount"
         v-model="customAmount"
         min="1"
         step="0.01"
-      />
-      <button @click="payWithStripe" :disabled="paymentProcessing">
+      /> -->
+      <button @click="payWithStripe" :disabled="paymentProcessing || this.customAmount == 0">
         Pay with Stripe
       </button>
       <p v-if="paymentProcessing">Proceeding to payment screen. Please wait...</p>
@@ -55,7 +55,8 @@ export default {
       paymentProcessing: false,
       paymentLink: "",
       subscriptionId: "",
-      subscriptionPlan: "monthly",
+      subscriptionPlan: "month",
+      
     };
   },
   methods: {
@@ -68,15 +69,15 @@ export default {
 
 
   const product = await stripe.products.create({
-  name: 'Monthly Subscription',
+  name: 'Progressor.cx - AI Cybersecuirty Chatbot',
 });
 
 // Create a price for the product (representing $19 per month)
 const price = await stripe.prices.create({
-  unit_amount: 1900, // Amount in cents (19 dollars)
+  unit_amount: this.customAmount*100, // Amount in cents (19 dollars)
   currency: 'usd',
   recurring: {
-    interval: 'month',
+    interval: this.subscriptionPlan,
   },
   product: product.id,
 });
@@ -112,3 +113,10 @@ const checkoutSession = await stripe.checkout.sessions.create({
   },
 };
 </script>
+
+<style>
+:disabled {
+  opacity: 0.2;
+}
+
+</style>

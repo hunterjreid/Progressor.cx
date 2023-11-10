@@ -10,8 +10,7 @@
           <p class="header-text">
 
             <a  v-if="!user" >Please Sign in to get started with Progressor!</a>
-            <a  v-if="user" ><router-link style="color: white" @click="closeMenu" to="/chat2"
-                >Click Here try Progressor.cx</router-link> </a>
+            <a  v-if="user" >Progressor is out now ! Read more on the blogs</a>
      
        
    
