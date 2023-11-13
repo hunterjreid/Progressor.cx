@@ -1,6 +1,6 @@
 <template>
     <div class="landing">
-        <div>
+        <div id="middleLocker">
             <div class="parallax-container">
       <div class="parallax-content">
         <div class="parallax-layer layer1" :style="getParallaxStyle(.5)">
@@ -60,7 +60,7 @@
       </div>
     </section>
 </div>
-
+<div id="middleLocker">
 <div id="hed-img" class="plx">
 <main class="container mx-auto p-4">
 <div class="benefits-grid">
@@ -110,7 +110,7 @@
 
 <br>
 
-
+</div>
     
       <FooterComp />
     </div>
@@ -188,7 +188,10 @@ import FooterComp from '@/components/FooterComp.vue';
     left: 0;
     z-index: 11;
   }
-  
+  #middleLocker {
+    max-width: 800px;
+    
+  }
  
   
   

@@ -38,13 +38,12 @@
 
           <button @click="menuOpen = !menuOpen; menuOpen2 = false" class="colorlessbtn">Resources {{ !menuOpen ? '⏬' : '🔝' }}</button>
           <button @click="menuOpen2 = !menuOpen2; menuOpen = false" class="colorlessbtn">Company {{ !menuOpen2 ? '⏬' : '🔝' }}</button>
-          <button  v-if="!user"  @click="$router.push('/pricing'), closeMenu" class="colorlessbtn">Pricing</button>
+          <button  v-if="!user" @click="$router.push('/pricing'), closeMenu" class="colorlessbtn">Pricing</button>
 
           <div class="btn_holder">
           <button   v-if="!user" @click="$router.push('/login'), closeMenu" class="actionBTN">Log in</button>
           <button v-if="!user" @click="$router.push('/signup'), closeMenu" class="actionBTN2">Sign up</button>
-        <a v-if="user" style="    background-color: aqua;
-    font-size: 13px;">Tokens: {{ userTokens }}</a>
+        <a v-if="user" style="background-color: aqua;font-size: 13px;">Tokens: {{ userTokens }}</a>
           <button v-if="user" @click="$router.push('/welcome'), closeMenu" class="actionBTN2">Account</button>
         
         </div>
@@ -101,6 +100,10 @@
   <router-link to="/terms" @click="closeMenu" class="link">
   Terms and Conditions
   </router-link>
+  <router-link to="/responsibility" @click="closeMenu" class="link">
+    Responsibility 
+  </router-link>
+
   <!-- <router-link to="/services" @click="closeMenu" class="link">
     <span class="emoji">🚀</span> Our Services
   </router-link>
@@ -131,7 +134,10 @@
 <div v-if="menuOpen2" class="b_menthisx">
 
   <router-link to="/services" @click="closeMenu" class="link">
-    Progressor.cx Benifits
+    Get Started
+  </router-link>
+  <router-link to="/landscape" @click="closeMenu" class="link">
+    Cybersecurity Landscape
   </router-link>
   <router-link to="/contact" @click="closeMenu" class="link">
     Contact Us

@@ -33,7 +33,7 @@
         </div>
         <div v-else>
           <router-link to="/chat2">Use Progressor.cx</router-link>
-          <button @click="manageSubscription">Manage Subscription</button>
+          <button @click="$router.push('/manage')">Manage Subscription</button>
         </div>
       </div>
 

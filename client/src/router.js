@@ -10,8 +10,10 @@ import PrivacyPolicyView from './views/PrivacyPolicyView.vue'
 import LearnMore from './views/LearnMore.vue'
 import NewLanding from './views/NewLanding.vue'
 
-import FaqView from './views/FaqView.vue'
 import ContactView from './views/ContactView.vue'
+
+import FaqView from './views/FaqView.vue'
+import CyberLandscape from './views/CyberLandscape.vue'
 import PricingPage from './views/PricingPage.vue'
 import HowtokensWorkPage from './views/HowtokensWorkPage.vue'
 import YoobeeTestView from './views/YoobeeTestView.vue'
@@ -22,11 +24,28 @@ import NewChatView from './views/NewChatView.vue'
 import PaymentPage from './views/PaymentPage.vue'
 import UpdatesPage from './views/UpdatesView.vue'
 import WelcomeBack from './views/WelcomeBack.vue'
+import ManageView from './views/ManageView.vue'
+import AIResponsibilityPage from './views/ResponsibilityView.vue'
 const routes = [
     {
       path: '/',
       name: 'NewHomeLanding',
       component: NewHomeLanding,
+    },
+    {
+      path: '/manage',
+      name: 'ManageView',
+      component: ManageView,
+    },
+    {
+      path: '/responsibility',
+      name: 'AIResponsibilityPage',
+      component: AIResponsibilityPage,
+    },
+    {
+      path: '/landscape',
+      name: 'CyberLandscape',
+      component: CyberLandscape,
     },
     {
       path: '/welcome',
