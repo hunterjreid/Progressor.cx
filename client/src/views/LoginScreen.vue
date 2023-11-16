@@ -22,6 +22,7 @@
 <script>
 import { getAuth, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
+
 export default {
   name: "LoginView",
   data() {
@@ -34,38 +35,41 @@ export default {
     };
   },
   methods: {
-    emailPasswordSignIn() {
+    async emailPasswordSignIn() {
       const auth = getAuth();
       const email = this.email;
       const password = this.password;
 
-      signInWithEmailAndPassword(auth, email, password)
-        .then(userCredential => {
-          this.$root.user = userCredential.user;
-          this.successMessage = 'Logged in with email and password.';
-          this.$router.push('/welcome');
-        })
-        .catch(error => {
-          this.errorMessage = 'Error signing in with email and password: ' + error.message;
-        });
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+
+        // Update login times in Firestore
+        await this.updateLoginTimes(userCredential.user.uid);
+
+        this.$root.user = userCredential.user;
+        this.successMessage = 'Logged in with email and password.';
+        this.$router.push('/welcome');
+      } catch (error) {
+        this.errorMessage = 'Error signing in with email and password: ' + error.message;
+      }
     },
 
-    loginWithGoogleSignIn() {
+    async loginWithGoogleSignIn() {
       const auth = getAuth();
       const provider = new GoogleAuthProvider();
 
-      
+      try {
+        const result = await signInWithPopup(auth, provider);
 
-      signInWithPopup(auth, provider)
-        .then(result => {
-          this.$root.user = result.user;
-          this.successMessage = 'Logged in with Google.';
-          this.$router.push('/welcome');
-        })
-        .catch(error => {
-          this.errorMessage = 'Error signing in with Google: ' + error.message;
-        });
+
+        this.$root.user = result.user;
+        this.successMessage = 'Logged in with Google.';
+        this.$router.push('/welcome');
+      } catch (error) {
+        this.errorMessage = 'Error signing in with Google: ' + error.message;
+      }
     },
+
 
     logout() {
       const auth = getAuth();

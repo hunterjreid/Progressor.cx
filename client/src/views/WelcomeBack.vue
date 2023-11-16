@@ -1,17 +1,13 @@
 <template>
   <div style="max-width: 800px; margin: 0px auto; padding: 0px 20px;">
     <div v-if="user">
-      <h1>Welcome back, {{ user.email }}</h1>
 
-      <!-- Radio box for first login message -->
-      <div v-if="firstLogin">
-        <input type="checkbox" id="firstLogin" v-model="firstLogin">
-        <label for="firstLogin">First Login: Welcome to Progressor! We gave you 1000 tokens for free to get started!!!</label>
-      </div>
+      <h1>Welcome <template v-if=" $root.user.displayName">{{ $root.user.displayName }}</template> <template v-else>{{ $root.user.email }}</template> </h1>
+  
+     
 
-      <!-- Radio switch for subscription selection -->
-      <label>Subscription:</label>
-      <div>
+ <div>
+       
         <input type="radio" id="noSubscription" value="no" v-model="selectedSubscription" @change="updateSubscription">
         <label for="noSubscription">No Subscription</label>
 
@@ -25,21 +21,33 @@
         <label for="tier3" :style="{ backgroundColor: tierColors['Tier 3'] }">Tier 3</label>
       </div>
 
+      <div  class="subscription-container" style="    border: 5px dashed blue;" v-if="$root.tokens = 1000 && $root.firstLogin == true">
+ 
+ <label for="firstLogin ">We see its your First Login: Welcome to Progressor! We gave you 1000 tokens for free to get started!!!</label>>  <router-link to="/chat2">Try now!</router-link>
+</div>
+
       <!-- Display subscription information -->
-      <div v-if="subscriptionInfo" class="subscription-container">
+      <div v-if="subscriptionInfo && selectedSubscription !== 'no'"  class="subscription-container" :style="{ backgroundColor: tierColors[selectedSubscription] }">
+        <router-link to="/chat2"><h1>Use Progressor.cx</h1></router-link>
         <p>{{ subscriptionInfo }}</p>
         <div v-if="selectedSubscription === 'no'">
           <p>View subscriptions or read on docs.</p>  <router-link to="/pricing">Subscribe now!</router-link>
         </div>
         <div v-else>
-          <router-link to="/chat2">Use Progressor.cx</router-link>
+
           <button @click="$router.push('/manage')">Manage Subscription</button>
         </div>
       </div>
 
+      <div v-if="selectedSubscription === 'no'" class="subscription-container" :style="{ backgroundColor: tierColors[selectedSubscription] }">
+          <h1>You must select a plan continue using Progressor.cx</h1>   <button @click="$router.push('/pricing')">Select plan</button>
+      </div>
+
       <button @click="logout">Logout</button>
 
-      <label for="tokensInput">Enter number of tokens:</label>
+      <template v-if="selectedSubscription === 'Tier 3'">
+<br>
+      <label for="tokensInput">You May Enter number of tokens:</label>
       <input type="number" id="tokensInput" v-model="tokensToAdd" />
       <button @click="addTokens">Set Tokens</button>
 
@@ -53,7 +61,7 @@
             <button @click="closeTokenAddedPopup">OK</button>
           </div>
         </div>
-      </div>
+      </div></template>
     </div>
     <div v-else>
       <p>You are not Logged in...</p>
@@ -63,33 +71,76 @@
 </template>
 
 <script>
-import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { getFirestore, doc, setDoc, getDoc  } from 'firebase/firestore';
 
 export default {
   data() {
     return {
       user: this.$root.user,
-      selectedSubscription: null,
+      selectedSubscription: 'no',
       subscriptionInfo: null,
       tokensToAdd: 0,
       showTokenAddedPopup: false,
       firstLogin: true,
       firstLoginAcknowledge: false,
       tierColors: {
-        'Tier 1': '#FFD700', // Define color for Tier 1
-        'Tier 2': '#32CD32', // Define color for Tier 2
-        'Tier 3': '#4169E1', // Define color for Tier 3
+        'Tier 1': '#1085ecab', // Define color for Tier 1
+        'Tier 2': '#864da1ab', // Define color for Tier 2
+        'Tier 3': '#e10000ab', // Define color for Tier 3
       },
     };
   },
   methods: {
-    logout() {
-      this.user = null;
-      this.$root.logout()
+    async logout() {
+  try {
+    // Check if the user is logged in and has a UID
+    if (this.user && this.user.uid) {
+      // Existing logout logic
+ 
+
+      // Logout using your existing logout logic
+      this.$root.logout();
       this.selectedSubscription = null;
       this.subscriptionInfo = null;
       this.$router.push('/login');
-    },
+
+      // Get the UID of the logged-in user
+      const uid = this.user.uid;
+
+      // Increment login times in the database
+      const db = getFirestore();
+      const userDocRef = doc(db, 'users', uid);
+
+      // Get the existing user data
+      const userDoc = await getDoc(userDocRef);
+
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+
+        // Increment the login times
+        const updatedLoginTimes = (userData.loginTimes || 0) + 1;
+
+        // Update the user document with the incremented login times
+        await setDoc(userDocRef, { loginTimes: updatedLoginTimes }, { merge: true });
+
+        // Update the local login times property
+        this.loginTimes = updatedLoginTimes;
+
+        // ... existing login success logic ...
+      } else {
+        // Handle the case where user data is not available
+        console.error('User data not available for logout');
+      }
+    } else {
+      // Handle the case where the user is not logged in or does not have a UID
+      console.error('User not logged in or UID not available for logout');
+           this.user = null; // Clear user data
+    }
+  } catch (error) {
+    console.error('Logout error:', error);
+  }
+},
+
     addTokens() {
       if (this.user && this.tokensToAdd > -1) {
         const db = getFirestore();
@@ -133,7 +184,7 @@ export default {
   },
   created() {
     this.user = this.$root.user;
-    this.selectedSubscription = 'Tier 1'; // Set a default subscription
+    this.selectedSubscription = 'no'; // Set a default subscription
     this.updateSubscription(); // Update subscription info based on the default
   },
 };

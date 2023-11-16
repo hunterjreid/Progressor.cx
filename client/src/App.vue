@@ -203,8 +203,8 @@
 <!-- JS -->
 <script>
 
-import { getAuth, onAuthStateChanged,signOut } from 'firebase/auth';
-import { getFirestore, getDoc, doc} from 'firebase/firestore';
+import { getAuth, onAuthStateChanged,signOut} from 'firebase/auth';
+import { getFirestore, getDoc, doc, setDoc } from 'firebase/firestore';
   
   export default {
     name: "App",
@@ -298,25 +298,36 @@ import { getFirestore, getDoc, doc} from 'firebase/firestore';
 
 
       const db = getFirestore();
-      const userDocRef = doc(db, 'users', this.user.uid);
+const userDocRef = doc(db, 'users', this.user.uid);
 
-      // Get the user's document from Firestore
-      getDoc(userDocRef)
-        .then((docSnapshot) => {
-          if (docSnapshot.exists()) {
-            const userData = docSnapshot.data();
-            const userTokens = userData.tokens; // Assuming 'tokens' is the field in Firestore that stores the token count
-            this.userTokens = userTokens; // Store the token count in a Vue variable
-            console.log('User tokens:', userTokens);
-          } else {
-            // Handle the case where the user's document doesn't exist
-            console.log('User document does not exist.');
-          }
+// Get the user's document from Firestore
+getDoc(userDocRef)
+  .then((docSnapshot) => {
+    if (docSnapshot.exists()) {
+      const userData = docSnapshot.data();
+      const userTokens = userData.tokens; // Assuming 'tokens' is the field in Firestore that stores the token count
+      this.userTokens = userTokens; // Store the token count in a Vue variable
+      console.log('User tokens:', userTokens);
+    } else {
+      // Handle the case where the user's document doesn't exist
+      console.log('User document does not exist.');
+
+      // Set firstLogin to true
+      this.firstLogin = true;
+
+      // Create the user's document with the provided UID
+      setDoc(userDocRef, { tokens: 0 }) // You can set any initial data for the new user
+        .then(() => {
+          console.log('User document created for the first login.');
         })
         .catch((error) => {
-          console.error('Error getting user document:', error);
+          console.error('Error creating user document:', error);
         });
-
+    }
+  })
+  .catch((error) => {
+    console.error('Error getting user document:', error);
+  });
 
       
     } else {

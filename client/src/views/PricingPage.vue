@@ -1,6 +1,32 @@
 <template>
 
     <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+
+
+      <div class="pricing-card" style="width: 100%;">
+        <h2>Launching Speacial - $1</h2>
+
+
+      <li><i class="fa fa-check"></i>1 Time payment of 100K Tokens</li>
+
+    <button
+          v-if="!$root.user"
+          style="margin-bottom: 40px; font: 1em sans-serif; background: linear-gradient(270deg, #ff1313 31%, #5c85ff);"
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4"
+          @click="$router.push('/login')"
+        >
+          Sign Up to Continue
+        </button>
+        <button
+          v-else
+          style="color:black; border: 1px solid; width: 70%;margin-bottom: 40px; font: 1em sans-serif; background: linear-gradient(270deg, #ffb413 31%, rgb(244, 255, 92));"
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4"
+
+          @click="$router.push({ path: '/pricing2', query: { pricing: 9 } })"
+        >
+          Pay now
+        </button>
+  </div>
       <!-- Your existing code here -->
   <h1>Simple pricing at any scale that just works.</h1>
   <h2>If you don;t like progressor we can refund you at any time.</h2>    <a>Well have a plan for you!</a><br><router-link class="jlinkers" to="/tokens">

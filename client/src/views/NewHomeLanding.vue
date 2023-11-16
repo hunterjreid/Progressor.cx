@@ -1,7 +1,13 @@
 <template>
     <div style="max-width: 800px; margin: 0 auto; padding: 20px; padding-top: 0px;padding-bottom: 0px;">
+      <div  v-if="$root.user && $root.tokens != 0" style="  margin-top: 20px;  border: 1px solid;
+    padding: 15px;
+    border-radius: 50px;text-align: center;
+    margin-bottom: 20px;
+"><router-link to="/chat2">GOTO CHAT</router-link></div>
 
-
+ 
+     
 
         <div class="bg_img">
       <h1 class="titleee">Progress with Progressor.cx</h1>

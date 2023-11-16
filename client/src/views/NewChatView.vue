@@ -3,11 +3,18 @@
     <div v-if="outOfTokens" class="out-of-tokens-message">
     You are out of tokens. Please consider upgrading your plan!
   </div>
+  <div class="button-scroller">
+    Ask me about :
+      <button v-for="(button, index) in cybersecurityButtons" :key="index" @click="handleButtonClick(button)">
+        {{ button }}
+      </button>
+    </div>
     <div class="dm-box" ref="dmBox">
    
         <a v-for="message in conversationHistory" :key="message.id">
           <div class="message-bubble" :class="{ 'sent': message.type === 'sent', 'received': message.type === 'received' }">
-            {{ message.content }}
+
+            <span style="white-space: pre-line;" v-html="formatMessage(message.content)"></span>
           </div>
         </a>
         <div v-if="progressorThinking" class="message-bubble received thinking-bubble">
@@ -17,19 +24,19 @@
     </div>
     
     <div class="chat-bar">
-
+      <span v-if="messageCost !== undefined">COST: ({{ messageCost }} tokens)</span>
   
       <input type="text" v-model="inputMessage" placeholder="Enter your message here..." />
       <button @click="sendMessage">Send</button>
-      <button @click="clearChat">Clear Chat</button> <!-- Add Clear Chat button -->
+      <button style="background-color:grey;" @click="clearChat">Clear Chat</button> <!-- Add Clear Chat button -->
     </div>
-    <span v-if="messageCost !== undefined">COST: ({{ messageCost }} tokens)</span>
+
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, setDoc, addDoc, collection } from 'firebase/firestore';
 
 
 export default {
@@ -38,6 +45,7 @@ export default {
   data() {
     return {
       all_msgs: [],
+      cybersecurityButtons: ['Firewall', 'Encryption', 'Phishing', 'Antivirus', 'Two-Factor Auth', 'Incident Response', 'Network Security', 'Endpoint Security', 'Security Policies', 'Social Engineering'],
       outOfTokens: false, // Initialize the outOfTokens property
       messageCost: 0, // Initialize messageCost as a data property
       conversationHistory: [
@@ -63,9 +71,23 @@ export default {
 
 
   methods: {
+    formatMessage(content) {
+    // Add spacing
+    content = content.replace(/\*\*/g, '&nbsp;&nbsp;');
+
+    // Make bold if there are two asterisks
+    content = content.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+
+    return content;
+  },
     clearChat() {
       this.conversationHistory = [];
       this.inputMessage = '';
+    },
+    handleButtonClick(button) {
+      // Handle the button click, you can use the button value in your logic
+      this.inputMessage = 'What is something I should know about ' + button;
+      console.log('Button Clicked:', button);
     },
     async sendMessage() {
       if (this.inputMessage.trim() === '' || this.progressorThinking === true) {
@@ -108,8 +130,34 @@ export default {
       // Update the userTokens in the root component
       this.$root.userTokens = newTokens;
 
+      setDoc(userDocRef, tokensData)
+    .then(() => {
+      // Upload usage information to Firebase
+      const usageRef = collection(db, 'usage');
+      const usageData = {
+        userId: this.$root.user.uid,
+        tokensUsed: this.messageCost,
+        timestamp: new Date().toISOString(),
+      };
+      console.log(usageData)
+
+      addDoc(usageRef, usageData)
+        .then((docRef) => {
+          console.log('Usage information uploaded to Firebase with ID:', docRef.id);
+          this.inputMessage = '';
+        })
+        .catch((error) => {
+          console.error('Error adding usage information:', error);
+        });
+
+      // Show the token added popup
+    })
+    .catch((error) => {
+      console.error('Error setting tokens:', error);
+    });
+    
       // Reset the messageCost
-      this.messageCost = 0;
+   
 
       // Show the token subtracted popup (if needed)
       // this.showTokenSubtractedPopup = true;
@@ -126,30 +174,16 @@ export default {
         const bisonUrl = 'https://generativelanguage.googleapis.com/v1beta3/models/chat-bison-001:generateMessage';
 
         const requestData = {
-          prompt: {
-          
-
-            context: 'You are a Cybersecurity Chat bot called Progressor.cx Oringally created for incident responce but I can do alot of cyber stuff and read code, Created by HUnter Reid from Yoobee Colleges in Auckland NZ',
-          examples: [],
-          messages: [{ content: this.inputMessage }],
-
-            // examples: [
-            //   {
-            //     input: {
-            //       content: "Hey, I think I'm getting a cyber attack. My database is Apache2, and it's saying that Apache24 and mod_php82 won't start up at all.",
-            //     },
-            //     output: {
-            //       content: "As Progressor, I suggest delving into your server logs to investigate any unusual activities..."
-            //     },
-            //   },
-            // ],
-        
-          },
-          temperature: 0.25,
-          top_k: 40,
-          top_p: 0.95,
-          candidate_count: 1,
-        };
+    prompt: {
+      context: "I'm Progressor.cx, a cybersecurity chatbot called Progressor.cx. Originally created for incident response, but I can do a lot of cyber stuff and read code. Created by Hunter Reid from Yoobee Colleges in Auckland, NZ",
+    
+      messages: [{ content: this.inputMessage }],
+    },
+    temperature: 0.25,
+    top_k: 40,
+    top_p: 0.95,
+    candidate_count: 1,
+  };
 
         const response = await axios.post(bisonUrl + `?key=${apiKey}`, requestData, {
           headers: {
@@ -157,10 +191,12 @@ export default {
           },
         });
 
+        console.log(response.data)
+
         const candidates = response.data.candidates;
-        this.conversationHistory.push({ content: candidates[0].content, type: 'received', id: this.conversationHistory.length });
-
-
+        this.conversationHistory.push({ content:  this.formatMessage(candidates[0].content), type: 'received', id: this.conversationHistory.length });
+console.log(this.formatMessage(candidates[0].content))
+       
         this.progressorThinking = false;
   
       } catch (error) {
@@ -169,7 +205,7 @@ export default {
       }
       const chatBox = this.$refs.dmBox;
       chatBox.scrollTop = chatBox.scrollHeight;
-      this.inputMessage = '';
+
     },
   },
 };
@@ -184,6 +220,7 @@ export default {
   align-content: center;
   align-items: center;
   margin: 20px;
+
 }
 
 .out-of-tokens-message {
@@ -211,6 +248,7 @@ export default {
     background-color: #f0f0f0;
     padding: 10px;
     border-radius: 10px;
+    width: 800px;
 
 }
 
@@ -240,7 +278,7 @@ button {
 }
 .dm-box {
     width: 60%;
-    max-width: 1280px;
+    max-width: 800px;
     border: 1px solid black;
     padding: 10px;
     overflow-y: scroll;
