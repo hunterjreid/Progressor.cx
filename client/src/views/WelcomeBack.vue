@@ -40,7 +40,7 @@
       </div>
 
       <div v-if="selectedSubscription === 'no'" class="subscription-container" :style="{ backgroundColor: tierColors[selectedSubscription] }">
-          <h1>You must select a plan continue using Progressor.cx</h1>   <button @click="$router.push('/pricing')">Select plan</button>
+          <h1>You must select a plan continue using Progressor.cx</h1>  <router-link to="/chat2">Use Progresor Chat If you have coins here</router-link> <br><button @click="$router.push('/pricing')">Select plan</button>
       </div>
 
       <button @click="logout">Logout</button>
