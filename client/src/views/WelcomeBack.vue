@@ -66,11 +66,15 @@
     <div v-else>
       <p>You are not Logged in...</p>
       <router-link to="/login">Login</router-link> | <router-link to="/signup">Signup</router-link>
-    </div>
+    </div>   <br>
+    <FooterComp />
+ 
   </div>
 </template>
 
 <script>
+import FooterComp from '@/components/FooterComp.vue';
+
 import { getFirestore, doc, setDoc, getDoc  } from 'firebase/firestore';
 
 export default {
@@ -89,6 +93,9 @@ export default {
         'Tier 3': '#e10000ab', // Define color for Tier 3
       },
     };
+  },
+  components: {
+    FooterComp
   },
   methods: {
     async logout() {

@@ -10,16 +10,16 @@
       </button>
     </div>
     <div class="dm-box" ref="dmBox">
-   
+      <div v-if="progressorThinking" class="message-bubble received thinking-bubble">
+          Progressor is thinking...
+        </div>
         <a v-for="message in conversationHistory" :key="message.id">
           <div class="message-bubble" :class="{ 'sent': message.type === 'sent', 'received': message.type === 'received' }">
 
             <span style="white-space: pre-line;" v-html="formatMessage(message.content)"></span>
           </div>
         </a>
-        <div v-if="progressorThinking" class="message-bubble received thinking-bubble">
-          Progressor is thinking...
-        </div>
+ 
   
     </div>
     
@@ -56,16 +56,16 @@ export default {
     };
   },
 
-  mounted() {
-    const chatBox = this.$refs.dmBox;
-    chatBox.scrollTop = chatBox.scrollHeight;
-  },
+
 
   watch: {
     inputMessage() {
     
       // Calculate the message cost based on the length of the new input message
       this.messageCost = this.inputMessage.length * 2;
+    },
+    conversationHistory() {
+      this.$nextTick(this.scrollToBottom);
     },
   },
 
@@ -99,9 +99,8 @@ export default {
     this.outOfTokens = true;
     return;
   }
-      var chatBoxe = this.$refs.dmBox;
-      chatBoxe.scrollTop = chatBoxe.scrollHeight;
-      this.conversationHistory.push({ content: this.inputMessage, type: 'sent', id: this.conversationHistory.length });
+
+      this.conversationHistory.unshift({ content: this.inputMessage, type: 'sent', id: this.conversationHistory.length });
 
  
       const db = getFirestore();
@@ -164,7 +163,7 @@ export default {
    
 
 
-      this.all_msgs.push(this.inputMessage);
+      this.all_msgs.unshift(this.inputMessage);
 
       this.progressorThinking = true;
 
@@ -194,7 +193,12 @@ export default {
         console.log(response.data)
 
         const candidates = response.data.candidates;
-        this.conversationHistory.push({ content:  this.formatMessage(candidates[0].content), type: 'received', id: this.conversationHistory.length });
+        if (candidates != undefined) {
+          this.conversationHistory.unshift({ content:  this.formatMessage(candidates[0].content), type: 'received', id: this.conversationHistory.length });
+        } else {
+          this.conversationHistory.unshift({ content:  "Progressor.cx couldn't awnser this question.", type: 'received', id: this.conversationHistory.length });
+        }
+   
 console.log(this.formatMessage(candidates[0].content))
        
         this.progressorThinking = false;
@@ -203,8 +207,7 @@ console.log(this.formatMessage(candidates[0].content))
         console.error('Error sending API request:', error);
         this.progressorThinking = false;
       }
-      const chatBox = this.$refs.dmBox;
-      chatBox.scrollTop = chatBox.scrollHeight;
+
 
     },
   },
@@ -233,12 +236,15 @@ console.log(this.formatMessage(candidates[0].content))
 }
 
 .dm-box {
-  width: 700px;
-  height: 600px; /* Adjust the height as needed */
-  border: 1px solid black;
-  padding: 10px;
-  overflow-y: scroll;
-  margin-bottom: 10px; /* Add margin to separate chat box and chat bar */
+  width: 60%;
+    max-width: 800px;
+    border: 1px solid black;
+    padding: 10px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+
+    height: 70vh;
 }
 
 .chat-bar {

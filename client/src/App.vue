@@ -94,16 +94,13 @@
   <router-link to="/home2" @click="closeMenu" class="link">
     Explore
   </router-link>
-  <router-link to="/faq" @click="closeMenu" class="link">
-    Frequently Asked Questions
-  </router-link>
-  <router-link to="/terms" @click="closeMenu" class="link">
-  Terms and Conditions
-  </router-link>
-  <router-link to="/responsibility" @click="closeMenu" class="link">
-    Responsibility 
-  </router-link>
 
+  <router-link to="/services" @click="closeMenu" class="link">
+    Get Started
+  </router-link>
+  <router-link to="/landscape" @click="closeMenu" class="link">
+    Cybersecurity Landscape
+  </router-link>
   <!-- <router-link to="/services" @click="closeMenu" class="link">
     <span class="emoji">🚀</span> Our Services
   </router-link>
@@ -133,11 +130,18 @@
 
 <div v-if="menuOpen2" class="b_menthisx">
 
-  <router-link to="/services" @click="closeMenu" class="link">
-    Get Started
+
+  <router-link to="/faq" @click="closeMenu" class="link">
+    Frequently Asked Questions
   </router-link>
-  <router-link to="/landscape" @click="closeMenu" class="link">
-    Cybersecurity Landscape
+  <router-link to="/terms" @click="closeMenu" class="link">
+  Terms and Conditions
+  </router-link>
+  <router-link to="/responsibility" @click="closeMenu" class="link">
+    Responsibility Policy
+  </router-link>
+  <router-link to="/pci" @click="closeMenu" class="link">
+    PCI Compliance Policy 
   </router-link>
   <router-link to="/contact" @click="closeMenu" class="link">
     Contact Us
@@ -711,15 +715,19 @@ getDoc(userDocRef)
   }
   
   .b_menthis {
-    background: rgb(224, 224, 224);
+    background: rgb(18, 86, 187);
     color: white;
     text-align: center;
+    width: 800px;
+    margin: auto;
   }
 
   .b_menthisx {
-    background: rgb(224, 224, 224);
+    background: rgb(168, 71, 71);
     color: white;
     text-align: center;
+    width: 800px;
+    margin: auto;
   }
   
   .gradient-header2 {
@@ -757,7 +765,7 @@ getDoc(userDocRef)
     display: block;
     margin-bottom: 10px;
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     font-size: 18px;
   }
   @media (min-width: 600px) {

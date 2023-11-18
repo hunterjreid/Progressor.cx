@@ -52,9 +52,11 @@
 
         <div>
       <router-link to="/">
-        <img alt="Logo" src=".././assets/logo_clean.png" class="max-w-xs logo" style="height: 30px;" />
-      </router-link></div><div>
-      <h3 class="text-lg font-bold">Empower Your Cyber Defense.</h3><br>
+        <img alt="Logo" src=".././assets/Logo.png" class="max-w-xs logo"/>
+      </router-link>      <h3 class="text-lg font-bold">Empower Your Cyber Defense.</h3><br></div><div style="display: flex;
+    flex-direction: column;
+    align-items: flex-end;">
+
       <h3 class="text-lg font-bold">CONTACT US</h3>
       <p>E-Mail: info@progressor.cx</p>
       <p class="footer-text">© 2023 Progressor.cx. All rights reserved.</p>
@@ -92,16 +94,16 @@
   
   .footer {
     background-color: #f4f4f4;
-    padding: 20px 0px;
+    padding: 20px 20px;
     text-align: center;
     max-width: 980px;
     margin: 0px auto !important;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center !important;
+    justify-content: space-between;
     color: #000000;
-    width: 100%;
+    width: calc(100% - 40px);
   }
   
 

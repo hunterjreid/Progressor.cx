@@ -23,6 +23,7 @@ import NewHomeLanding from './views/NewHomeLanding.vue'
 import NewChatView from './views/NewChatView.vue'
 import PaymentPage from './views/PaymentPage.vue'
 import UpdatesPage from './views/UpdatesView.vue'
+import PCICompliancePage from './views/PCICompliancePage.vue'
 import WelcomeBack from './views/WelcomeBack.vue'
 import ManageView from './views/ManageView.vue'
 import AIResponsibilityPage from './views/ResponsibilityView.vue'
@@ -31,6 +32,11 @@ const routes = [
       path: '/',
       name: 'NewHomeLanding',
       component: NewHomeLanding,
+    },
+    {
+      path: '/PCI',
+      name: 'PCICompliancePage',
+      component: PCICompliancePage,
     },
     {
       path: '/manage',

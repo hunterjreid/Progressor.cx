@@ -1,25 +1,10 @@
 <template>
     <div class="main">
-      <h1>Our Cybersecurity Solutions</h1>
-      <p>Explore the comprehensive range of cybersecurity solutions we provide to our clients. From advanced technologies to exceptional support, we have it all covered.</p>
-      
+      <h1>Progressor.cx Expert Chatbot Services</h1>
+    <p>Welcome to Progressor, your expert chatbot companion. Ask us anything about cybersecurity, and we'll provide you with insightful answers and guidance. Our expertise covers a range of topics, from specific threat scenarios to incident response planning.</p>
+    
       <div class="grid-container">
-        <div class="grid-item" style="background: linear-gradient(135deg, #8E44AD, #3498DB);">
-          <h2>Customized Threat Detection</h2>
-          <p>Deploy tailored threat detection systems to identify and neutralize cyber threats specific to your environment.</p>
-        </div>
-        <div class="grid-item" style="background: linear-gradient(135deg, #6C3483, #1F618D);">
-          <h2>Incident Response Planning</h2>
-          <p>Create a personalized plan to respond swiftly and effectively to security incidents and minimize potential damages.</p>
-        </div>
-        <div class="grid-item" style="background: linear-gradient(135deg, #1A5276, #52BE80);">
-          <h2>Secure Communication Solutions</h2>
-          <p>Implement secure communication channels and encryption methods to protect sensitive data from unauthorized access.</p>
-        </div>
-        <div class="grid-item" style="background: linear-gradient(135deg, #8E44AD, #3498DB);">
-          <h2>Continuous Threat Monitoring</h2>
-          <p>Monitor your digital landscape round-the-clock to stay vigilant against evolving cyber threats and vulnerabilities.</p>
-        </div>
+
         <div class="grid-item" style="background: linear-gradient(135deg, #6C3483, #1F618D);">
           <h2>Regulatory Compliance Assistance</h2>
           <p>Ensure your cybersecurity measures align with industry standards and regulations to stay compliant and secure.</p>
@@ -28,6 +13,22 @@
           <h2>24/7 Expert Support</h2>
           <p>Access our team of cybersecurity experts at any time for guidance and resolution of security concerns.</p>
         </div>
+        <div class="grid-item" style="background: linear-gradient(135deg, #8E44AD, #3498DB);">
+        <h2>Tailored Threat Detection</h2>
+        <p>Curious about customized threat detection systems? Ask us how to identify and neutralize cyber threats specific to your environment.</p>
+      </div>
+      <div class="grid-item" style="background: linear-gradient(135deg, #6C3483, #1F618D);">
+        <h2>Effective Incident Response</h2>
+        <p>Have questions about creating a personalized plan for incident response? Inquire about responding swiftly and minimizing potential damages.</p>
+      </div>
+      <div class="grid-item" style="background: linear-gradient(135deg, #1A5276, #52BE80);">
+        <h2>Securing Communication Channels</h2>
+        <p>Interested in implementing secure communication channels and encryption methods? Learn how to protect sensitive data from unauthorized access.</p>
+      </div>
+      <div class="grid-item" style="background: linear-gradient(135deg, #8E44AD, #3498DB);">
+        <h2>Continuous Threat Monitoring</h2>
+        <p>Discover how to monitor your digital landscape round-the-clock and stay vigilant against evolving cyber threats and vulnerabilities.</p>
+      </div>
       </div>
       <br>
       <FooterComp/>
