@@ -5,7 +5,14 @@
        <h2>Progressor.cx is a AI-powered cybersecurity website/startup that features a Palm 2 AI-based Cyber Security expert Chatbot. </h2>
 
 <p>Capstone Project - Progressor.cx by Hunter Reid from Yoobee Colleges with help of wonderful lecturers Arthur, Mohammad and Rouwa. (Firebase Using the power of web v9 Modular) </p>      
-<p></p>          
+
+![image](https://github.com/hunterjreid/Progressor.cx/assets/62681404/f2d67fe7-7c36-48e8-8762-f96ded5f4ac3)
+
+
+
+
+
+
 <td><details closed><summary><h4 style="text-align: center;">Quick Start (builds for dev)</h4></summary>
 
 
