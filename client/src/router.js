@@ -24,6 +24,7 @@ import NewChatView from './views/NewChatView.vue'
 import PaymentPage from './views/PaymentPage.vue'
 import UpdatesPage from './views/UpdatesView.vue'
 import PCICompliancePage from './views/PCICompliancePage.vue'
+import LaunchingSpeacialPage from './views/LaunchingSpeacialPage.vue'
 import WelcomeBack from './views/WelcomeBack.vue'
 import ManageView from './views/ManageView.vue'
 import AIResponsibilityPage from './views/ResponsibilityView.vue'
@@ -32,6 +33,11 @@ const routes = [
       path: '/',
       name: 'NewHomeLanding',
       component: NewHomeLanding,
+    },
+    {
+      path: '/bonus_deal',
+      name: 'LaunchingSpeacialPage',
+      component: LaunchingSpeacialPage,
     },
     {
       path: '/PCI',

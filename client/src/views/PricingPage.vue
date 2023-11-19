@@ -22,7 +22,7 @@
           style="color:black; border: 1px solid; width: 70%;margin-bottom: 40px; font: 1em sans-serif; background: linear-gradient(270deg, #ffb413 31%, rgb(244, 255, 92));"
           class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4"
 
-          @click="$router.push({ path: '/pricing2', query: { pricing: 9 } })"
+          @click="$router.push({ path: '/bonus_deal' })"
         >
           Pay now
         </button>

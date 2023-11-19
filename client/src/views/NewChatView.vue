@@ -30,12 +30,14 @@
       <button @click="sendMessage">Send</button>
       <button style="background-color:grey;" @click="clearChat">Clear Chat</button> <!-- Add Clear Chat button -->
     </div>
+    <button @click="generateReport" class="generate-report-button">Generate Report</button>
 
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+const html2pdf = require('html2pdf.js');
 import { getFirestore, doc, getDoc, setDoc, addDoc, collection } from 'firebase/firestore';
 
 
@@ -79,6 +81,24 @@ export default {
     content = content.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
 
     return content;
+  },
+  generateReport() {
+    const pdfContent = this.$refs.dmBox.innerHTML; // Use ref to get the content of the dm-box
+
+    const pdfOptions = {
+      margin: 10,
+      filename: 'conversation_report.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    };
+
+    // Generate PDF
+    html2pdf().from(pdfContent).set(pdfOptions).save();
+
+    // You can customize the options as needed, such as adding a header or footer.
+
+    console.log('Generating report...');
   },
     clearChat() {
       this.conversationHistory = [];
