@@ -4,7 +4,7 @@
     You are out of tokens. Please consider upgrading your plan!
   </div>
   <div class="button-scroller">
-    Ask me about :
+   <a style="color:aqua"> Ask me about :</a>
       <button v-for="(button, index) in cybersecurityButtons" :key="index" @click="handleButtonClick(button)">
         {{ button }}
       </button>
@@ -236,13 +236,22 @@ console.log(this.formatMessage(candidates[0].content))
 
 
 <style scoped>
+.button-scroller {
+  max-width: 800px;
+}
 .mainer {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 0px !important;
+    bottom: 0;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 100px;
+    background-color: black;
 
 }
 
@@ -261,6 +270,7 @@ console.log(this.formatMessage(candidates[0].content))
     border: 1px solid black;
     padding: 10px;
     overflow-y: scroll;
+    background-color: rgb(53, 53, 53);
     display: flex;
     flex-direction: column-reverse;
 
@@ -288,7 +298,7 @@ input[type="text"] {
 button {
   margin-left: 10px;
   padding: 8px 15px;
-  background-color: lightblue;
+  background-color: #0090ff;
   border: none;
   border-radius: 5px;
   cursor: pointer;

@@ -4,9 +4,9 @@
 
       <h1>Welcome <template v-if=" $root.user.displayName">{{ $root.user.displayName }}</template> <template v-else>{{ $root.user.email }}</template> </h1>
   
-     
+      <router-link to="/chat2">Chat</router-link> 
 
- <div>
+ <!-- <div>
        
         <input type="radio" id="noSubscription" value="no" v-model="selectedSubscription" @change="updateSubscription">
         <label for="noSubscription">No Subscription</label>
@@ -19,7 +19,7 @@
 
         <input type="radio" id="tier3" value="Tier 3" v-model="selectedSubscription" @change="updateSubscription">
         <label for="tier3" :style="{ backgroundColor: tierColors['Tier 3'] }">Tier 3</label>
-      </div>
+      </div> -->
 
       <div  class="subscription-container" style="    border: 5px dashed blue;" v-if="$root.tokens = 1000 && $root.firstLogin == true">
  
@@ -40,7 +40,7 @@
       </div>
 
       <div v-if="selectedSubscription === 'no'" class="subscription-container" :style="{ backgroundColor: tierColors[selectedSubscription] }">
-          <h1>You must select a plan continue using Progressor.cx</h1>  <router-link to="/chat2">Use Progresor Chat If you have coins here</router-link> <br><button @click="$router.push('/pricing')">Select plan</button>
+          <h1>You must select a plan continue using Progressor.cx</h1> <br><button @click="$router.push('/pricing')">Select plan</button>
       </div>
 
       <button @click="logout">Logout</button>

@@ -2,7 +2,8 @@
 <!-- MAIN -->
 <template>
     <div id="master">
-      <header v-if="$route.path !== '/chat'" class="header">
+      <header v-if="$route.path !== '/chat2'" class="header">
+        
         <div class="gradient-header2 wave-bottom" style="z-index: 99999">
          
 
@@ -158,6 +159,7 @@
 
       </header>
       <header v-else class="header">
+        <div class="gradient-header2 wave-bottom" style="z-index: 99999">
         <div
           style="
             height: 100px;
@@ -175,16 +177,16 @@
             style="font-size: 24px"
             class="link"
           >
-            <span class="emojirrr">🔙RETURN</span>
+            <span class="emojirrr">Go back</span>
           </router-link>
   
           <img
             alt="Logo"
-            src="./assets/logo_clean.png"
+            src="./assets/Logo.png"
             class=""
             style="max-width: 330px"
           />
-        </div>
+        </div></div>
       </header>
   
       <main
