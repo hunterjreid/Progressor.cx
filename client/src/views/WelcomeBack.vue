@@ -1,48 +1,27 @@
 <template>
   <div style="max-width: 800px; margin: 0px auto; padding: 0px 20px;">
-    <div v-if="user">
+    <div v-if="$root.user">
 
       <h1>Welcome <template v-if=" $root.user.displayName">{{ $root.user.displayName }}</template> <template v-else>{{ $root.user.email }}</template> </h1>
   
       <router-link to="/chat2">Chat</router-link> 
 
- <!-- <div>
-       
-        <input type="radio" id="noSubscription" value="no" v-model="selectedSubscription" @change="updateSubscription">
-        <label for="noSubscription">No Subscription</label>
 
-        <input type="radio" id="tier1" value="Tier 1" v-model="selectedSubscription" @change="updateSubscription">
-        <label for="tier1" :style="{ backgroundColor: tierColors['Tier 1'] }">Tier 1</label>
-
-        <input type="radio" id="tier2" value="Tier 2" v-model="selectedSubscription" @change="updateSubscription">
-        <label for="tier2" :style="{ backgroundColor: tierColors['Tier 2'] }">Tier 2</label>
-
-        <input type="radio" id="tier3" value="Tier 3" v-model="selectedSubscription" @change="updateSubscription">
-        <label for="tier3" :style="{ backgroundColor: tierColors['Tier 3'] }">Tier 3</label>
-      </div> -->
 
       <div  class="subscription-container" style="    border: 5px dashed blue;" v-if="$root.tokens = 1000 && $root.firstLogin == true">
  
  <label for="firstLogin ">We see its your First Login: Welcome to Progressor! We gave you 1000 tokens for free to get started!!!</label>>  <router-link to="/chat2">Try now!</router-link>
 </div>
 
+
+<div  class="subscription-container"  v-if="$root.tierData == '0'" :style="{ backgroundColor: tierColors[$root.tierData] }"> NO PLAN!    <p>View subscriptions or read on docs.</p>  <router-link to="/pricing">Subscribe now!</router-link></div>
+<div  class="subscription-container"  v-else-if="$root.tierData == '1'" :style="{ backgroundColor: '#4c5fa8ab' }"> TIER 1         <button @click="$router.push('/manage')">Manage Subscription</button>      <h1>You are TIER 1 Subscriber</h1> <br></div>
+<div  class="subscription-container"  v-else-if="$root.tierData == '2'" :style="{ backgroundColor: 'blue' }"> TIER 2         <button @click="$router.push('/manage')">Manage Subscription</button>      <h1>You are TIER 1 Subscriber</h1> <br></div>
+<div  class="subscription-container"  v-else-if="$root.tierData == '3'" :style="{ backgroundColor: 'orange' }"> TIER 3         <button @click="$router.push('/manage')">Manage Subscription</button>      <h1>You are TIER 1 Subscriber</h1> <br></div>
+
       <!-- Display subscription information -->
-      <div v-if="subscriptionInfo && selectedSubscription !== 'no'"  class="subscription-container" :style="{ backgroundColor: tierColors[selectedSubscription] }">
-        <router-link to="/chat2"><h1>Use Progressor.cx</h1></router-link>
-        <p>{{ subscriptionInfo }}</p>
-        <div v-if="selectedSubscription === 'no'">
-          <p>View subscriptions or read on docs.</p>  <router-link to="/pricing">Subscribe now!</router-link>
-        </div>
-        <div v-else>
 
-          <button @click="$router.push('/manage')">Manage Subscription</button>
-        </div>
-      </div>
-
-      <div v-if="selectedSubscription === 'no'" class="subscription-container" :style="{ backgroundColor: tierColors[selectedSubscription] }">
-          <h1>You must select a plan continue using Progressor.cx</h1> <br><button @click="$router.push('/pricing')">Select plan</button>
-      </div>
-
+ 
       <button @click="logout">Logout</button>
 
       <template v-if="selectedSubscription === 'Tier 3'">
@@ -88,9 +67,9 @@ export default {
       firstLogin: true,
       firstLoginAcknowledge: false,
       tierColors: {
-        'Tier 1': '#1085ecab', // Define color for Tier 1
-        'Tier 2': '#864da1ab', // Define color for Tier 2
-        'Tier 3': '#e10000ab', // Define color for Tier 3
+        '1': '#1085ecab', // Define color for Tier 1
+        '2': '#864da1ab', // Define color for Tier 2
+        '3': '#e10000ab', // Define color for Tier 3
       },
     };
   },
@@ -106,9 +85,8 @@ export default {
  
 
       // Logout using your existing logout logic
-      this.$root.logout();
-      this.selectedSubscription = null;
-      this.subscriptionInfo = null;
+
+
       this.$router.push('/login');
 
       // Get the UID of the logged-in user
@@ -131,8 +109,9 @@ export default {
         await setDoc(userDocRef, { loginTimes: updatedLoginTimes }, { merge: true });
 
         // Update the local login times property
+     
         this.loginTimes = updatedLoginTimes;
-
+        this.$root.logout();
         // ... existing login success logic ...
       } else {
         // Handle the case where user data is not available
@@ -189,10 +168,39 @@ export default {
       }
     },
   },
-  created() {
+  mounted() {
     this.user = this.$root.user;
-    this.selectedSubscription = 'no'; // Set a default subscription
-    this.updateSubscription(); // Update subscription info based on the default
+    this.tier = this.$root.tierData;
+    console.log(this.tier)
+
+
+
+
+
+
+
+
+
+
+
+// Map tier values to numerical values
+const tierMapping = {
+  'NO': 0,
+  'tier1': 1,
+  'tier2': 2,
+  'tier3': 3,
+};
+
+// Map the tier value to its corresponding numerical value
+this.tierValue = tierMapping[this.tier];
+
+// Set a default subscription
+this.selectedSubscription = 'no';
+
+// Update subscription info based on the default
+this.updateSubscription();
+
+
   },
 };
 </script>

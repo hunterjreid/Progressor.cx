@@ -141,7 +141,7 @@
 }
 
 .footer-menu a {
-  color: #a5a5a5; /* Change link color on hover (you can choose a different color) */
+  color: #ffffff; /* Change link color on hover (you can choose a different color) */
 }
 
 .footer-menu a:hover {

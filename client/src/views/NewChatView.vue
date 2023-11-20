@@ -241,18 +241,19 @@ console.log(this.formatMessage(candidates[0].content))
 }
 .mainer {
   text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    margin: 0px !important;
-    bottom: 0;
-    position: fixed;
-    right: 0;
-    left: 0;
-    top: 100px;
-    background-color: black;
-
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin: 0px !important;
+  bottom: 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 100px;
+  background-color: black;
+  background-image: url('@/assets/bggb.png'); /* Replace 'your-image-url.jpg' with the actual URL or path of your image */
+  background-size: cover; /* Adjust this property based on how you want the image to be displayed */
 }
 
 .out-of-tokens-message {

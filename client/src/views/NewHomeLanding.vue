@@ -10,11 +10,9 @@
      
 
         <div class="bg_img">
-      <h1 class="titleee">Progress with Progressor.cx</h1>
-      <h4  class="below_para2">
-Are you concerned about the security of your code, Just ask progressor!</h4>
-      <h1 class="below_para">Engineered to perfectionProgressor Cyber Security Q&A Chat Bot" – Your Ultimate Code Security Companion!
- </h1>
+          <h1 class="titleee">Worried about Cyber Security?</h1>
+<h4 class="below_para2">Secure Your Online with Progressor.cx - Let Progressor be your guide!</h4>
+<h1 class="below_para">Your Ultimate Security Companion!</h1>
 
 </div>
 

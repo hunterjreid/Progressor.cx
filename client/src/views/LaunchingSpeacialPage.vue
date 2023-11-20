@@ -15,6 +15,7 @@
       </button>
       <p v-if="paymentProcessing">Proceeding to payment screen. Please wait...</p>
     </div> 
+    <h1 v-if="$route.query.status == 'confirmed'">Your coins have now been added !!!</h1>
     <p v-if="$route.query.status == 'confirmed'">Payment confirmed. Enjoy your coins!</p>
       <p v-if="$route.query.status == 'declined'">Payment declined. Payment method failed.</p>
    
@@ -25,9 +26,9 @@
 </template>
 
 <script>
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged  } from 'firebase/auth';
 import FooterComp from "@/components/FooterComp.vue";
-import { getFirestore, collection, addDoc, doc, updateDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, doc, updateDoc, increment } from 'firebase/firestore';
 import { Stripe } from "stripe";
 
 const stripe = new Stripe("sk_test_51HRBTFBewAw4IAEuztSDWicx95ofc2cYNB5uAGpFP4rWqlYY2puzq3JEPVfbuRMRRDdG9uHEf1M0kOzPtfBa30cL00vRf6R6jH");
@@ -47,7 +48,9 @@ export default {
   methods: {
     async updateTokenCount(uid, amount) {
       const userRef = doc(getFirestore(), 'users', uid);
-      await updateDoc(userRef, { tokens: amount });
+      console.log("adding token")
+      // Use the increment method to add tokens
+  await updateDoc(userRef, { tokens: increment(amount) });
     },
     setPaymentOption(option) {
       this.paymentOption = option;
@@ -70,8 +73,8 @@ export default {
         payment_method_types: ['card'],
         line_items: [{ price: price.id, quantity: 1 }],
         mode: 'payment',
-        success_url: 'https://example.com/success',
-        cancel_url: 'https://example.com/cancel',
+        success_url: 'https://progressor.cx/bonus_deal?status=confirmed',
+        cancel_url: 'https://progressor.cx/bonus_deal?status=declined',
       });
 
       const paymentRef = collection(getFirestore(), "payments");
@@ -86,13 +89,33 @@ export default {
 
       // Update the user's token count when the payment is confirmed.
       if (this.paymentOption === 'oneTime' && this.$route.query.status === 'confirmed') {
+        console.log("adding token")
         await this.updateTokenCount(getAuth().currentUser.uid, 1000); // Add 1000 tokens
       }
 
-      window.open(checkoutSession.url, "_blank", "width=800,height=600");
+
+
+      window.location.href = checkoutSession.url;
       this.paymentProcessing = false;
     },
   },
+  async mounted() {
+  // Check if the route is payment confirmed and execute logic
+  if (this.$route.query.status === 'confirmed') {
+    // Wait for the authentication state to be ready
+    const unsubscribe = onAuthStateChanged(getAuth(), async (user) => {
+      if (user) {
+        // Update the user's token count when the payment is confirmed.
+        await this.updateTokenCount(user.uid, 1000); // Add 1000 tokens
+      } else {
+        console.error('User not authenticated');
+      }
+
+      // Unsubscribe to onAuthStateChanged to avoid memory leaks
+      unsubscribe();
+    });
+  }
+},
 };
 </script>
 

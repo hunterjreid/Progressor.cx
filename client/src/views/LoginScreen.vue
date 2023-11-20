@@ -1,6 +1,6 @@
 <template>
   <div class="centered-content">
-    <h1>Welcome To Progressor. Please Log In</h1>
+    <h1>Log In</h1>
     <div v-if="!user">
       <form @submit.prevent="emailPasswordSignIn">
         <input type="email" v-model="email" placeholder="Email" required>
@@ -10,8 +10,8 @@
     </div>
 
     <button v-if="user" @click="logout">Log Out</button>
-
-    <button v-if="!user" @click="loginWithGoogleSignIn">Login with Google</button>
+OR
+    <button v-if="!user" @click="loginWithGoogleSignIn"><img src="@/assets/google.png"></button>
 
     <!-- Display success and error messages -->
     <p v-if="successMessage" style="color: green">{{ successMessage }}</p>

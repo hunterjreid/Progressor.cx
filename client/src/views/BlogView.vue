@@ -1,9 +1,10 @@
 <template>
   <div class="blog-container">
     <div v-if="loading" class="loading-overlay" :class="{ 'hide': !loading }">
-      Loading Blog...
+ 
       <div class="loading-spinner">
-        <img alt="Logo" src="./../assets/logo_clean.png" class="max-w-xs logo" style="height: 50px; padding: 27px; margin-left: -25px; margin-top: 8px;" />
+        <img alt="Logo" src="./../assets/SPINNER.png" class="max-w-xs logo" style="    height: 50px;
+    padding: 25px;" />
       </div>
     </div>
     <div class="main" v-else>

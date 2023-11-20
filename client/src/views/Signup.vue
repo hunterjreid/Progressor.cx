@@ -1,16 +1,17 @@
 <template>
   <div class="centered-content">
-    <h1>Welcome To Progressor. Sign Up with Email or Google</h1>
+    <h1>Sign Up</h1>
     <div v-if="!user">
       <form @submit.prevent="createAccountWithEmail">
         <input type="email" v-model="email" placeholder="Email" required>
         <input type="password" v-model="password" placeholder="Password" required>
         <button type="submit">Sign Up with Email</button>
       </form>
-      <button @click="loginWithGoogleSignIn">Sign Up with Google</button>
-    </div>
 
-    <button v-if="user" @click="logout" style="color: red">Log Out</button>
+    </div>
+    OR
+    <button v-if="!user" @click="loginWithGoogleSignIn"><img src="@/assets/google.png"></button>
+   
 
     <!-- Display success and error messages -->
     <p v-if="successMessage" style="color: green">{{ successMessage }}</p>

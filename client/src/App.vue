@@ -176,7 +176,7 @@
             @click="closeMenu"
             style="font-size: 24px"
             class="link"
-          >
+          >  
             <span class="emojirrr">Go back</span>
           </router-link>
   
@@ -186,6 +186,17 @@
             class=""
             style="max-width: 330px"
           />
+          <a v-if="user" style="background-color: rgb(0, 0, 0);font-size: 19px;color:white">Tokens: {{ userTokens }}</a> 
+        
+        
+        
+          <router-link
+            to="/pricing"
+            @click="closeMenu"
+            style="font-size: 14px"
+            class="link"
+          >  Get more Tokens </router-link>
+        
         </div></div>
       </header>
   
@@ -223,7 +234,7 @@ import { getFirestore, getDoc, doc, setDoc } from 'firebase/firestore';
 
         userTokens: 0,
         user: null,
-
+        tierData: '',
         menuOpen: false,
         menuOpen2: false,
         activeDropdown: null,
@@ -314,6 +325,8 @@ getDoc(userDocRef)
       const userTokens = userData.tokens; // Assuming 'tokens' is the field in Firestore that stores the token count
       this.userTokens = userTokens; // Store the token count in a Vue variable
       console.log('User tokens:', userTokens);
+      this.tierData =userData.tier === undefined ? '0' : userData.tier 
+
     } else {
       // Handle the case where the user's document doesn't exist
       console.log('User document does not exist.');
