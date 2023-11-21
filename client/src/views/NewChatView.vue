@@ -5,7 +5,7 @@
   </div>
   <div class="button-scroller">
    <a style="color:aqua"> Ask me about :</a>
-      <button v-for="(button, index) in cybersecurityButtons" :key="index" @click="handleButtonClick(button)">
+      <button style="background-color:rgba(240, 248, 255, 0.048);font-size: 20px;" v-for="(button, index) in cybersecurityButtons" :key="index" @click="handleButtonClick(button)">
         {{ button }}
       </button>
     </div>
@@ -216,7 +216,7 @@ export default {
         if (candidates != undefined) {
           this.conversationHistory.unshift({ content:  this.formatMessage(candidates[0].content), type: 'received', id: this.conversationHistory.length });
         } else {
-          this.conversationHistory.unshift({ content:  "Progressor.cx couldn't awnser this question.", type: 'received', id: this.conversationHistory.length });
+          this.conversationHistory.unshift({ content:  "I'm Progressor.cx, Ask me something about cyber secuirty!", type: 'received', id: this.conversationHistory.length });
         }
    
 console.log(this.formatMessage(candidates[0].content))
@@ -236,6 +236,10 @@ console.log(this.formatMessage(candidates[0].content))
 
 
 <style scoped>
+
+* {
+  font-family: 'M PLUS 1 Code', monospace !important;
+}
 .button-scroller {
   max-width: 800px;
 }
@@ -268,13 +272,13 @@ console.log(this.formatMessage(candidates[0].content))
 .dm-box {
   width: 60%;
     max-width: 800px;
-    border: 1px solid black;
+
     padding: 10px;
     overflow-y: scroll;
-    background-color: rgb(53, 53, 53);
+
     display: flex;
     flex-direction: column-reverse;
-
+    font-family: 'M PLUS 1 Code', monospace;
     height: 70vh;
 }
 
@@ -286,6 +290,12 @@ console.log(this.formatMessage(candidates[0].content))
     padding: 10px;
     border-radius: 10px;
     width: 800px;
+
+    width: 60%;
+    max-width: 800px;
+
+    padding: 10px;
+    overflow-y: scroll;
 
 }
 
@@ -313,13 +323,7 @@ button {
   align-items: center;
   margin: 20px;
 }
-.dm-box {
-    width: 60%;
-    max-width: 800px;
-    border: 1px solid black;
-    padding: 10px;
-    overflow-y: scroll;
-}
+
 
 @media (max-width: 600px) {
 .dm-box {
@@ -337,15 +341,17 @@ button {
 .sent {
   background-color: lightblue;
   float: right;
+  color: #000;
 }
 
 .received {
-  background-color: lightgray;
+  background-color: rgba(211, 211, 211, 0.034);
   float: left;
+  font-size: 20px;  color: #ffffff;
 }
 
 .thinking-bubble {
-  background-color: #f0f0f0;
+  background-color: #f0f0f02a;
   animation: pulse 1s infinite;
 }
 

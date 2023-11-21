@@ -37,14 +37,14 @@
             />
           </router-link>
 
-          <button @click="menuOpen = !menuOpen; menuOpen2 = false" class="colorlessbtn">Resources {{ !menuOpen ? '⏬' : '🔝' }}</button>
-          <button @click="menuOpen2 = !menuOpen2; menuOpen = false" class="colorlessbtn">Company {{ !menuOpen2 ? '⏬' : '🔝' }}</button>
+          <button @click="menuOpen = !menuOpen; menuOpen2 = false" class="colorlessbtn">Resources {{ !menuOpen ? '↓' : '↨' }}</button>
+          <button @click="menuOpen2 = !menuOpen2; menuOpen = false" class="colorlessbtn">Company {{ !menuOpen2 ? '↓' : '↨' }}</button>
           <button  v-if="!user" @click="$router.push('/pricing'), closeMenu" class="colorlessbtn">Pricing</button>
 
           <div class="btn_holder">
           <button   v-if="!user" @click="$router.push('/login'), closeMenu" class="actionBTN">Log in</button>
           <button v-if="!user" @click="$router.push('/signup'), closeMenu" class="actionBTN2">Sign up</button>
-        <a v-if="user" style="background-color: aqua;font-size: 13px;">Tokens: {{ userTokens }}</a>
+        <a v-if="user" style="font-size: 19px;">Tokens: {{ userTokens }}</a>
           <button v-if="user" @click="$router.push('/welcome'), closeMenu" class="actionBTN2">Account</button>
         
         </div>
@@ -159,12 +159,12 @@
 
       </header>
       <header v-else class="header">
-        <div class="gradient-header2 wave-bottom" style="z-index: 99999">
+
         <div
           style="
             height: 100px;
             z-index: 99999;
-            background: linear-gradient(159deg, rgb(0, 0, 0), rgb(111, 111, 111));
+            background: linear-gradient(159deg, rgb(0, 0, 0), rgb(0, 0, 0));
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -177,7 +177,11 @@
             style="font-size: 24px"
             class="link"
           >  
-            <span class="emojirrr">Go back</span>
+          <img src="@/assets/back.png" style="    height: 20px;
+    width: 20px;
+    margin-right: 20px;
+    margin-bottom: -5px;">
+           
           </router-link>
   
           <img
@@ -186,18 +190,21 @@
             class=""
             style="max-width: 330px"
           />
-          <a v-if="user" style="background-color: rgb(0, 0, 0);font-size: 19px;color:white">Tokens: {{ userTokens }}</a> 
+          <a v-if="user" style="background-color: rgb(0, 0, 0);font-size: 19px;color:white; margin-left: 40px;">Tokens: {{ userTokens }}</a> 
         
-        
+     
         
           <router-link
             to="/pricing"
             @click="closeMenu"
             style="font-size: 14px"
             class="link"
-          >  Get more Tokens </router-link>
+          >       <img src="@/assets/toptup.png" style="    height: 22px;
+    width: 24px;
+    margin-left: 10px;
+    margin-bottom: -12px;"></router-link>
         
-        </div></div>
+        </div>
       </header>
   
       <main
@@ -521,7 +528,7 @@ getDoc(userDocRef)
   }
   
   button:hover {
-    background-color: #cecece;
+    background-color: #cecece00 !important;
   }
   
   footer {
@@ -604,6 +611,7 @@ getDoc(userDocRef)
     padding: 0px;
     margin: 0px;
     margin-left: 10px;
+    background-color: none !important;
 }
 
   nav {

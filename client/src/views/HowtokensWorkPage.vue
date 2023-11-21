@@ -1,23 +1,19 @@
 <template>
     <div>
       <div class="container">
-        <h1>Progressor Token System</h1>
-        <p>Tokens are the currency of our AI SaaS platform. Each token represents 3 words. For example:</p>
 
-        <ul class="feature-list">
-          <li><i class="fas fa-check-circle"></i> Transcribing a sentence small typically requires 5 tokens.</li>
-          <li><i class="fas fa-check-circle"></i> Generating a detailed report might consume 10 tokens.</li>
-          <li><i class="fas fa-check-circle"></i> Processing a lengthy document could use 30 tokens.</li>
-        </ul>
+        <h1> Token System</h1>
+      <p>Tokens are the currency of Progressor!. Each token represents 2 characters. For example:</p>
+
+      <ul class="feature-list">
+        <li><i class="fas fa-check-circle"></i>Small questions requires 20 tokens.</li>
+        <li><i class="fas fa-check-circle"></i>Detailed questions might consume 50-200 tokens.</li>
+
+      </ul>
   
-        <p>If you had 1,000 tokens, you could expect to perform:</p>
-        <ul class="feature-list">
-          <li><i class="fas fa-check-circle"></i> 200 sentence transcriptions</li>
-          <li><i class="fas fa-check-circle"></i> 20 detailed report generations</li>
-          <li><i class="fas fa-check-circle"></i> 2 processing tasks for lengthy documents</li>
-        </ul>
-  
-        <p>With 5,000 tokens, your capacity would increase accordingly, allowing you to perform five times as many tasks.</p>
+        <p>With 100,000 tokens, your capacity would increase accordingly, allowing you to perform alot of tasks.</p>
+        <button       @click="$router.push({ path: '/pricing' })" style="maring-bottom:20px;">Back</button>
+        <br>
         <FooterComp /> 
      
       </div>

@@ -3,36 +3,48 @@
     <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
 
 
-      <div class="pricing-card" style="width: 100%;">
-        <h2>Launching Speacial - $1</h2>
+      <div class="pricing-card" style="    width: calc(100% - 46px);
+    background: white;border-image: linear-gradient(#ff1313, #5c85ff) 30;
+border-width: 4px;
+border-style: solid;"
+  >
+        <div class="right-left">
+        <div>
+          <h2>
+Introducing our Special Launch Offer - $1 for 10K!</h2>
 
 
-      <li><i class="fa fa-check"></i>1 Time payment of 100K Tokens</li>
-
+     Make a one-time payment of $1.00USD to get 10,000 Tokens to use in Progressor chat. <i class="fa fa-check"></i> 
+<br>
     <button
           v-if="!$root.user"
           style="margin-bottom: 40px; font: 1em sans-serif; background: linear-gradient(270deg, #ff1313 31%, #5c85ff);"
           class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4"
           @click="$router.push('/login')"
         >
-          Sign Up to Continue
+        Sign up now to experience
         </button>
         <button
           v-else
-          style="color:black; border: 1px solid; width: 70%;margin-bottom: 40px; font: 1em sans-serif; background: linear-gradient(270deg, #ffb413 31%, rgb(244, 255, 92));"
+          style="color:black; font-size: 20px;color:white; border: 1px solid white; width: 30%;margin-bottom: 40px;background: linear-gradient(270deg, rgb(5, 5, 5) 91%, #5c85ff);"
           class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4"
 
           @click="$router.push({ path: '/bonus_deal' })"
         >
-          Pay now
+          Redeem now
         </button>
+
+
+        </div>
+        <img src="@/assets/offer.png">
+      </div>
   </div>
       <!-- Your existing code here -->
-  <h1>Simple pricing at any scale that just works.</h1>
-  <h2>If you don;t like progressor we can refund you at any time.</h2>    <a>Well have a plan for you!</a><br><router-link class="jlinkers" to="/tokens">
+  <h1>Enjoy straightforward pricing that suits any scale seamlessly.</h1>
+  <h2>If Progressor isn't to your liking, we offer hassle-free refunds at any time.</h2>   <br><router-link class="jlinkers" to="/tokens">
 
     <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
-       LEARN ABOUT HOW DO TOKENS WORK?
+     How do tokens work?
     </button>
 </router-link>    
       <!-- Pricing Cards -->
@@ -178,6 +190,12 @@
   </script>
   
   <style scoped>
+  .right-left {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
   .notice-box {
     background: linear-gradient(270deg, #ff1313 31%, #5c85ff);
     text-align: center;

@@ -23,7 +23,7 @@
 "><router-link to="/updates">See more here, about our lastest updates.</router-link></div>
 
 
-<h2 class="font-semibold text-white font-semiboldcxs " style="text-align: center;">Companies just trust progressor.cx</h2>
+<h2 class="font-semibold text-white font-semiboldcxs " style="text-align: center;">Companies just trust Progressor.cx</h2>
     <div style="display: flex;
   justify-content: space-around;">
         <img src="@/assets/Manulife_logo.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
@@ -34,8 +34,8 @@
 
 
     <div class="what_is_box">
-    <h2 class="font-semibold text-white" style="text-align: center;">What is progressor.cx?</h2>
-    <h1 class="titleee3">Find and fix vulnerabilities with a single responce</h1>
+    <h2 class="font-semibold text-white" style="text-align: center;">Digital Defense with Progressor.cx</h2>
+    <h1 class="titleee3">Where Security Meets Simplicity!</h1>
 
 
 
