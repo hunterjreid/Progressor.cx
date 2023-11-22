@@ -1,18 +1,14 @@
 <template>
     <div style="max-width: 800px; margin: 0 auto; padding: 20px; padding-top: 0px;padding-bottom: 0px;">
-      <div  v-if="$root.user && $root.tokens != 0" style="  margin-top: 20px;  border: 1px solid;
-    padding: 15px;
-    border-radius: 50px;text-align: center;
-    margin-bottom: 20px;
-"><router-link to="/chat2">GOTO CHAT</router-link></div>
+  
 
  
      
 
         <div class="bg_img">
-          <h1 class="titleee">Worried about Cyber Security?</h1>
-<h4 class="below_para2">Secure Your Online with Progressor.cx - Let Progressor be your guide!</h4>
-<h1 class="below_para">Your Ultimate Security Companion!</h1>
+          <h1 class="titleee">Cyber Security Meets A Chatbot!</h1>
+<h4 class="below_para2">Secure Your Online with Progressor.cx - Let Progressor.cx  be your guide!</h4>
+<h1 class="below_para">Your Ultimate Cyber Security Chatbot!</h1>
 
 </div>
 
@@ -26,16 +22,16 @@
 <h2 class="font-semibold text-white font-semiboldcxs " style="text-align: center;">Companies just trust Progressor.cx</h2>
     <div style="display: flex;
   justify-content: space-around;">
-        <img src="@/assets/Manulife_logo.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
-        <img src="@/assets/Manulife_logo.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
-        <img src="@/assets/Manulife_logo.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />   <img src="@/assets/Manulife_logo.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
-        <img src="@/assets/Manulife_logo.svg" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
+        <img src="@/assets/rwd.png" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
+        <img src="@/assets/test_logo.png" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
+     <img src="@/assets/hunter_Company.png" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
+  
     </div>
 
 
     <div class="what_is_box">
     <h2 class="font-semibold text-white" style="text-align: center;">Digital Defense with Progressor.cx</h2>
-    <h1 class="titleee3">Where Security Meets Simplicity!</h1>
+    <h1 class="titleee3">Worried about Cyber Security?</h1>
 
 
 
@@ -59,21 +55,21 @@
       <!-- Benefit 2 -->
       <div class="bg-gray-100 p-4">
         <img src="./../assets/icons/222.png" class="img_bolco" alt="Benefit 2">
-        <h2 class="font-semibold">Always ahead of the curb</h2>
+        <h2 class="font-semibold">Always ahead</h2>
         <p>Stay ahead in cybersecurity with our expert network, always one step ahead of emerging threats.</p>
       </div>
 
       <!-- Benefit 3 -->
       <div class="bg-gray-100 p-4">
         <img src="./../assets/icons/2222.png" class="img_bolco" alt="Benefit 3">
-        <h2 class="font-semibold">Save your company money</h2>
+        <h2 class="font-semibold">Save your time</h2>
         <p>Global cybercrime costs rise yearly, with businesses losing billions - a constant battleground.</p>
       </div>
 
 
     </div>
 
-    <h2 class="font-semibold text-white" style="text-align: center;">Why wait?</h2>
+    <h2 class="font-semibold text-white" style="text-align: center;">Why wait? Use Progressor.cx Today!</h2>
   </section>
 
 
@@ -93,11 +89,11 @@
 
 <div class="pic-left-text-right">
   <div class="max-w-md">
-    <h2 class="text-3xl font-bold">Enhance Your Cyber Security with Our AI Chatbot</h2>
+    <h2 class="text-3xl font-bold">Become an Cyber Voyager</h2>
     <p class="my-4">
       Elevate your organization's security posture with our advanced AI Chatbot Cyber Security SaaS. Explore cutting-edge solutions and protect your digital assets today.
     </p>
-    <button class="custom-button" @click="$router.push('/home2')">
+    <button class="custom-button" @click="$router.push('/pricing')">
       Learn More
     </button>
   </div>
@@ -107,11 +103,11 @@
 <div class="pic-left-text-right">
     <img src="../assets/main(2).png" alt="AI Cyber Security" class="max-w-md h-auto" />
   <div class="max-w-md" style="margin-left: 20px;">
-    <h2 class="text-3xl font-bold">Enhance Your Cyber Security with Our AI Chatbot</h2>
+    <h2 class="text-3xl font-bold">Or maybe a Cyber Knight</h2>
     <p class="my-4">
       Elevate your organization's security posture with our advanced AI Chatbot Cyber Security SaaS. Explore cutting-edge solutions and protect your digital assets today.
     </p>
-    <button class="custom-button" @click="$router.push('/home2')">
+    <button class="custom-button"  @click="$router.push('/pricing')">
       Learn More
     </button>
   </div>
@@ -120,11 +116,11 @@
 
 <div class="pic-left-text-right">
   <div class="max-w-md">
-    <h2 class="text-3xl font-bold">Enhance Your Cyber Security with Our AI Chatbot</h2>
+    <h2 class="text-3xl font-bold">Guardian Cyber Elite</h2>
     <p class="my-4">
       Elevate your organization's security posture with our advanced AI Chatbot Cyber Security SaaS. Explore cutting-edge solutions and protect your digital assets today.
     </p>
-    <button class="custom-button" @click="$router.push('/home2')">
+    <button class="custom-button"  @click="$router.push('/pricing')">
       Learn More
     </button>
   </div>
@@ -144,7 +140,7 @@
       <div class="bg-gray-100 p-4ee">
         <div class="smaller_box"><img src="./../assets/ai.png"></div>
         <h2 class="font-semibold"> Unleash the power of AI </h2>
-        <p>Join our cybersecurity journey - feel the warmth of ouhe warmth of ouhe warmth of ouhe warmth of ouhe warmth of our family and our unwavering support.</p>
+        <p>Join our cybersecurity journey - feel the warmth of ouhe warmth of ouhe warmth unwavering support.</p>
       </div>
 
       <!-- Benefit 2 -->
@@ -168,7 +164,7 @@
 ">
     <h2 class="text-3xl font-bold">Reduce risk, boost productivity</h2>
     <p class="my-4">
-        More than 85% of developers recommend Snyk thanks to its ease of use and the considerable amount of time it saves them during development.
+      Progressor.cx is highly recommended by over 85% of cyber experts for its user-friendly interface and the substantial time savings it provides in Cyber Security practices.
     </p>
     <button class="custom-button" @click="$router.push('/home2')">
         Book a demo
@@ -192,8 +188,9 @@
 </h4>
       <h1 class="below_para"  style="color:rgb(53, 53, 53)">No credit card required.
  </h1>
- <div style="margin-left: 40px;"> <button style="margin-right: 20px; background-color: rgb(0, 0, 0);color: rgb(255, 255, 255);">Login back in</button>
- <button>TZry Prgressor</button></div>
+ <div  style="margin-left: 40px;"> <button v-if="!$root.user" @click="$router.push('/login')" style="margin-right: 20px; background-color: rgb(0, 0, 0);color: rgb(255, 255, 255);">Login back in</button>
+  
+ <button @click="$router.push('/chat2')">Try Prgressor.cx</button></div>
 
 </div>
  <FooterComp />
@@ -243,7 +240,7 @@ border-radius: 10px;
   .titleee {
     font-weight: 900;
     margin-top: 0px;
-    font-size: 50px;
+    font-size: 40px;
     color: rgb(255, 255, 255);
     padding: 20px;
     margin: 0px;

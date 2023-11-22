@@ -1,23 +1,22 @@
 <template>
   <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-    <h1>
-      You have chosen the ${{ $route.query.pricing }} plan. Select a payment option:
-    </h1>
+    <div v-if="$route.query.status == ''">
+      <h1>Introducing our Special Launch Offer - $1 for 10K!</h1>
+<h2>Make a one-time payment of $1.00USD to get 10,000 Tokens to use in Progressor chat. </h2>
+  
+    </div>
+ 
 
-    <li>
-      <input type="radio" name="paymentOption" @click="setPaymentOption('oneTime')" value="oneTime">
-      One-Time Payment (${{ $route.query.pricing }})
-    </li>
 
     <div class="custom-amount">
       <button @click="payWithStripe" :disabled="paymentProcessing || this.customAmount == 0">
-        Pay with Stripe
+        Pay
       </button>
       <p v-if="paymentProcessing">Proceeding to payment screen. Please wait...</p>
     </div> 
     <h1 v-if="$route.query.status == 'confirmed'">Your coins have now been added !!!</h1>
     <p v-if="$route.query.status == 'confirmed'">Payment confirmed. Enjoy your coins!</p>
-      <p v-if="$route.query.status == 'declined'">Payment declined. Payment method failed.</p>
+      <h1 v-if="$route.query.status == 'declined'">Payment declined or cancelled please try again. for the  Special Launch Offer</h1>
    
     <br/>
 
@@ -45,6 +44,7 @@ export default {
       paymentOption: "oneTime",
     };
   },
+
   methods: {
     async updateTokenCount(uid, amount) {
       const userRef = doc(getFirestore(), 'users', uid);
@@ -67,10 +67,12 @@ export default {
         unit_amount: 1 * 100, // Amount in cents
         currency: 'usd',
         product: product.id,
+        
       });
 
       const checkoutSession = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
+        customer_email:  this.$root.user.email ,
         line_items: [{ price: price.id, quantity: 1 }],
         mode: 'payment',
         success_url: 'https://progressor.cx/bonus_deal?status=confirmed',
@@ -100,6 +102,7 @@ export default {
     },
   },
   async mounted() {
+    this.setPaymentOption('oneTime')
   // Check if the route is payment confirmed and execute logic
   if (this.$route.query.status === 'confirmed') {
     // Wait for the authentication state to be ready

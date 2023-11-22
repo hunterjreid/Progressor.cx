@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { getFirestore, collection, orderBy, doc } from 'firebase/firestore';
+import { getFirestore, collection, orderBy, getDocs, query } from 'firebase/firestore';
 
 
 export default {
@@ -35,12 +35,18 @@ export default {
     return {
       user: this.$root.user,
       subscriptionInfo: null,
-   usageInfo: null,
+      usageInfo: [
+        { id: 1, timestamp: '2023-01-01 10:00 AM', tokensUsed: 50 },
+        { id: 2, timestamp: '2023-01-02 12:30 PM', tokensUsed: 30 },
+        { id: 3, timestamp: '2023-01-03 03:45 PM', tokensUsed: 20 },
+        // Add more usage data as needed
+      ],
     };
+    
   },
   methods: {
     async viewUsage() {
-  try {
+      try {
     const userUid = this.$root.user.uid;
 
     if (!userUid) {
@@ -49,15 +55,18 @@ export default {
     }
 
     const db = getFirestore();
-    const usageRef = collection(db, 'usage', userUid, orderBy('timestamp', 'desc'));
-    
-    const querySnapshot = await doc(usageRef);
- 
+    const usageRef = collection(db, 'usage');
+    const querySnapshot = await getDocs(query(usageRef, orderBy('timestamp', 'desc')));
+
     // Extract usage information from the query snapshot
-    console.log('Usage Info:', querySnapshot);
-  } catch (error) {
+    querySnapshot.forEach((doc) => {
+        console.log('Usage Info:', doc.data());
+    });
+
+} catch (error) {
     console.error('Error fetching usage information:', error);
-  }
+}
+
 },
     logout() {
       // Implement logout logic

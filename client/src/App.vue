@@ -37,6 +37,10 @@
             />
           </router-link>
 
+          <div  v-if="$root.user && $root.tokens != 0" style="     font-size: 11px;
+"><router-link to="/chat2">GOTO CHAT</router-link></div>
+
+
           <button @click="menuOpen = !menuOpen; menuOpen2 = false" class="colorlessbtn">Resources {{ !menuOpen ? '↓' : '↨' }}</button>
           <button @click="menuOpen2 = !menuOpen2; menuOpen = false" class="colorlessbtn">Company {{ !menuOpen2 ? '↓' : '↨' }}</button>
           <button  v-if="!user" @click="$router.push('/pricing'), closeMenu" class="colorlessbtn">Pricing</button>

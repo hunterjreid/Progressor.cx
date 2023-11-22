@@ -2,14 +2,14 @@
     <div>
       <section class="my-8">
         <h2 class="text-2xl font-bold">Frequently Asked Questions (FAQ)</h2>
-        <div class="faq-container">
+       
           <div class="faq-item" v-for="(faq, index) in faqs" :key="index">
             <button class="faq-question" @click="toggleFAQ(index)">{{ faq.question }}</button>
             <div v-if="faq.open" class="faq-answer">
               <p>{{ faq.answer }}</p>
             </div>
           </div>
-        </div>
+   
       </section>
     </div>
   </template>
@@ -17,7 +17,7 @@
   <style>
     /* Add your CSS styles here */
     .faq-container {
-      background-color: #f6f2f8; /* Light purple */
+      background-color: #f6f2f811; /* Light purple */
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -25,7 +25,7 @@
   
     .faq-item {
       margin: 10px 0;
-      border: 1px solid #e0d0e8; /* Light pink */
+      border: 1px solid #e0d0e813; /* Light pink */
       border-radius: 5px;
       padding: 10px;
     }
@@ -45,8 +45,8 @@
     }
   
     .faq-question:hover {
-        color: #ffffff; /* Purple */
-      background-color: #2e2e2ec2; /* Darker pink on hover */
+
+      background-color: #2e2e2e2c; /* Darker pink on hover */
     }
   
     .faq-answer {

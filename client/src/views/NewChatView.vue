@@ -5,7 +5,7 @@
   </div>
   <div class="button-scroller">
    <a style="color:aqua"> Ask me about :</a>
-      <button style="background-color:rgba(240, 248, 255, 0.048);font-size: 20px;" v-for="(button, index) in cybersecurityButtons" :key="index" @click="handleButtonClick(button)">
+      <button style="background-color:rgba(240, 248, 255, 0.048);font-size: 20px; color: rgb(184, 184, 184);" v-for="(button, index) in cybersecurityButtons" :key="index" @click="handleButtonClick(button)">
         {{ button }}
       </button>
     </div>

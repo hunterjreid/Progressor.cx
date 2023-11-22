@@ -99,7 +99,7 @@
     </router-link>
   </div>
 </section>
-<div class="hed-content body-content" style="background: linear-gradient(45deg, #ff00a6, #00ffcc);">
+<div class="hed-content body-content" style="background: linear-gradient(45deg, #0090ff, #e10000); color: white;">
   <h2>Ready to Elevate Your Security?</h2>
   <router-link :to="{ path: '/apply' }">
     <button class="bg-blue-53ee3">

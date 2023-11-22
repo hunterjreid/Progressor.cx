@@ -27,7 +27,7 @@
     <h1 style="font-size: 24px; margin-bottom: 10px;">Cyber Voyager</h1>
     <button @click="$router.push('/manage')" style="background-color: #ffffff; color: #02002e; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer;">Manage Subscription</button>
     <h2 style="margin-top: 10px;">You are a TIER 1 Subscriber</h2>
-    <button @click="useProgressorNow" style="background-color: #ffcc00; color: #02002e; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">Use Progressor Now</button>
+    <button @click="$router.push('/chat2')" style="background-color: #ffcc00; color: #02002e; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">Use Progressor Now</button>
     <p>Your plan will expire on: {{ getExpirationDate(17) }}</p>
 </div>
 
@@ -35,7 +35,7 @@
     <h1 style="font-size: 24px; margin-bottom: 10px;">Cyber Knight</h1>
     <button @click="$router.push('/manage')" style="background-color: #ffffff; color: #02002e; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer;">Manage Subscription</button>
     <h2 style="margin-top: 10px;">You are a TIER 2 Subscriber</h2>
-    <button @click="useProgressorNow" style="background-color: #ffcc00; color: #02002e; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">Use Progressor Now</button>
+    <button @click="$router.push('/chat2')"  style="background-color: #ffcc00; color: #02002e; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">Use Progressor Now</button>
     <p>Your plan will expire on: {{ getExpirationDate(38) }}</p>
 </div>
 
@@ -47,7 +47,7 @@
     <h1 style="font-size: 24px; margin-bottom: 10px;">Guardian Cyber Elite</h1>
     <button @click="$router.push('/manage')" style="background-color: #ffffff; color: #02002e; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer;">Manage Subscription</button>
     <h2 style="margin-top: 10px;">You are a TIER 3 Subscriber</h2>
-    <button @click="useProgressorNow" style="background-color: #000000; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">Use Progressor Now</button>
+    <button @click="$router.push('/chat2')"  style="background-color: #000000; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">Use Progressor Now</button>
     <p>Your plan will expire on: {{ getExpirationDate(29) }}</p>
 </div>
 
