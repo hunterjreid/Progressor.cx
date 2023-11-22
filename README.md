@@ -7,6 +7,9 @@
 <p>Capstone Project - Progressor.cx by Hunter Reid from Yoobee Colleges with help of wonderful lecturers Arthur, Mohammad and Rouwa. (Firebase Using the power of web v9 Modular) </p>      
 
 ![image](https://github.com/hunterjreid/Progressor.cx/assets/62681404/f2d67fe7-7c36-48e8-8762-f96ded5f4ac3)
+![image](https://github.com/hunterjreid/Progressor.cx/assets/62681404/d5a853ef-2520-40b5-af94-190e76895f97)
+
+
 ![e12e1212e12e](https://github.com/hunterjreid/Progressor.cx/assets/62681404/aa0e6fb9-97e5-4654-a776-25583ac5402b)
 
 
