@@ -2,9 +2,9 @@
   <div style="max-width: 800px; margin: 0px auto; padding: 0px 20px;">
     <div v-if="$root.user">
 
-      <h1>Welcome <template v-if=" $root.user.displayName">{{ $root.user.displayName }}</template> <template v-else>{{ $root.user.email }}</template> </h1>
+      <h1>Welcome <template v-if=" $root.user.displayName">{{ $root.user.displayName }}</template> <template v-else>{{ $root.user.email }}</template>   <button style="background: none;" @click="logout"><img style="height: 20px;;" src="@/assets/logout_icon_151219.png"></button> </h1>
   
-      <router-link to="/chat2">Chat</router-link> 
+
 
 
 
@@ -12,17 +12,50 @@
  
  <label for="firstLogin ">We see its your First Login: Welcome to Progressor! We gave you 1000 tokens for free to get started!!!</label>>  <router-link to="/chat2">Try now!</router-link>
 </div>
+<button @click="$root.tierData = '0'">0</button>
+<button @click="$root.tierData = '1'">1</button>
+<button @click="$root.tierData = '2'">2</button>
+<button @click="$root.tierData = '3'">3</button>
+<div class="subscription-container" v-if="$root.tierData == '0'" style="background-color: #dadada; padding: 20px; textAlign: center, color: 'white' }">
+    <h1 style="font-size: 24px; margin-bottom: 10px;">NO PLAN!</h1>
+    <router-link to="/chat2" style="text-decoration: underline; color: rgb(0, 81, 255);">If you have coins, you can still Chat</router-link>
+    <p style="margin-top: 10px;">View subscriptions or read our docs.</p>
+    <router-link to="/pricing" style="background-color: #ffcc00; color: #02002e; padding: 8px 16px; text-decoration: none; border-radius: 5px;">Subscribe now!</router-link>
+</div>
 
+<div class="subscription-container" style="    border: 7px dashed #00c4ff;" v-else-if="$root.tierData == '1'" :style="{ backgroundColor: 'rgb(44 115 205)', padding: '20px', textAlign: 'center', color: 'white' }">
+    <h1 style="font-size: 24px; margin-bottom: 10px;">Cyber Voyager</h1>
+    <button @click="$router.push('/manage')" style="background-color: #ffffff; color: #02002e; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer;">Manage Subscription</button>
+    <h2 style="margin-top: 10px;">You are a TIER 1 Subscriber</h2>
+    <button @click="useProgressorNow" style="background-color: #ffcc00; color: #02002e; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">Use Progressor Now</button>
+    <p>Your plan will expire on: {{ getExpirationDate(17) }}</p>
+</div>
 
-<div  class="subscription-container"  v-if="$root.tierData == '0'" :style="{ backgroundColor: tierColors[$root.tierData] }"> NO PLAN!    <p>View subscriptions or read on docs.</p>  <router-link to="/pricing">Subscribe now!</router-link></div>
-<div  class="subscription-container"  v-else-if="$root.tierData == '1'" :style="{ backgroundColor: '#4c5fa8ab' }"> TIER 1         <button @click="$router.push('/manage')">Manage Subscription</button>      <h1>You are TIER 1 Subscriber</h1> <br></div>
-<div  class="subscription-container"  v-else-if="$root.tierData == '2'" :style="{ backgroundColor: 'blue' }"> TIER 2         <button @click="$router.push('/manage')">Manage Subscription</button>      <h1>You are TIER 1 Subscriber</h1> <br></div>
-<div  class="subscription-container"  v-else-if="$root.tierData == '3'" :style="{ backgroundColor: 'orange' }"> TIER 3         <button @click="$router.push('/manage')">Manage Subscription</button>      <h1>You are TIER 1 Subscriber</h1> <br></div>
+<div class="subscription-container" style="    border: 7px dashed rgb(255 0 247)" v-else-if="$root.tierData == '2'" :style="{ backgroundColor: '#6e4981', padding: '20px', textAlign: 'center', color: 'white' }">
+    <h1 style="font-size: 24px; margin-bottom: 10px;">Cyber Knight</h1>
+    <button @click="$router.push('/manage')" style="background-color: #ffffff; color: #02002e; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer;">Manage Subscription</button>
+    <h2 style="margin-top: 10px;">You are a TIER 2 Subscriber</h2>
+    <button @click="useProgressorNow" style="background-color: #ffcc00; color: #02002e; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">Use Progressor Now</button>
+    <p>Your plan will expire on: {{ getExpirationDate(38) }}</p>
+</div>
+
+<div class="subscription-container" style="      border: 16px dashed rgb(0 144 255);
+    background-color: rgb(229 0 0);
+    padding: 20px;
+    text-align: center;
+    color: white;" v-else-if="$root.tierData == '3'">
+    <h1 style="font-size: 24px; margin-bottom: 10px;">Guardian Cyber Elite</h1>
+    <button @click="$router.push('/manage')" style="background-color: #ffffff; color: #02002e; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer;">Manage Subscription</button>
+    <h2 style="margin-top: 10px;">You are a TIER 3 Subscriber</h2>
+    <button @click="useProgressorNow" style="background-color: #000000; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">Use Progressor Now</button>
+    <p>Your plan will expire on: {{ getExpirationDate(29) }}</p>
+</div>
+
 
       <!-- Display subscription information -->
 
  
-      <button @click="logout">Logout</button>
+  
 
       <template v-if="selectedSubscription === 'Tier 3'">
 <br>
@@ -87,7 +120,7 @@ export default {
       // Logout using your existing logout logic
 
 
-      this.$router.push('/login');
+
 
       // Get the UID of the logged-in user
       const uid = this.user.uid;
@@ -126,7 +159,14 @@ export default {
     console.error('Logout error:', error);
   }
 },
+getExpirationDate(days) {
+      const currentDate = new Date();
+      const expirationDate = new Date();
+      expirationDate.setDate(currentDate.getDate() + days);
 
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return expirationDate.toLocaleDateString(undefined, options);
+    },
     addTokens() {
       if (this.user && this.tokensToAdd > -1) {
         const db = getFirestore();

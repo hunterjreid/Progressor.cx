@@ -23,14 +23,36 @@
   
     </div>
     
-    <div class="chat-bar">
-      <span v-if="messageCost !== undefined">COST: ({{ messageCost }} tokens)</span>
-  
-      <input type="text" v-model="inputMessage" placeholder="Enter your message here..." />
-      <button @click="sendMessage">Send</button>
-      <button style="background-color:grey;" @click="clearChat">Clear Chat</button> <!-- Add Clear Chat button -->
+    <div class="chat-bar" >
+      <textarea name="Text1" cols="10" rows="5" style="    background: #02002e;
+  background: rgb(65 65 65 / 16%);
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    max-width: 100%;
+    padding: 2px;
+    padding-left: 20px;
+    min-width: 100%;
+    resize: none;
+    outline: none !important;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 10px;"   placeholder="Enter your message here..."  v-model="inputMessage"></textarea>
+      <div style="    display: flex;
+    flex-grow: 1;
+    width: 100%;">
+
+
+   
+      <button class="bot_btn" style="background-color:#777b7e52;" @click="sendMessage">Send</button>
+      <button class="bot_btn" style="background-color:#0090ff52;" @click="clearChat">Clear Chat</button> <!-- Add Clear Chat button -->        <button class="bot_btn" @click="generateReport">Generate Report</button>
     </div>
-    <button @click="generateReport" class="generate-report-button">Generate Report</button>
+        <span  style="color:white;" v-if="messageCost !== undefined">COST: {{ messageCost }} tokens</span>
+
+    </div>
+
+
 
   </div>
 </template>
@@ -51,7 +73,7 @@ export default {
       outOfTokens: false, // Initialize the outOfTokens property
       messageCost: 0, // Initialize messageCost as a data property
       conversationHistory: [
-        { content: 'Welcome to Progressor CX! 🚀 Hello! How can we assist you today?', type: 'received', id: 0 },
+        { content: 'Welcome to Progressor CX! 🚀 Hello! How can I assist you today?', type: 'received', id: 0 },
       ],
       inputMessage: '',
       progressorThinking: false,
@@ -216,7 +238,7 @@ export default {
         if (candidates != undefined) {
           this.conversationHistory.unshift({ content:  this.formatMessage(candidates[0].content), type: 'received', id: this.conversationHistory.length });
         } else {
-          this.conversationHistory.unshift({ content:  "I'm Progressor.cx, Ask me something about cyber secuirty!", type: 'received', id: this.conversationHistory.length });
+          this.conversationHistory.unshift({ content:  "I'm Progressor.cx. Feel free to ask me anything about cybersecurity, and I'll provide you with an answer!", type: 'received', id: this.conversationHistory.length });
         }
    
 console.log(this.formatMessage(candidates[0].content))
@@ -286,16 +308,15 @@ console.log(this.formatMessage(candidates[0].content))
   display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #f0f0f0;
+    background-color: #00000061;
     padding: 10px;
     border-radius: 10px;
     width: 800px;
-
     width: 60%;
     max-width: 800px;
-
     padding: 10px;
-    overflow-y: scroll;
+    overflow-y: scroll;    display: flex;
+    flex-direction: column;
 
 }
 
@@ -315,6 +336,10 @@ button {
   cursor: pointer;
 }
 
+.bot_btn {
+  margin-top: 0px;
+}
+
 .mainer {
   text-align: center;
   display: flex;
@@ -326,10 +351,17 @@ button {
 
 
 @media (max-width: 600px) {
+  .chat-bar {
+    width: 96%;
+    padding: 0px;;
+  }
 .dm-box {
   height: 90vw;
   width: 90%;
 
+}
+.button-scroller {
+  display: none;
 }
 }
 .message-bubble {
@@ -339,9 +371,10 @@ button {
 }
 
 .sent {
-  background-color: lightblue;
-  float: right;
-  color: #000;
+  background-color: #000000;
+    float: right;
+    color: #000;
+    color: white;
 }
 
 .received {

@@ -528,7 +528,7 @@ getDoc(userDocRef)
   }
   
   button:hover {
-    background-color: #cecece00 !important;
+    background-color: #cececedc !important;
   }
   
   footer {
