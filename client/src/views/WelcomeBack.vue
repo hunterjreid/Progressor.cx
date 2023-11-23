@@ -12,10 +12,10 @@
  
  <label for="firstLogin ">We see its your First Login: Welcome to Progressor! We gave you 1000 tokens for free to get started!!!</label>>  <router-link to="/chat2">Try now!</router-link>
 </div>
-<!-- <button @click="$root.tierData = '0'">0</button>
-<button @click="$root.tierData = '1'">1</button>
+ <!-- <button @click="$root.tierData = '0'">0</button>
+ <button @click="$root.tierData = '1'">1</button> -->
 <button @click="$root.tierData = '2'">2</button>
-<button @click="$root.tierData = '3'">3</button> -->
+<!--<button @click="$root.tierData = '3'">3</button> -->
 <div class="subscription-container" v-if="$root.tierData == '0'" style="background-color: #dadada; padding: 20px; textAlign: center, color: 'white' }">
     <h1 style="font-size: 24px; margin-bottom: 10px;">NO PLAN!</h1>
     <router-link to="/chat2" style="text-decoration: underline; color: rgb(0, 81, 255);">If you have coins, you can still Chat</router-link>

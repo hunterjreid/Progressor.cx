@@ -4,8 +4,8 @@
             <div class="parallax-container">
       <div class="parallax-content">
         <div class="parallax-layer layer1" :style="getParallaxStyle(.5)">
-          <h1>What is Progressor?</h1>
-          <p style="font-size: 16px;">
+          <h1 style="background-color: rgba(0, 0, 0, 0.534);">What is Progressor?</h1>
+          <p style="font-size: 16px;background-color: rgba(0, 0, 0, 0.534);">
             Progressor is the leading mobile app for enhancing your cybersecurity knowledge and protecting your digital presence. Join us today and take control of your online security!
           </p>
         </div>

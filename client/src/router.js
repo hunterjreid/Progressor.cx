@@ -82,10 +82,11 @@ const routes = [
       component: PaymentPage,
     },
     {
-      path: '/chat2',
+      path: '/chat',
       name: 'NewChatView',
       component: NewChatView,
     },
+    { path: '/chat2', redirect: '/chat' },
 
     {
         path: '/signup',
@@ -119,10 +120,17 @@ const routes = [
       },
 
     {
-        path: '/home2',
+        path: '/explore',
         name: 'NewLanding',
         component: NewLanding,
       },
+
+      {
+        path: '/home2',
+        redirect: '/explore',
+
+      },
+
       {
         path: '/contact',
         name: 'ContactView',

@@ -1,22 +1,29 @@
 <template>
   <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-    <div v-if="$route.query.status == ''">
+    <div v-if="$route.query.status == undefined">
+
       <h1>Introducing our Special Launch Offer - $1 for 10K!</h1>
 <h2>Make a one-time payment of $1.00USD to get 10,000 Tokens to use in Progressor chat. </h2>
-  
     </div>
  
 
 
     <div class="custom-amount">
-      <button @click="payWithStripe" :disabled="paymentProcessing || this.customAmount == 0">
+      <button style="font-size: 30px;" @click="payWithStripe" :disabled="paymentProcessing || this.customAmount == 0">
         Pay
       </button>
       <p v-if="paymentProcessing">Proceeding to payment screen. Please wait...</p>
+      <div class="loading-spinner" v-if="paymentProcessing">      <img   alt="Logo" src="./../assets/SPINNER.png" class="max-w-xs" style="    height: 50px;
+    padding: 25px;" />
+</div>
+
+
+
+
     </div> 
     <h1 v-if="$route.query.status == 'confirmed'">Your coins have now been added !!!</h1>
     <p v-if="$route.query.status == 'confirmed'">Payment confirmed. Enjoy your coins!</p>
-      <h1 v-if="$route.query.status == 'declined'">Payment declined or cancelled please try again. for the  Special Launch Offer</h1>
+      <h1 v-if="$route.query.status == 'declined'">Payment cancelled or declined</h1>
    
     <br/>
 
@@ -89,11 +96,16 @@ export default {
 
       await addDoc(paymentRef, paymentData);
 
-      // Update the user's token count when the payment is confirmed.
-      if (this.paymentOption === 'oneTime' && this.$route.query.status === 'confirmed') {
+
+        
+        if (this.$route.query.status === 'confirmed') {
         console.log("adding token")
         await this.updateTokenCount(getAuth().currentUser.uid, 1000); // Add 1000 tokens
       }
+  
+
+      // Update the user's token count when the payment is confirmed.
+
 
 
 
@@ -126,4 +138,9 @@ export default {
 :disabled {
   opacity: 0.2;
 }
+.loading-spinner {
+    width: 100px;
+    height: 100px;
+    animation: spin 1s linear infinite;
+  }
 </style>

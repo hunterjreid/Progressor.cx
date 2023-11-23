@@ -1,6 +1,7 @@
 <template>
     <div class="main">
-      <h1>Progressor.cx Expert Chatbot Services</h1>
+      <h1>Get Started!</h1>
+      <h3>These 6 Points about Progressor.cx Expert Chatbot Services will get you Started!</h3>
     <p>Welcome to Progressor, your expert chatbot companion. Ask us anything about cybersecurity, and we'll provide you with insightful answers and guidance.<br> Our expertise covers a range of topics, from specific threat scenarios to incident response planning.</p>
     
       <div class="grid-container">

@@ -1,16 +1,17 @@
 <template>
   <div class="centered-content">
-    <h1>Sign Up</h1>
-    <div v-if="!user">
+    <h1 style="    font-family: 'M PLUS 1 Code', monospace !important; font-size: 4em;margin: 0;">Sign up</h1>
+    <div v-if="!user" style="width: 100%;margin-bottom: 10px;">
       <form @submit.prevent="createAccountWithEmail">
-        <input type="email" v-model="email" placeholder="Email" required>
+        <input style="i_box" type="email" v-model="email" placeholder="Email" required>
         <input type="password" v-model="password" placeholder="Password" required>
-        <button type="submit">Sign Up with Email</button>
+        <button type="submit">Sign up</button>
+   
       </form>
 
     </div>
     OR
-    <button v-if="!user" @click="loginWithGoogleSignIn"><img src="@/assets/google.png"></button>
+    <button v-if="!user"  class="gogole" style="background-color: none !important;" @click="loginWithGoogleSignIn"><img src="@/assets/google.png"></button>
    
 
     <!-- Display success and error messages -->
@@ -125,7 +126,12 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* This makes the container take the full viewport height */
+  max-width: 800px;
+    margin: 0px auto;
+    padding: 0px 20px;
   text-align: center; /* Center text within the container */
+}
+.i_box {
+  width: 100%;
 }
 </style>

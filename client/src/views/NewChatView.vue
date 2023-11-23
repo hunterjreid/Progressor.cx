@@ -5,7 +5,7 @@
   </div>
   <div class="button-scroller">
    <a style="color:aqua"> Ask me about :</a>
-      <button style="background-color:rgba(240, 248, 255, 0.048);font-size: 20px; color: rgb(184, 184, 184);" v-for="(button, index) in cybersecurityButtons" :key="index" @click="handleButtonClick(button)">
+      <button style="background-color:rgba(240, 248, 255, 0.048);font-size: 20px; color: rgb(184, 184, 184);" v-for="(button, index) in cybersecurityButtons" :key="index"  class="msg"  @click="handleButtonClick(button)">
         {{ button }}
       </button>
     </div>
@@ -23,7 +23,7 @@
   
     </div>
     
-    <div class="chat-bar" >
+    <div class="chat-bar" style="overflow: hidden;">
       <textarea name="Text1" cols="10" rows="5" style="    background: #02002e;
   background: rgb(65 65 65 / 16%);
     color: white;
@@ -35,7 +35,7 @@
     min-width: 100%;
     resize: none;
     outline: none !important;
-    height: 10em;
+    height: 10em;overflow-y: hidden;
     border: none;
     border-radius: 8px;
     margin-bottom: 10px;"   placeholder="Enter your message here..."  v-model="inputMessage"></textarea>
@@ -107,7 +107,16 @@ export default {
     return content;
   },
   generateReport() {
+
+    const receivedElements = document.getElementsByClassName('received');
+
+// Loop through the elements and set the background color
+for (const element of receivedElements) {
+    element.style.color = 'black';
+}
+
     const pdfContent = this.$refs.dmBox.innerHTML; // Use ref to get the content of the dm-box
+
 
     const pdfOptions = {
       margin: 10,
@@ -115,12 +124,19 @@ export default {
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2 },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+     
     };
 
-    // Generate PDF
+
     html2pdf().from(pdfContent).set(pdfOptions).save();
 
     // You can customize the options as needed, such as adding a header or footer.
+    setTimeout(() => {
+        // Loop through the elements and set the color to white
+        for (const element of receivedElements) {
+            element.style.color = 'white';
+        }
+    }, 200);
 
     console.log('Generating report...');
   },
@@ -237,6 +253,8 @@ export default {
           },
         });
 
+        this.inputMessage = ''
+
         console.log(response.data)
 
         const candidates = response.data.candidates;
@@ -286,7 +304,9 @@ console.log(this.formatMessage(candidates[0].content))
   background-image: url('@/assets/bggb.png'); /* Replace 'your-image-url.jpg' with the actual URL or path of your image */
   background-size: cover; /* Adjust this property based on how you want the image to be displayed */
 }
-
+.msg:hover {
+  color: #000 !important;
+}
 .out-of-tokens-message {
   background-color: #FF0000; /* Red background color */
   color: #FFFFFF; /* White text color */

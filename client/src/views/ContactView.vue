@@ -5,14 +5,14 @@
       
       <div class="contact-info">
         <h2>Contact Information</h2>
-        <p>Email: <a href="mailto:info@ommida.com">info@progressor.com</a></p>
-        <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        <p>Email: <a href="mailto:info@ommida.com">support@progressor.com</a></p>
+
   
 
       </div>
       
       <form @submit.prevent="submitForm">
-      <h2>Contact Form</h2>
+      <h2>Contact</h2>
       <label for="name">Name:</label>
       <input type="text" id="name" v-model="name" required>
 
@@ -24,6 +24,7 @@
 
       <button type="submit">Submit</button>
     </form>
+    <br>
       
       <FooterComp />
     </div>

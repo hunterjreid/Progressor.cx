@@ -2,7 +2,7 @@
 <!-- MAIN -->
 <template>
     <div id="master">
-      <header v-if="$route.path !== '/chat2'" class="header" :style="{ boxShadow: (menuOpen2 === false || menuOpen === false) ? '0px 2px 4px rgba(0, 0, 0, 0.1)' : 'none' }">
+      <header v-if="$route.path !== '/chat'" class="header" :style="{ boxShadow: (menuOpen2 === false || menuOpen === false) ? '0px 2px 4px rgba(0, 0, 0, 0.1)' : 'none' }">
         
         <div class="gradient-header2 wave-bottom" style="z-index: 99999">
          
@@ -30,9 +30,9 @@
           <router-link @click="closeMenu"  style="margin-left: 20px;" class="Mob" to="/">
             <img
               alt="Logo"
-              src="./assets/lil_logo.png"
+              src="./assets/LIL_logo2.png"
             
-              style="height: 30px;  display: flex;"  
+              style="height: 40px;  display: flex;"  
               @click="navigateToHome"
             />
           </router-link>

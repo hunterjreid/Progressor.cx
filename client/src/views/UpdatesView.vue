@@ -29,59 +29,10 @@ export default {
       updates: [
         {
           version: '1.0',
-          date: '2023-01-15',
-          description: 'Initial release of our application.',
+          date: '24 November 2023',
+          description: 'Initial release of progressor.cx.',
         },
-        {
-          version: '1.1',
-          date: '2023-03-10',
-          description: 'Added new features and improved performance.',
-        },
-        {
-          version: '1.2',
-          date: '2023-05-20',
-          description: 'Fixed several bugs and enhanced user experience.',
-        },
-        {
-          version: '1.3',
-          date: '2023-07-15',
-          description: 'Introduced a new user interface design.',
-        },
-        {
-          version: '1.4',
-          date: '2023-09-05',
-          description: 'Optimized application for mobile devices.',
-        },
-        {
-          version: '1.5',
-          date: '2023-11-10',
-          description: 'Added support for multiple languages.',
-        },
-        {
-          version: '1.6',
-          date: '2024-01-15',
-          description: 'Implemented user feedback and suggestions.',
-        },
-        {
-          version: '1.7',
-          date: '2024-03-20',
-          description: 'Enhanced security and data privacy features.',
-        },
-        {
-          version: '1.8',
-          date: '2024-05-15',
-          description: 'Improved performance and reduced load times.',
-        },
-        {
-          version: '1.9',
-          date: '2024-07-10',
-          description: 'Added integration with third-party services.',
-        },
-        {
-          version: '2.0',
-          date: '2024-09-20',
-          description: 'Major update with new features and enhancements.',
-        },
+      
         // You can continue adding more updates here
       ],
     };
