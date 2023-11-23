@@ -3,7 +3,7 @@
     <div v-if="loading" class="loading-overlay" :class="{ 'hide': !loading }">
  
       <div class="loading-spinner">
-        <img alt="Logo" src="./../assets/SPINNER.png" class="max-w-xs logo" style="    height: 50px;
+        <img alt="Logo" src="./../assets/SPINNER.png" class="max-w-xs" style="    height: 50px;
     padding: 25px;" />
       </div>
     </div>
@@ -104,7 +104,7 @@ async created() {
     text-stroke: 1px black;
     -webkit-text-fill-color: transparent;
     font-family: system-ui;
-    background-image: linear-gradient(200deg,#0090ff 31%,#e50000);
+    background-image: linear-gradient(197deg,#0090ff 74%,#e50000);
     -webkit-background-clip: text;
     background-clip: text;
     font-size: 60px;

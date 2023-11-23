@@ -1,7 +1,7 @@
 <template>
     <div class="main">
       <h1>Progressor.cx Expert Chatbot Services</h1>
-    <p>Welcome to Progressor, your expert chatbot companion. Ask us anything about cybersecurity, and we'll provide you with insightful answers and guidance. Our expertise covers a range of topics, from specific threat scenarios to incident response planning.</p>
+    <p>Welcome to Progressor, your expert chatbot companion. Ask us anything about cybersecurity, and we'll provide you with insightful answers and guidance.<br> Our expertise covers a range of topics, from specific threat scenarios to incident response planning.</p>
     
       <div class="grid-container">
 
@@ -48,7 +48,7 @@
   };
   </script>
   
-  <style>
+  <style scoped>
   grid-item {
     color: white;
   }
@@ -79,7 +79,7 @@
     max-width: 800px; margin: 0 auto; padding: 20px;
   }
   h2 {
-    color: white;
+    color: white  !important;
   }
 }
   </style>

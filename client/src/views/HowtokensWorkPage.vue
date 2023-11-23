@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div class="container">
+      <div class="container"  style="maring-bottom:20px;">
 
         <h1> Token System</h1>
       <p>Tokens are the currency of Progressor!. Each token represents 2 characters. For example:</p>

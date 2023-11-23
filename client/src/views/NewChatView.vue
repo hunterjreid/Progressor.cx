@@ -35,19 +35,21 @@
     min-width: 100%;
     resize: none;
     outline: none !important;
-    height: 40px;
+    height: 10em;
     border: none;
     border-radius: 8px;
     margin-bottom: 10px;"   placeholder="Enter your message here..."  v-model="inputMessage"></textarea>
-      <div style="    display: flex;
+      <div style="   display: flex;
     flex-grow: 1;
-    width: 100%;">
+    width: 100%;
+    justify-content: space-between;">
 
-
+<button class="bot_btn"  style="background-color:#777b7e52;margin: 0px;" @click="clearChat">Clear Chat</button> 
    
-      <button class="bot_btn" style="background-color:#777b7e52;" @click="sendMessage">Send</button>
-      <button class="bot_btn" style="background-color:#0090ff52;" @click="clearChat">Clear Chat</button> <!-- Add Clear Chat button -->        <button class="bot_btn" @click="generateReport">Generate Report</button>
-    </div>
+   
+      <div>
+<!-- Add Clear Chat button -->        <button style="background-color:#777b7e52;" class="bot_btn" @click="generateReport">Generate Report</button>   <button class="bot_btn" style="margin: 0px;"  @click="sendMessage">Send</button>
+    </div>  </div>
         <span  style="color:white;" v-if="messageCost !== undefined">COST: {{ messageCost }} tokens</span>
 
     </div>
@@ -358,11 +360,7 @@ button {
     width: 96%;
     padding: 0px;;
   }
-.dm-box {
-  height: 90vw;
-  width: 90%;
 
-}
 .button-scroller {
   display: none;
 }

@@ -20,11 +20,10 @@
 
 
 <h2 class="font-semibold text-white font-semiboldcxs " style="text-align: center;">Companies just trust Progressor.cx</h2>
-    <div style="display: flex;
-  justify-content: space-around;">
-        <img src="@/assets/rwd.png" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
-        <img src="@/assets/test_logo.png" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
-     <img src="@/assets/hunter_Company.png" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md h-auto" />
+    <div class="hure">
+        <img src="@/assets/rwd.png" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md " />
+        <img src="@/assets/test_logo.png" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md " />
+     <img src="@/assets/hunter_Company.png" style="margin-left:20px;" alt="AI Cyber Security" class="max-w-md " />
   
     </div>
 
@@ -86,26 +85,27 @@
 
 
 </div>
-
+<br> 
 <div class="pic-left-text-right">
   <div class="max-w-md">
-    <h2 class="text-3xl font-bold">Become an Cyber Voyager</h2>
+    <h2 class="text-3xl font-bold">Explore the Horizon</h2>
     <p class="my-4">
-      Elevate your organization's security posture with our advanced AI Chatbot Cyber Security SaaS. Explore cutting-edge solutions and protect your digital assets today.
+   
+Embark on a transformative journey as a Cyber Voyager and fortify your organization's cybersecurity with the cutting-edge capabilities of Progressor.cx. Dive into a realm of advanced AI-driven security solutions that redefine the way you safeguard your digital assets. Take the first step by trying Progressor.cx now and experience the future of cyber resilience.
     </p>
     <button class="custom-button" @click="$router.push('/pricing')">
       Learn More
     </button>
   </div>
-  <br> <img src="../assets/main(1).png" alt="AI Cyber Security" class="max-w-md h-auto" />
+  <br> <img src="../assets/img33.jpg" alt="AI Cyber Security" class="max-w-md h-auto" />
 </div>
 <br><br>
 <div class="pic-left-text-right">
-    <img src="../assets/main(2).png" alt="AI Cyber Security" class="max-w-md h-auto" />
+    <img src="../assets/img2.jpg" alt="AI Cyber Security" class="max-w-md h-auto" />
   <div class="max-w-md" style="margin-left: 20px;">
-    <h2 class="text-3xl font-bold">Or maybe a Cyber Knight</h2>
+    <h2 class="text-3xl font-bold">Learn More About Cyber Security</h2>
     <p class="my-4">
-      Elevate your organization's security posture with our advanced AI Chatbot Cyber Security SaaS. Explore cutting-edge solutions and protect your digital assets today.
+      Delve into the realm of AI Cyber Security, where innovation meets protection. Progressor.cx stands as your cyber sentinel, enhancing security posture with its advanced capabilities. As a Cyber Knight, you'll navigate through a landscape of proactive defense mechanisms, ensuring your organization is fortified against emerging cyber threats.
     </p>
     <button class="custom-button" style="background-color: blueviolet;"  @click="$router.push('/pricing')">
       Learn More
@@ -116,17 +116,17 @@
 
 <div class="pic-left-text-right">
   <div class="max-w-md">
-    <h2 class="text-3xl font-bold">Guardian Cyber Elite</h2>
+    <h2 class="text-3xl font-bold">Start Your Cybersecurity Odyssey Now</h2>
     <p class="my-4">
-      Elevate your organization's security posture with our advanced AI Chatbot Cyber Security SaaS. Explore cutting-edge solutions and protect your digital assets today.
+      Take the lead in securing your digital frontier. Progressor.cx is more than just a tool; it's your trusted ally in the fight against cyber threats. Join the ranks of Cyber Voyagers, Cyber Knights, and Guardian Cyber Elites who have embraced the power of Progressor.cx to redefine cybersecurity excellence.
     </p>
     <button class="custom-button" style="background-color: rgb(226, 43, 150);"  @click="$router.push('/pricing')">
       Learn More
     </button>
   </div>
-  <br>  <img src="../assets/main224.png" alt="AI Cyber Security" class="max-w-md h-auto" />
+  <br>  <img src="../assets/img11.jpg" alt="AI Cyber Security" class="max-w-md h-auto" />
 </div>
-
+<br> 
 <div class="ewq" style="
     text-align: center;
 ">
@@ -188,9 +188,9 @@
 </h4>
       <h1 class="below_para"  style="color:rgb(53, 53, 53)">No credit card required.
  </h1>
- <div  style="margin-left: 40px;"> <button v-if="!$root.user" @click="$router.push('/login')" style="margin-right: 20px; background-color: rgb(0, 0, 0);color: rgb(255, 255, 255);">Login back in</button>
+ <div  style="margin-left: 40px;"> <button v-if="!$root.user" @click="$router.push('/login')" style="margin-right: 20px; background-color: rgb(0, 0, 0);color: rgb(255, 255, 255);">Log back in</button>
   
- <button @click="$router.push('/chat2')">Try Prgressor.cx</button></div>
+ <button style="background-color: #0090ff;" @click="$router.push('/chat2')">Try Progressor.cx</button></div>
 
 </div>
  <FooterComp />
@@ -285,6 +285,10 @@ border-radius: 10px;
     border-radius: 10px;
   }
 
+  .h-auto {
+    border-radius: 20px;
+  }
+
   .below_para2 {
     font-weight: 900;
     margin-top: 0px;
@@ -356,6 +360,10 @@ border-radius: 10px;
   color: white;
     }
 
+    .hure {
+      display:flex;justify-content:space-around;
+    }
+
   @media only screen and (max-width: 600px) {
     .grid {
         display: flex;
@@ -364,12 +372,20 @@ border-radius: 10px;
     align-items: center;
     }
 
+    .hure {
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    }
+
     .bg_img {
-        background-image: url(http://localhost:8080/img/main225.cef4fc43.png);
+
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
-    height: 50px;
+    margin-bottom: -260px;
     padding: 100px 0px;
     }
   .titleee {

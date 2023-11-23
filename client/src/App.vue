@@ -42,7 +42,7 @@
 
 
           <button @click="menuOpen = !menuOpen; menuOpen2 = false" class="colorlessbtn">Resources {{ !menuOpen ? '↓' : '↨' }}</button>
-          <button @click="menuOpen2 = !menuOpen2; menuOpen = false" class="colorlessbtn">Company {{ !menuOpen2 ? '↓' : '↨' }}</button>
+          <button @click="menuOpen2 = !menuOpen2; menuOpen = false" class="colorlessbtn logo">Company {{ !menuOpen2 ? '↓' : '↨' }}</button>
           <button  v-if="!user" @click="$router.push('/pricing'), closeMenu" class="colorlessbtn">Pricing</button>
 
           <div class="btn_holder">
@@ -192,9 +192,23 @@
           <img
             alt="Logo"
             src="./assets/Logo.png"
-            class=""
+            class="r3r3z" 
             style="max-width: 330px"
           />
+
+
+
+          <router-link @click="closeMenu"  style="margin-left: 20px;" class="Mob" to="/">
+            <img
+              alt="Logo"
+              src="./assets/LIL_logo2.png"
+            
+              style="height: 80px;width: 100px;  display: flex;"  
+              @click="navigateToHome"
+            />
+          </router-link>
+
+
           <a v-if="user" style="background-color: rgb(0, 0, 0);font-size: 19px;color:white; margin-left: 40px;">Tokens: {{ userTokens }}</a> 
         
           <a v-if="$root.tokens_bypass == true" style="font-size: 19px;background-color: rgb(0, 0, 0);font-size: 19px;color:white; margin-left: 40px;">Tokens: <a style="font-size: 20px;">∞</a></a>
@@ -802,6 +816,7 @@ getDoc(userDocRef)
       margin: 10px;
       font-size: 20px;
     }
+
  
   }
   
@@ -818,6 +833,15 @@ getDoc(userDocRef)
     display: block;
   }
   @media (max-width: 600px) {
+
+    .b_menthis {
+
+width: 100% !important;
+
+}
+    h2 {
+      color: black !important;
+    }
 
     .bg_img2 {
       padding: 100px 0px !important;
@@ -851,12 +875,14 @@ width: 100%;
         padding: 0px;
     margin: 0px;
     margin-right: 10px;
-    width: auto;
+    width: auto;        padding: 10px;
+    margin: 0px; margin-right: 10px;  
 
     }
     .actionBTN2 {
-        padding: 0px;
+        padding: 10px;
     margin: 0px;
+    margin-right: 10px;
     width: auto;
 
     }

@@ -14,12 +14,12 @@
       <li><router-link to="/blog/our-mission">Our Mission</router-link></li>
       <li><router-link to="/blog/company-history">Company History</router-link></li>
       <li><router-link to="/blog/leadership-team">Leadership Team</router-link></li>
-      <li><router-link to="/blog/corporate-responsibility">Corporate Responsibility</router-link></li>
+   
     </ul>
 
     <ul class="footer-menu">
   <li><router-link to="/blog/about">Who are We?</router-link></li>
-  <li><router-link to="/blog/about">Meet Our Expert Team</router-link></li>
+  <li><router-link to="/blog/webinars">Webinars</router-link></li> 
   <li><router-link to="/blog/client-testimonials">Read Client Testimonials</router-link></li>
   <li><router-link to="/blog/check-out-our-blog">Check Out Our Blog</router-link></li>
   <li><router-link to="/contact">Contact Our Support Team</router-link></li>
@@ -33,13 +33,13 @@
   <li><router-link to="/blog/services">Services</router-link></li>
   <li><router-link to="/blog/consulting-services">Consulting Services</router-link></li>
   <li><router-link to="/blog/security-audits">Comprehensive Security Audits</router-link></li>
-  <li><router-link to="/blog/training-programs">Specialized Training Programs</router-link></li>
+  <li><router-link to="/blog/corporate-responsibility">Corporate Responsibility</router-link></li>
   <li><router-link to="/blog/partnership-opportunities">Explore Partnership Opportunities</router-link></li>
   <li><router-link to="/blog/resources">Resources</router-link></li>
   <li><router-link to="/blog/whitepapers">Whitepapers</router-link></li>
   <li><router-link to="/blog/case-studies">Case Studies</router-link></li>
-  <li><router-link to="/blog/webinars">Webinars</router-link></li>
-  <li><router-link to="/blog/faqs">FAQs</router-link></li>
+ <li><router-link to="/blog/about">Meet Our Expert Team</router-link></li>
+  <li><router-link to="/faq">FAQs</router-link></li>
 </ul>
 </div>
 
@@ -169,7 +169,7 @@
     }
     .menuCatch {
     display: flex;
-    background: #464646;
+
     justify-content: center;
     margin-top: 20px;
     flex-direction: column;

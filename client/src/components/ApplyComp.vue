@@ -1,27 +1,21 @@
 <template>
       <section class="my-8">
-        <h2 class="blog-titlee">Apply Now to Progressor.cx PLUS PLAN</h2>
-        <p>Apply now and we should get back to within 48 hours. Average 24 hours</p>
+
         <form class="contact-form">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" v-model="name" required>
 
-          <label for="country">Country/Region:</label>
+          <label for="country">Company:</label>
           <input type="text" id="country" name="country" v-model="country" required>
 
-          <label for="email">Email:</label>
+          <label for="email">What tech stack do you use:</label>
           <input type="email" id="email" name="email" v-model="email" required>
 
           <label for="phone">Phone number:</label>
           <input type="text" id="phone" name="phone" v-model="phone" required>
 
-          <label for="twitter">Twitter username (optional):</label>
-          <input type="text" id="twitter" name="twitter" v-model="twitter">
 
-          <label for="instagram">Instagram username (optional):</label>
-          <input type="text" id="instagram" name="instagram" v-model="instagram">
-
-          <label for="message">Message (optional):</label>
+          <label for="message">How will you use Progressor Plus:</label>
           <textarea id="message" name="message" v-model="message" rows="4"></textarea>
 
           <!-- <label for="picture">Upload one picture of you (optional):</label>
@@ -29,7 +23,7 @@
 
       <img v-if="profilePicture" :src="profilePicture" style="max-width: 200px; max-height: 200px;" alt="Profile Picture">
 
-      <button style="width: 100%;" type="button" @click="submitForm">Apply Now to Progressor.cx PLUS PLAN</button>
+      <button style="width: 100%;font-size: 1.24em;" type="button" @click="submitForm">Apply Now to Progressor.cx Plus+</button>
         </form>
       </section>
   </template>
@@ -141,10 +135,11 @@
   background-color: #474747;
 }
 .my-8 {
-    background: #8888881c;
+    background: #88888815;
     padding: 10px;
     margin-top: 20px;
-    border: 1px solid;
+    border-radius: 20px;
+
 }
 
 .contact-form input:focus,
@@ -155,6 +150,7 @@
 }
 .contact-form {
     display: flex;
+    margin: 0px;
     flex-direction: column;
   }
 
@@ -168,7 +164,7 @@
   .contact-form input[type="email"],
   .contact-form textarea {
     padding: 8px;
-    border: 1px solid #ff1313; /* Light pink */
+    border: 1px solid #132bff; /* Light pink */
     border-radius: 5px;
     margin-top: 5px;
   }
@@ -186,7 +182,7 @@
   }
 
   .contact-form button[type="button"] {
-    background-color: #ff1313; /* Darker pink */
+    background-color: #c813ff; /* Darker pink */
     color: #fff;
     padding: 8px 12px;
     border: none;
