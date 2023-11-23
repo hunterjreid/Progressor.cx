@@ -97,7 +97,7 @@ Embark on a transformative journey as a Cyber Voyager and fortify your organizat
       Learn More
     </button>
   </div>
-  <br> <img src="../assets/img33.jpg" alt="AI Cyber Security" class="max-w-md h-auto" />
+  <br> <img  src="../assets/main(2).png" alt="AI Cyber Security" class="max-w-md h-auto" />
 </div>
 <br><br>
 <div class="pic-left-text-right">

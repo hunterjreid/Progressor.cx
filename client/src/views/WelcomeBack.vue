@@ -14,7 +14,7 @@
 </div>
  <!-- <button @click="$root.tierData = '0'">0</button>
  <button @click="$root.tierData = '1'">1</button> -->
-<button @click="$root.tierData = '2'">2</button>
+<!-- <button @click="$root.tierData = '2'">2</button> -->
 <!--<button @click="$root.tierData = '3'">3</button> -->
 <div class="subscription-container" v-if="$root.tierData == '0'" style="background-color: #dadada; padding: 20px; textAlign: center, color: 'white' }">
     <h1 style="font-size: 24px; margin-bottom: 10px;">NO PLAN!</h1>
@@ -255,6 +255,7 @@ this.updateSubscription();
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 .subscription-container h1 {
   font-size: 24px;

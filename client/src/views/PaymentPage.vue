@@ -1,17 +1,19 @@
 <template>
 
   <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-    <h1>
+    <h1 class="titlew">You're just <b>one step</b> away from becoming a member of the Progressors Club!</h1>
+    <p>
       You have chosen the ${{ $route.query.pricing }} plan. Would you like to pay monthly or annually?
-    </h1>
+    </p>
  
  
-    
+ 
       <li>
-        <input type="radio" name="subscriptionPlan"  @click="this.customAmount=  $route.query.pricing, subscriptionPlan = 'month'"   value="monthly"> Monthly (${{ $route.query.pricing }}/month)
+        <input type="radio" name="subscriptionPlan"  @click="this.customAmount=  $route.query.pricing, subscriptionPlan = 'month'"   value="monthly"><a class="subscriptionPlan"> Monthly (${{ $route.query.pricing }}/month)</a>
       </li>
       <li>
-        <input type="radio" name="subscriptionPlan"  @click="this.customAmount =  $route.query.pricing * 11.2, subscriptionPlan = 'year'" value="annual"> Annual (${{ $route.query.pricing * 11.2}}/year)
+        <input type="radio" name="subscriptionPlan"  @click="this.customAmount =  $route.query.pricing * 11.2, subscriptionPlan = 'year'" value="annual"> <a class="subscriptionPlan">Annual (${{ ($route.query.pricing * 11.2).toFixed(2) }}/year)</a> <a style="       background: rgb(228, 9, 9);
+    color: white;">⭐ 7% CHEAPER LESS MONTHLY</a>
       </li>
     
 
@@ -25,8 +27,10 @@
         step="0.01"
       /> -->
       <button @click="payWithStripe" :disabled="paymentProcessing || this.customAmount == 0">
-        Pay with Stripe
+        Pay
       </button>
+      <div class="loading-spinner" v-if="paymentProcessing">      <img   alt="Logo" src="./../assets/SPINNER.png" class="max-w-xs" style="    height: 50px;
+    padding: 25px;" /></div>
       <p v-if="paymentProcessing">Proceeding to payment screen. Please wait...</p>
     </div>
 
@@ -85,6 +89,7 @@ const price = await stripe.prices.create({
 // Create a checkout session for the subscription
 const checkoutSession = await stripe.checkout.sessions.create({
   mode: 'subscription',
+  customer_email:  this.$root.user.email ,
   payment_method_types: ['card'],
   line_items: [
     {
@@ -114,9 +119,19 @@ const checkoutSession = await stripe.checkout.sessions.create({
 };
 </script>
 
-<style>
+<style scoped>
+.titlew {
+  font-family: 'M PLUS 1 Code';
+  font-style: 20px;
+}
 :disabled {
   opacity: 0.2;
+}
+.subscriptionPlan {
+  font-size: 2em;
+}
+button {
+  font-size: 2em;
 }
 
 </style>

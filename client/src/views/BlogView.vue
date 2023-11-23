@@ -136,6 +136,22 @@ async created() {
     height: 100px;
     animation: spin 1s linear infinite;
   }
+  @media (max-width: 600px) {
+  /* Adjust padding and margins for better spacing */
+  .blog-title{
+    font-family: 'M PLUS 1 Code';
+    -webkit-text-fill-color: black;
+    background-color: rgb(233, 0, 0);
+    background-image: none;
+    -webkit-background-clip: unset;
+    -webkit-text-stroke: unset;
+    background: none;
+    text-stroke: 1px black;
+    color: red;
+  }
+}
+
+
   .main {
     max-width: 800px; margin: 0 auto; padding: 20px;
   }
