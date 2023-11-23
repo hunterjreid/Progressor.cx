@@ -1,12 +1,13 @@
 <template>
-  <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+  <div style="max-width: 800px; margin: 0 auto; padding: 20px">
     <h1>Update Log</h1>
 
     <div class="updates">
       <h2>Version Updates</h2>
       <ul>
         <li v-for="(update, index) in updates" :key="index">
-          <strong class="version-header">Version {{ update.version }}</strong> - {{ update.date }}:
+          <strong class="version-header">Version {{ update.version }}</strong> -
+          {{ update.date }}:
           <p class="update-description">{{ update.description }}</p>
         </li>
       </ul>
@@ -17,10 +18,10 @@
 </template>
 
 <script>
-import FooterComp from '@/components/FooterComp.vue';
+import FooterComp from "@/components/FooterComp.vue";
 
 export default {
-  name: 'UpdatesView',
+  name: "UpdatesView",
   components: {
     FooterComp,
   },
@@ -28,11 +29,11 @@ export default {
     return {
       updates: [
         {
-          version: '1.0',
-          date: '24 November 2023',
-          description: 'Initial release of progressor.cx.',
+          version: "1.0",
+          date: "24 November 2023",
+          description: "Initial release of progressor.cx.",
         },
-      
+
         // You can continue adding more updates here
       ],
     };

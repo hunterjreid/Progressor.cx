@@ -17,7 +17,7 @@ import FaqView from './views/FaqView.vue'
 import CyberLandscape from './views/CyberLandscape.vue'
 import PricingPage from './views/PricingPage.vue'
 import HowtokensWorkPage from './views/HowtokensWorkPage.vue'
-import YoobeeTestView from './views/YoobeeTestView.vue'
+
 import SignupView from './views/Signup.vue'
 import LoginView from './views/LoginScreen.vue'
 import NewHomeLanding from './views/NewHomeLanding.vue'
@@ -107,11 +107,7 @@ const routes = [
         component: PricingPage,
       },
 
-      {
-        path: '/Yoobee_test_wip',
-        name: 'YoobeeTestView',
-        component: YoobeeTestView,
-      },
+
 
       {
         path: '/faq',
