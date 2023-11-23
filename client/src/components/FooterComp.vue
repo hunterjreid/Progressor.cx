@@ -18,11 +18,11 @@
     </ul>
 
     <ul class="footer-menu">
-  <li><router-link to="/blog/about-us">About Us</router-link></li>
-  <li><router-link to="/blog/meet-our-expert-team">Meet Our Expert Team</router-link></li>
+  <li><router-link to="/blog/about">Who are We?</router-link></li>
+  <li><router-link to="/blog/about">Meet Our Expert Team</router-link></li>
   <li><router-link to="/blog/client-testimonials">Read Client Testimonials</router-link></li>
   <li><router-link to="/blog/check-out-our-blog">Check Out Our Blog</router-link></li>
-  <li><router-link to="/blog/contact-support-team">Contact Our Support Team</router-link></li>
+  <li><router-link to="/contact">Contact Our Support Team</router-link></li>
   <li><router-link to="/blog/services">Services</router-link></li>
   <li><router-link to="/blog/cybersecurity-solutions">Cybersecurity Solutions</router-link></li>
   <li><router-link to="/blog/data-privacy-consulting">Data Privacy Consulting</router-link></li>
@@ -53,20 +53,26 @@
         <div>
       <router-link to="/">
         <img alt="Logo" src=".././assets/Logo.png" class="max-w-xs logo"/>
-      </router-link>      <h3 class="text-lg font-bold">Empower Your Cyber Defense.</h3><br></div><div style="display: flex;
+      </router-link>      <h3 class="text-lg font-bold">Empower Your Cyber Defense ☻</h3><br></div><div style="display: flex;
     flex-direction: column;
     align-items: flex-end;">
 
       <h3 class="text-lg font-bold">CONTACT US</h3>
-      <p>E-Mail: info@progressor.cx</p>
+      <p>E-Mail: progressor@progressor.cx</p>
       <p class="footer-text">© 2023 Progressor.cx. All rights reserved.</p>
       <div class="contact"></div>
       <div class="social">
-        <h3 class="text-lg font-bold">CONNECT WITH US</h3>
+        <h3 class="text-lg font-bold"  style="
+    text-align: end;
+
+">CONNECT WITH US</h3>
         <p>
           Follow us on social media
         </p>
-        <div class="social-icons">
+        <div class="social-icons" style="
+    text-align: end;
+
+">
           <!-- Use 'fa-3x' class to make the icons 3 times larger -->
           <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon">
             <i class="fab fa-instagram fa-3x"></i>
@@ -150,7 +156,7 @@
 
 .menuCatch {
     display: flex;
-    background: #464646;
+    background: #000000;
     justify-content: center;
  
     flex-direction: row;

@@ -41,12 +41,7 @@ Introducing our Special Launch Offer - $1 for 10K!</h2>
   </div>
       <!-- Your existing code here -->
   <h1>Enjoy straightforward pricing that suits any scale seamlessly.</h1>
-  <h2>If Progressor isn't to your liking, we offer hassle-free refunds at any time.</h2>   <br><router-link class="jlinkers" to="/tokens">
 
-    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
-     How do tokens work?
-    </button>
-</router-link>    
       <!-- Pricing Cards -->
       <div class="pricing-cards">
   <!-- Card 1 -->
@@ -117,7 +112,7 @@ Introducing our Special Launch Offer - $1 for 10K!</h2>
 
         <button
           v-if="!$root.user"
-          style="margin-bottom: 40px; font: 1em sans-serif; background: linear-gradient(270deg, #ff1313 31%, #5c85ff);"
+          style="margin-bottom: 40px; font: 1em sans-serif; background: linear-gradient(270deg, #131212 31%, #6a6a6d);"
           class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4"
           @click="$router.push('/login')"
         >
@@ -151,7 +146,12 @@ Introducing our Special Launch Offer - $1 for 10K!</h2>
 </div>
 <router-link class="jlinkers" to="/pricing2">
 
-</router-link>     
+</router-link>       <h2>If Progressor isn't to your liking, we offer hassle-free refunds at any time.</h2>   <router-link class="jlinkers" to="/tokens">
+
+<button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
+ How do tokens work?
+</button>
+</router-link>    
 <p>Your Satisfaction is 100% Guaranteed or Your Money Back</p>
   <FooterComp /> <!-- Your existing code here -->
 </div>

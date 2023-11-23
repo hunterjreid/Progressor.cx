@@ -16,7 +16,7 @@
     padding: 15px;
     border-radius: 50px;text-align: center;
     margin-bottom: 20px;
-"><router-link to="/updates">See more here, about our lastest updates.</router-link></div>
+"><router-link to="/updates" style="color:rgb(27, 10, 185)">View Lastest updates</router-link></div>
 
 
 <h2 class="font-semibold text-white font-semiboldcxs " style="text-align: center;">Companies just trust Progressor.cx</h2>
@@ -107,7 +107,7 @@
     <p class="my-4">
       Elevate your organization's security posture with our advanced AI Chatbot Cyber Security SaaS. Explore cutting-edge solutions and protect your digital assets today.
     </p>
-    <button class="custom-button"  @click="$router.push('/pricing')">
+    <button class="custom-button" style="background-color: blueviolet;"  @click="$router.push('/pricing')">
       Learn More
     </button>
   </div>
@@ -120,7 +120,7 @@
     <p class="my-4">
       Elevate your organization's security posture with our advanced AI Chatbot Cyber Security SaaS. Explore cutting-edge solutions and protect your digital assets today.
     </p>
-    <button class="custom-button"  @click="$router.push('/pricing')">
+    <button class="custom-button" style="background-color: rgb(226, 43, 150);"  @click="$router.push('/pricing')">
       Learn More
     </button>
   </div>
@@ -167,7 +167,7 @@
       Progressor.cx is highly recommended by over 85% of cyber experts for its user-friendly interface and the substantial time savings it provides in Cyber Security practices.
     </p>
     <button class="custom-button" @click="$router.push('/home2')">
-        Book a demo
+       Learn about Progressor Plus+
 
 
 
@@ -220,6 +220,11 @@ border-radius: 10px;
   .ewq {
     
   }
+  .bg-gray-100  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
   .bg_img {
     background-image: url('@/assets/main225.png'); 
@@ -251,7 +256,7 @@ border-radius: 10px;
 
   .what_is_box {
     padding: 20px;
-    background: #c2c2c2;
+    background: #c2c2c226;
     margin-top: 20px;
     border-radius: 10px;
   }
@@ -273,9 +278,9 @@ border-radius: 10px;
     font-size: 20px;
   }
   .p-4ee {
-    background: #ececec;
+    background: #ececec28;
     padding: 20px;
-    border: 1px solid black;
+
     margin-top: 20px;
     border-radius: 10px;
   }

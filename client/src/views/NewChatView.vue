@@ -136,7 +136,7 @@ export default {
         return;
       }
 
-      if (this.messageCost > this.$root.userTokens) {
+      if (this.messageCost > this.$root.userTokens && this.$root.tokens_bypass == false) {
     // User doesn't have enough tokens
     this.outOfTokens = true;
     return;
@@ -145,6 +145,9 @@ export default {
       this.conversationHistory.unshift({ content: this.inputMessage, type: 'sent', id: this.conversationHistory.length });
 
  
+      if (this.$root.tokens_bypass == false) {
+
+
       const db = getFirestore();
       const userDocRef = doc(db, 'users', this.$root.user.uid);
 
@@ -198,7 +201,7 @@ export default {
     });
     
       // Reset the messageCost
-   
+    }
 
       // Show the token subtracted popup (if needed)
       // this.showTokenSubtractedPopup = true;

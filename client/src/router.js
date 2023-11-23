@@ -9,8 +9,9 @@ import TermsOfServiceView from './views/TermsOfServiceView.vue'
 import PrivacyPolicyView from './views/PrivacyPolicyView.vue'
 import LearnMore from './views/LearnMore.vue'
 import NewLanding from './views/NewLanding.vue'
-
+import yoobeeTest from './views/yoobeeTest.vue'
 import ContactView from './views/ContactView.vue'
+
 
 import FaqView from './views/FaqView.vue'
 import CyberLandscape from './views/CyberLandscape.vue'
@@ -34,6 +35,12 @@ const routes = [
       name: 'NewHomeLanding',
       component: NewHomeLanding,
     },
+    {
+      path: '/yoobee',
+      name: 'yoobeeTest',
+      component: yoobeeTest,
+    },
+ 
     {
       path: '/bonus_deal',
       name: 'LaunchingSpeacialPage',

@@ -1,6 +1,7 @@
 <template>
   <div class="centered-content">
     <h1>Log In</h1>
+    
     <div v-if="!user">
       <form @submit.prevent="emailPasswordSignIn">
         <input type="email" v-model="email" placeholder="Email" required>
@@ -12,17 +13,18 @@
     <button v-if="user" @click="logout">Log Out</button>
 OR
     <button v-if="!user" @click="loginWithGoogleSignIn"><img src="@/assets/google.png"></button>
-
     <!-- Display success and error messages -->
     <p v-if="successMessage" style="color: green">{{ successMessage }}</p>
     <p v-if="errorMessage" style="color: red">{{ errorMessage }}</p>
+   
   </div>
+
 </template>
 
 <script>
 import { getAuth, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
-
+import FooterComp from '@/components/FooterComp.vue';
 export default {
   name: "LoginView",
   data() {
@@ -53,7 +55,9 @@ export default {
         this.errorMessage = 'Error signing in with email and password: ' + error.message;
       }
     },
-
+    components: {
+    FooterComp,
+  },
     async loginWithGoogleSignIn() {
       const auth = getAuth();
       const provider = new GoogleAuthProvider();

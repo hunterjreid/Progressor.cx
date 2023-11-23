@@ -2,7 +2,7 @@
 <!-- MAIN -->
 <template>
     <div id="master">
-      <header v-if="$route.path !== '/chat2'" class="header">
+      <header v-if="$route.path !== '/chat2'" class="header" :style="{ boxShadow: (menuOpen2 === false || menuOpen === false) ? '0px 2px 4px rgba(0, 0, 0, 0.1)' : 'none' }">
         
         <div class="gradient-header2 wave-bottom" style="z-index: 99999">
          
@@ -49,6 +49,7 @@
           <button   v-if="!user" @click="$router.push('/login'), closeMenu" class="actionBTN">Log in</button>
           <button v-if="!user" @click="$router.push('/signup'), closeMenu" class="actionBTN2">Sign up</button>
         <a v-if="user" style="font-size: 19px;">Tokens: {{ userTokens }}</a>
+
           <button v-if="user" @click="$router.push('/welcome'), closeMenu" class="actionBTN2">Account</button>
         
         </div>
@@ -196,7 +197,7 @@
           />
           <a v-if="user" style="background-color: rgb(0, 0, 0);font-size: 19px;color:white; margin-left: 40px;">Tokens: {{ userTokens }}</a> 
         
-     
+          <a v-if="$root.tokens_bypass == true" style="font-size: 19px;background-color: rgb(0, 0, 0);font-size: 19px;color:white; margin-left: 40px;">Tokens: <a style="font-size: 20px;">∞</a></a>
         
           <router-link
             to="/pricing"
@@ -241,7 +242,7 @@ import { getFirestore, getDoc, doc, setDoc } from 'firebase/firestore';
       return {
         api_prefix: `http://${location.hostname}:3001`,
         // CHANGE IN PROD ^^^^^^^^^^^^^^^^^^^^^^^^
-
+        tokens_bypass: false,
 
         userTokens: 0,
         user: null,
@@ -392,7 +393,7 @@ getDoc(userDocRef)
     color: #fff;
     margin: 0;
     margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+
   }
   
   /* Add bubbles */

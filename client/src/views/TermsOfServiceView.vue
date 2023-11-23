@@ -1,6 +1,6 @@
 <template>
     <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-      <h1 style="font-size: 36px; margin-bottom: 20px;">Terms of Service</h1>
+      <h1 style="font-size: 36px; margin-bottom: 20px; margin-top: 0px;">Terms of Service</h1>
       <p style="font-size: 16px; margin-bottom: 30px;">
         Join our innovative AI SaaS team and embark on a journey of cutting-edge technology and boundless opportunities. We are always seeking talented individuals to join our visionary community.
       </p>

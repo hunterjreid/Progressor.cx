@@ -9,14 +9,14 @@
     </div>
     <div class="main" v-else>
       <br v-if="this.$cookies.isKey('admin')">
-      <button v-if="this.$cookies.isKey('admin')" @click="$router.push('/admin')" style="border:1px solid black;margin: 20px;margin-top: 0px;
+      <button v-if="this.$cookies.isKey('admin')" @click="$router.push('/admin')" style="border:1px solid black;margin: 20px;margin-top: 20px;
         background: linear-gradient(45deg, red, orange);">goto Admin</button>
-      <h1 class="blog-title" v-if="blog">{{ blog.title }}</h1>
+      <h1 class="blog-title" v-if="blog" style="margin-top: 10px;">{{ blog.title }}</h1>
       <a v-else><br>Sorry this blog has either been removed or deleted No blog found. Please</a>
       <p v-if="blog" class="blog-content" v-html="blog.content"></p>
       <!-- <br> -->
       <!-- <p v-if="blog" class="blog-content">{{ blog.read_count }} Views</p>
-      <router-link :to="'/all_blogs'">View all Blogs</router-link><br> -->
+      <router-link :to="'/all_blogs'">View all Blogs</router-link> --><br>
       <router-link :to="'/'">Back to Home Page</router-link>
       <div></div>
       <br>

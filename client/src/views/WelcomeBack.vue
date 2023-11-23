@@ -12,10 +12,10 @@
  
  <label for="firstLogin ">We see its your First Login: Welcome to Progressor! We gave you 1000 tokens for free to get started!!!</label>>  <router-link to="/chat2">Try now!</router-link>
 </div>
-<button @click="$root.tierData = '0'">0</button>
+<!-- <button @click="$root.tierData = '0'">0</button>
 <button @click="$root.tierData = '1'">1</button>
 <button @click="$root.tierData = '2'">2</button>
-<button @click="$root.tierData = '3'">3</button>
+<button @click="$root.tierData = '3'">3</button> -->
 <div class="subscription-container" v-if="$root.tierData == '0'" style="background-color: #dadada; padding: 20px; textAlign: center, color: 'white' }">
     <h1 style="font-size: 24px; margin-bottom: 10px;">NO PLAN!</h1>
     <router-link to="/chat2" style="text-decoration: underline; color: rgb(0, 81, 255);">If you have coins, you can still Chat</router-link>
@@ -111,6 +111,7 @@ export default {
   },
   methods: {
     async logout() {
+      this.$root.logout();
   try {
     // Check if the user is logged in and has a UID
     if (this.user && this.user.uid) {
@@ -123,7 +124,7 @@ export default {
 
 
       // Get the UID of the logged-in user
-      const uid = this.user.uid;
+      const uid = this.$root.user.uid;
 
       // Increment login times in the database
       const db = getFirestore();
@@ -144,7 +145,7 @@ export default {
         // Update the local login times property
      
         this.loginTimes = updatedLoginTimes;
-        this.$root.logout();
+       
         // ... existing login success logic ...
       } else {
         // Handle the case where user data is not available
@@ -248,7 +249,7 @@ this.updateSubscription();
 <style scoped>
 .subscription-container {
   max-width: 800px;
-  margin: 50px auto;
+  margin: 0px auto;
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
